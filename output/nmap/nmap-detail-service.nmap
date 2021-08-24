@@ -1,0 +1,45 @@
+# Nmap 7.91 scan initiated Tue Aug 24 20:15:27 2021 as: nmap -sC -sV -p 88,139,53,389,49703,9389,49665,49664,49684,593,445,464,636,135 -oA /media/psf/Home/projects/oscp_auto/output//nmap/nmap-detail-service 10.10.10.161
+Nmap scan report for 10.10.10.161
+Host is up (0.55s latency).
+
+PORT      STATE SERVICE      VERSION
+53/tcp    open  domain?
+88/tcp    open  kerberos-sec Microsoft Windows Kerberos (server time: 2021-08-24 13:40:23Z)
+135/tcp   open  msrpc        Microsoft Windows RPC
+139/tcp   open  netbios-ssn  Microsoft Windows netbios-ssn
+389/tcp   open  ldap         Microsoft Windows Active Directory LDAP (Domain: htb.local, Site: Default-First-Site-Name)
+445/tcp   open  microsoft-ds Windows Server 2016 Standard 14393 microsoft-ds (workgroup: HTB)
+464/tcp   open  kpasswd5?
+593/tcp   open  ncacn_http   Microsoft Windows RPC over HTTP 1.0
+636/tcp   open  tcpwrapped
+9389/tcp  open  mc-nmf       .NET Message Framing
+49664/tcp open  msrpc        Microsoft Windows RPC
+49665/tcp open  msrpc        Microsoft Windows RPC
+49684/tcp open  msrpc        Microsoft Windows RPC
+49703/tcp open  msrpc        Microsoft Windows RPC
+Service Info: Host: FOREST; OS: Windows; CPE: cpe:/o:microsoft:windows
+
+Host script results:
+|_clock-skew: mean: 2h44m48s, deviation: 4h02m30s, median: 24m47s
+| smb-os-discovery: 
+|   OS: Windows Server 2016 Standard 14393 (Windows Server 2016 Standard 6.3)
+|   Computer name: FOREST
+|   NetBIOS computer name: FOREST\x00
+|   Domain name: htb.local
+|   Forest name: htb.local
+|   FQDN: FOREST.htb.local
+|_  System time: 2021-08-24T06:42:52-07:00
+| smb-security-mode: 
+|   account_used: <blank>
+|   authentication_level: user
+|   challenge_response: supported
+|_  message_signing: required
+| smb2-security-mode: 
+|   2.02: 
+|_    Message signing enabled and required
+| smb2-time: 
+|   date: 2021-08-24T13:42:54
+|_  start_date: 2021-08-24T09:07:43
+
+Service detection performed. Please report any incorrect results at https://nmap.org/submit/ .
+# Nmap done at Tue Aug 24 20:18:25 2021 -- 1 IP address (1 host up) scanned in 178.81 seconds

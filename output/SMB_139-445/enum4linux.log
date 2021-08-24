@@ -1,0 +1,484 @@
+enum4linux -a 10.10.10.161
+Starting enum4linux v0.8.9 ( http://labs.portcullis.co.uk/application/enum4linux/ ) on Tue Aug 24 20:18:27 2021
+
+ ========================== 
+|    Target Information    |
+ ========================== 
+Target ........... 10.10.10.161
+RID Range ........ 500-550,1000-1050
+Username ......... ''
+Password ......... ''
+Known Usernames .. administrator, guest, krbtgt, domain admins, root, bin, none
+
+
+ ==================================================== 
+|    Enumerating Workgroup/Domain on 10.10.10.161    |
+ ==================================================== 
+[E] Can't find workgroup/domain
+
+
+ ============================================ 
+|    Nbtstat Information for 10.10.10.161    |
+ ============================================ 
+Looking up status of 10.10.10.161
+No reply from 10.10.10.161
+
+ ===================================== 
+|    Session Check on 10.10.10.161    |
+ ===================================== 
+[+] Server 10.10.10.161 allows sessions using username '', password ''
+[+] Got domain/workgroup name: 
+
+ =========================================== 
+|    Getting domain SID for 10.10.10.161    |
+ =========================================== 
+Domain Name: HTB
+Domain Sid: S-1-5-21-3072663084-364016917-1341370565
+[+] Host is part of a domain (not a workgroup)
+
+ ====================================== 
+|    OS information on 10.10.10.161    |
+ ====================================== 
+[+] Got OS info for 10.10.10.161 from smbclient: 
+[+] Got OS info for 10.10.10.161 from srvinfo:
+Could not initialise srvsvc. Error was NT_STATUS_ACCESS_DENIED
+
+ ============================= 
+|    Users on 10.10.10.161    |
+ ============================= 
+index: 0x2137 RID: 0x463 acb: 0x00020015 Account: $331000-VK4ADACQNUCA	Name: (null)	Desc: (null)
+index: 0xfbc RID: 0x1f4 acb: 0x00020010 Account: Administrator	Name: Administrator	Desc: Built-in account for administering the computer/domain
+index: 0x2369 RID: 0x47e acb: 0x00000210 Account: andy	Name: Andy Hislip	Desc: (null)
+index: 0xfbe RID: 0x1f7 acb: 0x00000215 Account: DefaultAccount	Name: (null)	Desc: A user account managed by the system.
+index: 0xfbd RID: 0x1f5 acb: 0x00000215 Account: Guest	Name: (null)	Desc: Built-in account for guest access to the computer/domain
+index: 0x2352 RID: 0x478 acb: 0x00000210 Account: HealthMailbox0659cc1	Name: HealthMailbox-EXCH01-010	Desc: (null)
+index: 0x234b RID: 0x471 acb: 0x00000210 Account: HealthMailbox670628e	Name: HealthMailbox-EXCH01-003	Desc: (null)
+index: 0x234d RID: 0x473 acb: 0x00000210 Account: HealthMailbox6ded678	Name: HealthMailbox-EXCH01-005	Desc: (null)
+index: 0x2351 RID: 0x477 acb: 0x00000210 Account: HealthMailbox7108a4e	Name: HealthMailbox-EXCH01-009	Desc: (null)
+index: 0x234e RID: 0x474 acb: 0x00000210 Account: HealthMailbox83d6781	Name: HealthMailbox-EXCH01-006	Desc: (null)
+index: 0x234c RID: 0x472 acb: 0x00000210 Account: HealthMailbox968e74d	Name: HealthMailbox-EXCH01-004	Desc: (null)
+index: 0x2350 RID: 0x476 acb: 0x00000210 Account: HealthMailboxb01ac64	Name: HealthMailbox-EXCH01-008	Desc: (null)
+index: 0x234a RID: 0x470 acb: 0x00000210 Account: HealthMailboxc0a90c9	Name: HealthMailbox-EXCH01-002	Desc: (null)
+index: 0x2348 RID: 0x46e acb: 0x00000210 Account: HealthMailboxc3d7722	Name: HealthMailbox-EXCH01-Mailbox-Database-1118319013	Desc: (null)
+index: 0x2349 RID: 0x46f acb: 0x00000210 Account: HealthMailboxfc9daad	Name: HealthMailbox-EXCH01-001	Desc: (null)
+index: 0x234f RID: 0x475 acb: 0x00000210 Account: HealthMailboxfd87238	Name: HealthMailbox-EXCH01-007	Desc: (null)
+index: 0xff4 RID: 0x1f6 acb: 0x00020011 Account: krbtgt	Name: (null)	Desc: Key Distribution Center Service Account
+index: 0x2360 RID: 0x47a acb: 0x00000210 Account: lucinda	Name: Lucinda Berger	Desc: (null)
+index: 0x236a RID: 0x47f acb: 0x00000210 Account: mark	Name: Mark Brandt	Desc: (null)
+index: 0x236b RID: 0x480 acb: 0x00000210 Account: santi	Name: Santi Rodriguez	Desc: (null)
+index: 0x235c RID: 0x479 acb: 0x00000210 Account: sebastien	Name: Sebastien Caron	Desc: (null)
+index: 0x215a RID: 0x468 acb: 0x00020011 Account: SM_1b41c9286325456bb	Name: Microsoft Exchange Migration	Desc: (null)
+index: 0x2161 RID: 0x46c acb: 0x00020011 Account: SM_1ffab36a2f5f479cb	Name: SystemMailbox{8cc370d3-822a-4ab8-a926-bb94bd0641a9}	Desc: (null)
+index: 0x2156 RID: 0x464 acb: 0x00020011 Account: SM_2c8eef0a09b545acb	Name: Microsoft Exchange Approval Assistant	Desc: (null)
+index: 0x2159 RID: 0x467 acb: 0x00020011 Account: SM_681f53d4942840e18	Name: Discovery Search Mailbox	Desc: (null)
+index: 0x2158 RID: 0x466 acb: 0x00020011 Account: SM_75a538d3025e4db9a	Name: Microsoft Exchange	Desc: (null)
+index: 0x215c RID: 0x46a acb: 0x00020011 Account: SM_7c96b981967141ebb	Name: E4E Encryption Store - Active	Desc: (null)
+index: 0x215b RID: 0x469 acb: 0x00020011 Account: SM_9b69f1b9d2cc45549	Name: Microsoft Exchange Federation Mailbox	Desc: (null)
+index: 0x215d RID: 0x46b acb: 0x00020011 Account: SM_c75ee099d0a64c91b	Name: Microsoft Exchange	Desc: (null)
+index: 0x2157 RID: 0x465 acb: 0x00020011 Account: SM_ca8c2ed5bdab4dc9b	Name: Microsoft Exchange	Desc: (null)
+index: 0x2365 RID: 0x47b acb: 0x00010210 Account: svc-alfresco	Name: svc-alfresco	Desc: (null)
+
+user:[Administrator] rid:[0x1f4]
+user:[Guest] rid:[0x1f5]
+user:[krbtgt] rid:[0x1f6]
+user:[DefaultAccount] rid:[0x1f7]
+user:[$331000-VK4ADACQNUCA] rid:[0x463]
+user:[SM_2c8eef0a09b545acb] rid:[0x464]
+user:[SM_ca8c2ed5bdab4dc9b] rid:[0x465]
+user:[SM_75a538d3025e4db9a] rid:[0x466]
+user:[SM_681f53d4942840e18] rid:[0x467]
+user:[SM_1b41c9286325456bb] rid:[0x468]
+user:[SM_9b69f1b9d2cc45549] rid:[0x469]
+user:[SM_7c96b981967141ebb] rid:[0x46a]
+user:[SM_c75ee099d0a64c91b] rid:[0x46b]
+user:[SM_1ffab36a2f5f479cb] rid:[0x46c]
+user:[HealthMailboxc3d7722] rid:[0x46e]
+user:[HealthMailboxfc9daad] rid:[0x46f]
+user:[HealthMailboxc0a90c9] rid:[0x470]
+user:[HealthMailbox670628e] rid:[0x471]
+user:[HealthMailbox968e74d] rid:[0x472]
+user:[HealthMailbox6ded678] rid:[0x473]
+user:[HealthMailbox83d6781] rid:[0x474]
+user:[HealthMailboxfd87238] rid:[0x475]
+user:[HealthMailboxb01ac64] rid:[0x476]
+user:[HealthMailbox7108a4e] rid:[0x477]
+user:[HealthMailbox0659cc1] rid:[0x478]
+user:[sebastien] rid:[0x479]
+user:[lucinda] rid:[0x47a]
+user:[svc-alfresco] rid:[0x47b]
+user:[andy] rid:[0x47e]
+user:[mark] rid:[0x47f]
+user:[santi] rid:[0x480]
+
+ ========================================= 
+|    Share Enumeration on 10.10.10.161    |
+ ========================================= 
+
+	Sharename       Type      Comment
+	---------       ----      -------
+SMB1 disabled -- no workgroup available
+
+[+] Attempting to map shares on 10.10.10.161
+
+ ==================================================== 
+|    Password Policy Information for 10.10.10.161    |
+ ==================================================== 
+
+
+[+] Attaching to 10.10.10.161 using a NULL share
+
+[+] Trying protocol 139/SMB...
+
+	[!] Protocol failed: Cannot request session (Called Name:10.10.10.161)
+
+[+] Trying protocol 445/SMB...
+
+[+] Found domain(s):
+
+	[+] HTB
+	[+] Builtin
+
+[+] Password Info for Domain: HTB
+
+	[+] Minimum password length: 7
+	[+] Password history length: 24
+	[+] Maximum password age: 41 days 23 hours 53 minutes 
+	[+] Password Complexity Flags: 000000
+
+		[+] Domain Refuse Password Change: 0
+		[+] Domain Password Store Cleartext: 0
+		[+] Domain Password Lockout Admins: 0
+		[+] Domain Password No Clear Change: 0
+		[+] Domain Password No Anon Change: 0
+		[+] Domain Password Complex: 0
+
+	[+] Minimum password age: 1 day 4 minutes 
+	[+] Reset Account Lockout Counter: 30 minutes 
+	[+] Locked Account Duration: 30 minutes 
+	[+] Account Lockout Threshold: None
+	[+] Forced Log off Time: Not Set
+
+
+[+] Retieved partial password policy with rpcclient:
+
+Password Complexity: Disabled
+Minimum Password Length: 7
+
+
+ ============================== 
+|    Groups on 10.10.10.161    |
+ ============================== 
+
+[+] Getting builtin groups:
+group:[Account Operators] rid:[0x224]
+group:[Pre-Windows 2000 Compatible Access] rid:[0x22a]
+group:[Incoming Forest Trust Builders] rid:[0x22d]
+group:[Windows Authorization Access Group] rid:[0x230]
+group:[Terminal Server License Servers] rid:[0x231]
+group:[Administrators] rid:[0x220]
+group:[Users] rid:[0x221]
+group:[Guests] rid:[0x222]
+group:[Print Operators] rid:[0x226]
+group:[Backup Operators] rid:[0x227]
+group:[Replicator] rid:[0x228]
+group:[Remote Desktop Users] rid:[0x22b]
+group:[Network Configuration Operators] rid:[0x22c]
+group:[Performance Monitor Users] rid:[0x22e]
+group:[Performance Log Users] rid:[0x22f]
+group:[Distributed COM Users] rid:[0x232]
+group:[IIS_IUSRS] rid:[0x238]
+group:[Cryptographic Operators] rid:[0x239]
+group:[Event Log Readers] rid:[0x23d]
+group:[Certificate Service DCOM Access] rid:[0x23e]
+group:[RDS Remote Access Servers] rid:[0x23f]
+group:[RDS Endpoint Servers] rid:[0x240]
+group:[RDS Management Servers] rid:[0x241]
+group:[Hyper-V Administrators] rid:[0x242]
+group:[Access Control Assistance Operators] rid:[0x243]
+group:[Remote Management Users] rid:[0x244]
+group:[System Managed Accounts Group] rid:[0x245]
+group:[Storage Replica Administrators] rid:[0x246]
+group:[Server Operators] rid:[0x225]
+
+[+] Getting builtin group memberships:
+Group 'RDS Endpoint Servers' (RID: 576) has member: Could not connect to server 10.10.10.161
+Group 'RDS Endpoint Servers' (RID: 576) has member: The username or password was not correct.
+Group 'RDS Endpoint Servers' (RID: 576) has member: Connection failed: NT_STATUS_LOGON_FAILURE
+Group 'Print Operators' (RID: 550) has member: Could not connect to server 10.10.10.161
+Group 'Print Operators' (RID: 550) has member: The username or password was not correct.
+Group 'Print Operators' (RID: 550) has member: Connection failed: NT_STATUS_LOGON_FAILURE
+Group 'Storage Replica Administrators' (RID: 582) has member: Could not connect to server 10.10.10.161
+Group 'Storage Replica Administrators' (RID: 582) has member: The username or password was not correct.
+Group 'Storage Replica Administrators' (RID: 582) has member: Connection failed: NT_STATUS_LOGON_FAILURE
+Group 'Certificate Service DCOM Access' (RID: 574) has member: Could not connect to server 10.10.10.161
+Group 'Certificate Service DCOM Access' (RID: 574) has member: The username or password was not correct.
+Group 'Certificate Service DCOM Access' (RID: 574) has member: Connection failed: NT_STATUS_LOGON_FAILURE
+Group 'Remote Management Users' (RID: 580) has member: Could not connect to server 10.10.10.161
+Group 'Remote Management Users' (RID: 580) has member: The username or password was not correct.
+Group 'Remote Management Users' (RID: 580) has member: Connection failed: NT_STATUS_LOGON_FAILURE
+Group 'Terminal Server License Servers' (RID: 561) has member: Could not connect to server 10.10.10.161
+Group 'Terminal Server License Servers' (RID: 561) has member: The username or password was not correct.
+Group 'Terminal Server License Servers' (RID: 561) has member: Connection failed: NT_STATUS_LOGON_FAILURE
+Group 'Performance Log Users' (RID: 559) has member: Could not connect to server 10.10.10.161
+Group 'Performance Log Users' (RID: 559) has member: The username or password was not correct.
+Group 'Performance Log Users' (RID: 559) has member: Connection failed: NT_STATUS_LOGON_FAILURE
+Group 'System Managed Accounts Group' (RID: 581) has member: Could not connect to server 10.10.10.161
+Group 'System Managed Accounts Group' (RID: 581) has member: The username or password was not correct.
+Group 'System Managed Accounts Group' (RID: 581) has member: Connection failed: NT_STATUS_LOGON_FAILURE
+Group 'Backup Operators' (RID: 551) has member: Could not connect to server 10.10.10.161
+Group 'Backup Operators' (RID: 551) has member: The username or password was not correct.
+Group 'Backup Operators' (RID: 551) has member: Connection failed: NT_STATUS_LOGON_FAILURE
+Group 'Users' (RID: 545) has member: Could not connect to server 10.10.10.161
+Group 'Users' (RID: 545) has member: The username or password was not correct.
+Group 'Users' (RID: 545) has member: Connection failed: NT_STATUS_LOGON_FAILURE
+Group 'RDS Management Servers' (RID: 577) has member: Could not connect to server 10.10.10.161
+Group 'RDS Management Servers' (RID: 577) has member: The username or password was not correct.
+Group 'RDS Management Servers' (RID: 577) has member: Connection failed: NT_STATUS_LOGON_FAILURE
+Group 'Administrators' (RID: 544) has member: Could not connect to server 10.10.10.161
+Group 'Administrators' (RID: 544) has member: The username or password was not correct.
+Group 'Administrators' (RID: 544) has member: Connection failed: NT_STATUS_LOGON_FAILURE
+Group 'Network Configuration Operators' (RID: 556) has member: Could not connect to server 10.10.10.161
+Group 'Network Configuration Operators' (RID: 556) has member: The username or password was not correct.
+Group 'Network Configuration Operators' (RID: 556) has member: Connection failed: NT_STATUS_LOGON_FAILURE
+Group 'Replicator' (RID: 552) has member: Could not connect to server 10.10.10.161
+Group 'Replicator' (RID: 552) has member: The username or password was not correct.
+Group 'Replicator' (RID: 552) has member: Connection failed: NT_STATUS_LOGON_FAILURE
+Group 'Remote Desktop Users' (RID: 555) has member: Could not connect to server 10.10.10.161
+Group 'Remote Desktop Users' (RID: 555) has member: The username or password was not correct.
+Group 'Remote Desktop Users' (RID: 555) has member: Connection failed: NT_STATUS_LOGON_FAILURE
+Group 'Incoming Forest Trust Builders' (RID: 557) has member: Could not connect to server 10.10.10.161
+Group 'Incoming Forest Trust Builders' (RID: 557) has member: The username or password was not correct.
+Group 'Incoming Forest Trust Builders' (RID: 557) has member: Connection failed: NT_STATUS_LOGON_FAILURE
+Group 'Performance Monitor Users' (RID: 558) has member: Could not connect to server 10.10.10.161
+Group 'Performance Monitor Users' (RID: 558) has member: The username or password was not correct.
+Group 'Performance Monitor Users' (RID: 558) has member: Connection failed: NT_STATUS_LOGON_FAILURE
+Group 'Distributed COM Users' (RID: 562) has member: Could not connect to server 10.10.10.161
+Group 'Distributed COM Users' (RID: 562) has member: The username or password was not correct.
+Group 'Distributed COM Users' (RID: 562) has member: Connection failed: NT_STATUS_LOGON_FAILURE
+Group 'Event Log Readers' (RID: 573) has member: Could not connect to server 10.10.10.161
+Group 'Event Log Readers' (RID: 573) has member: The username or password was not correct.
+Group 'Event Log Readers' (RID: 573) has member: Connection failed: NT_STATUS_LOGON_FAILURE
+Group 'Hyper-V Administrators' (RID: 578) has member: Could not connect to server 10.10.10.161
+Group 'Hyper-V Administrators' (RID: 578) has member: The username or password was not correct.
+Group 'Hyper-V Administrators' (RID: 578) has member: Connection failed: NT_STATUS_LOGON_FAILURE
+Group 'Pre-Windows 2000 Compatible Access' (RID: 554) has member: Could not connect to server 10.10.10.161
+Group 'Pre-Windows 2000 Compatible Access' (RID: 554) has member: The username or password was not correct.
+Group 'Pre-Windows 2000 Compatible Access' (RID: 554) has member: Connection failed: NT_STATUS_LOGON_FAILURE
+Group 'Windows Authorization Access Group' (RID: 560) has member: Could not connect to server 10.10.10.161
+Group 'Windows Authorization Access Group' (RID: 560) has member: The username or password was not correct.
+Group 'Windows Authorization Access Group' (RID: 560) has member: Connection failed: NT_STATUS_LOGON_FAILURE
+Group 'RDS Remote Access Servers' (RID: 575) has member: Could not connect to server 10.10.10.161
+Group 'RDS Remote Access Servers' (RID: 575) has member: The username or password was not correct.
+Group 'RDS Remote Access Servers' (RID: 575) has member: Connection failed: NT_STATUS_LOGON_FAILURE
+Group 'Account Operators' (RID: 548) has member: Could not connect to server 10.10.10.161
+Group 'Account Operators' (RID: 548) has member: The username or password was not correct.
+Group 'Account Operators' (RID: 548) has member: Connection failed: NT_STATUS_LOGON_FAILURE
+Group 'IIS_IUSRS' (RID: 568) has member: Could not connect to server 10.10.10.161
+Group 'IIS_IUSRS' (RID: 568) has member: The username or password was not correct.
+Group 'IIS_IUSRS' (RID: 568) has member: Connection failed: NT_STATUS_LOGON_FAILURE
+Group 'Guests' (RID: 546) has member: Could not connect to server 10.10.10.161
+Group 'Guests' (RID: 546) has member: The username or password was not correct.
+Group 'Guests' (RID: 546) has member: Connection failed: NT_STATUS_LOGON_FAILURE
+Group 'Server Operators' (RID: 549) has member: Could not connect to server 10.10.10.161
+Group 'Server Operators' (RID: 549) has member: The username or password was not correct.
+Group 'Server Operators' (RID: 549) has member: Connection failed: NT_STATUS_LOGON_FAILURE
+Group 'Access Control Assistance Operators' (RID: 579) has member: Could not connect to server 10.10.10.161
+Group 'Access Control Assistance Operators' (RID: 579) has member: The username or password was not correct.
+Group 'Access Control Assistance Operators' (RID: 579) has member: Connection failed: NT_STATUS_LOGON_FAILURE
+Group 'Cryptographic Operators' (RID: 569) has member: Could not connect to server 10.10.10.161
+Group 'Cryptographic Operators' (RID: 569) has member: The username or password was not correct.
+Group 'Cryptographic Operators' (RID: 569) has member: Connection failed: NT_STATUS_LOGON_FAILURE
+
+[+] Getting local groups:
+group:[Cert Publishers] rid:[0x205]
+group:[RAS and IAS Servers] rid:[0x229]
+group:[Allowed RODC Password Replication Group] rid:[0x23b]
+group:[Denied RODC Password Replication Group] rid:[0x23c]
+group:[DnsAdmins] rid:[0x44d]
+
+[+] Getting local group memberships:
+Group 'Cert Publishers' (RID: 517) has member: Could not connect to server 10.10.10.161
+Group 'Cert Publishers' (RID: 517) has member: The username or password was not correct.
+Group 'Cert Publishers' (RID: 517) has member: Connection failed: NT_STATUS_LOGON_FAILURE
+Group 'Allowed RODC Password Replication Group' (RID: 571) has member: Could not connect to server 10.10.10.161
+Group 'Allowed RODC Password Replication Group' (RID: 571) has member: The username or password was not correct.
+Group 'Allowed RODC Password Replication Group' (RID: 571) has member: Connection failed: NT_STATUS_LOGON_FAILURE
+Group 'DnsAdmins' (RID: 1101) has member: Could not connect to server 10.10.10.161
+Group 'DnsAdmins' (RID: 1101) has member: The username or password was not correct.
+Group 'DnsAdmins' (RID: 1101) has member: Connection failed: NT_STATUS_LOGON_FAILURE
+Group 'Denied RODC Password Replication Group' (RID: 572) has member: Could not connect to server 10.10.10.161
+Group 'Denied RODC Password Replication Group' (RID: 572) has member: The username or password was not correct.
+Group 'Denied RODC Password Replication Group' (RID: 572) has member: Connection failed: NT_STATUS_LOGON_FAILURE
+Group 'RAS and IAS Servers' (RID: 553) has member: Could not connect to server 10.10.10.161
+Group 'RAS and IAS Servers' (RID: 553) has member: The username or password was not correct.
+Group 'RAS and IAS Servers' (RID: 553) has member: Connection failed: NT_STATUS_LOGON_FAILURE
+
+[+] Getting domain groups:
+group:[Enterprise Read-only Domain Controllers] rid:[0x1f2]
+group:[Domain Admins] rid:[0x200]
+group:[Domain Users] rid:[0x201]
+group:[Domain Guests] rid:[0x202]
+group:[Domain Computers] rid:[0x203]
+group:[Domain Controllers] rid:[0x204]
+group:[Schema Admins] rid:[0x206]
+group:[Enterprise Admins] rid:[0x207]
+group:[Group Policy Creator Owners] rid:[0x208]
+group:[Read-only Domain Controllers] rid:[0x209]
+group:[Cloneable Domain Controllers] rid:[0x20a]
+group:[Protected Users] rid:[0x20d]
+group:[Key Admins] rid:[0x20e]
+group:[Enterprise Key Admins] rid:[0x20f]
+group:[DnsUpdateProxy] rid:[0x44e]
+group:[Organization Management] rid:[0x450]
+group:[Recipient Management] rid:[0x451]
+group:[View-Only Organization Management] rid:[0x452]
+group:[Public Folder Management] rid:[0x453]
+group:[UM Management] rid:[0x454]
+group:[Help Desk] rid:[0x455]
+group:[Records Management] rid:[0x456]
+group:[Discovery Management] rid:[0x457]
+group:[Server Management] rid:[0x458]
+group:[Delegated Setup] rid:[0x459]
+group:[Hygiene Management] rid:[0x45a]
+group:[Compliance Management] rid:[0x45b]
+group:[Security Reader] rid:[0x45c]
+group:[Security Administrator] rid:[0x45d]
+group:[Exchange Servers] rid:[0x45e]
+group:[Exchange Trusted Subsystem] rid:[0x45f]
+group:[Managed Availability Servers] rid:[0x460]
+group:[Exchange Windows Permissions] rid:[0x461]
+group:[ExchangeLegacyInterop] rid:[0x462]
+group:[$D31000-NSEL5BRJ63V7] rid:[0x46d]
+group:[Service Accounts] rid:[0x47c]
+group:[Privileged IT Accounts] rid:[0x47d]
+group:[test] rid:[0x13ed]
+
+[+] Getting domain group memberships:
+Group 'Security Administrator' (RID: 1117) has member: Could not connect to server 10.10.10.161
+Group 'Security Administrator' (RID: 1117) has member: The username or password was not correct.
+Group 'Security Administrator' (RID: 1117) has member: Connection failed: NT_STATUS_LOGON_FAILURE
+Group 'Exchange Trusted Subsystem' (RID: 1119) has member: Could not connect to server 10.10.10.161
+Group 'Exchange Trusted Subsystem' (RID: 1119) has member: The username or password was not correct.
+Group 'Exchange Trusted Subsystem' (RID: 1119) has member: Connection failed: NT_STATUS_LOGON_FAILURE
+Group 'Domain Admins' (RID: 512) has member: Could not connect to server 10.10.10.161
+Group 'Domain Admins' (RID: 512) has member: The username or password was not correct.
+Group 'Domain Admins' (RID: 512) has member: Connection failed: NT_STATUS_LOGON_FAILURE
+Group 'UM Management' (RID: 1108) has member: Could not connect to server 10.10.10.161
+Group 'UM Management' (RID: 1108) has member: The username or password was not correct.
+Group 'UM Management' (RID: 1108) has member: Connection failed: NT_STATUS_LOGON_FAILURE
+Group 'Domain Users' (RID: 513) has member: Could not connect to server 10.10.10.161
+Group 'Domain Users' (RID: 513) has member: The username or password was not correct.
+Group 'Domain Users' (RID: 513) has member: Connection failed: NT_STATUS_LOGON_FAILURE
+Group 'Service Accounts' (RID: 1148) has member: Could not connect to server 10.10.10.161
+Group 'Service Accounts' (RID: 1148) has member: The username or password was not correct.
+Group 'Service Accounts' (RID: 1148) has member: Connection failed: NT_STATUS_LOGON_FAILURE
+Group 'Enterprise Read-only Domain Controllers' (RID: 498) has member: Could not connect to server 10.10.10.161
+Group 'Enterprise Read-only Domain Controllers' (RID: 498) has member: The username or password was not correct.
+Group 'Enterprise Read-only Domain Controllers' (RID: 498) has member: Connection failed: NT_STATUS_LOGON_FAILURE
+Group 'Read-only Domain Controllers' (RID: 521) has member: Could not connect to server 10.10.10.161
+Group 'Read-only Domain Controllers' (RID: 521) has member: The username or password was not correct.
+Group 'Read-only Domain Controllers' (RID: 521) has member: Connection failed: NT_STATUS_LOGON_FAILURE
+Group 'Exchange Servers' (RID: 1118) has member: Could not connect to server 10.10.10.161
+Group 'Exchange Servers' (RID: 1118) has member: The username or password was not correct.
+Group 'Exchange Servers' (RID: 1118) has member: Connection failed: NT_STATUS_LOGON_FAILURE
+Group 'Records Management' (RID: 1110) has member: Could not connect to server 10.10.10.161
+Group 'Records Management' (RID: 1110) has member: The username or password was not correct.
+Group 'Records Management' (RID: 1110) has member: Connection failed: NT_STATUS_LOGON_FAILURE
+Group 'Enterprise Admins' (RID: 519) has member: Could not connect to server 10.10.10.161
+Group 'Enterprise Admins' (RID: 519) has member: The username or password was not correct.
+Group 'Enterprise Admins' (RID: 519) has member: Connection failed: NT_STATUS_LOGON_FAILURE
+Group 'Domain Controllers' (RID: 516) has member: Could not connect to server 10.10.10.161
+Group 'Domain Controllers' (RID: 516) has member: The username or password was not correct.
+Group 'Domain Controllers' (RID: 516) has member: Connection failed: NT_STATUS_LOGON_FAILURE
+Group 'Compliance Management' (RID: 1115) has member: Could not connect to server 10.10.10.161
+Group 'Compliance Management' (RID: 1115) has member: The username or password was not correct.
+Group 'Compliance Management' (RID: 1115) has member: Connection failed: NT_STATUS_LOGON_FAILURE
+Group 'Server Management' (RID: 1112) has member: Could not connect to server 10.10.10.161
+Group 'Server Management' (RID: 1112) has member: The username or password was not correct.
+Group 'Server Management' (RID: 1112) has member: Connection failed: NT_STATUS_LOGON_FAILURE
+Group 'ExchangeLegacyInterop' (RID: 1122) has member: Could not connect to server 10.10.10.161
+Group 'ExchangeLegacyInterop' (RID: 1122) has member: The username or password was not correct.
+Group 'ExchangeLegacyInterop' (RID: 1122) has member: Connection failed: NT_STATUS_LOGON_FAILURE
+Group 'Delegated Setup' (RID: 1113) has member: Could not connect to server 10.10.10.161
+Group 'Delegated Setup' (RID: 1113) has member: The username or password was not correct.
+Group 'Delegated Setup' (RID: 1113) has member: Connection failed: NT_STATUS_LOGON_FAILURE
+Group 'DnsUpdateProxy' (RID: 1102) has member: Could not connect to server 10.10.10.161
+Group 'DnsUpdateProxy' (RID: 1102) has member: The username or password was not correct.
+Group 'DnsUpdateProxy' (RID: 1102) has member: Connection failed: NT_STATUS_LOGON_FAILURE
+Group 'Security Reader' (RID: 1116) has member: Could not connect to server 10.10.10.161
+Group 'Security Reader' (RID: 1116) has member: The username or password was not correct.
+Group 'Security Reader' (RID: 1116) has member: Connection failed: NT_STATUS_LOGON_FAILURE
+Group 'Domain Computers' (RID: 515) has member: Could not connect to server 10.10.10.161
+Group 'Domain Computers' (RID: 515) has member: The username or password was not correct.
+Group 'Domain Computers' (RID: 515) has member: Connection failed: NT_STATUS_LOGON_FAILURE
+Group 'Recipient Management' (RID: 1105) has member: Could not connect to server 10.10.10.161
+Group 'Recipient Management' (RID: 1105) has member: The username or password was not correct.
+Group 'Recipient Management' (RID: 1105) has member: Connection failed: NT_STATUS_LOGON_FAILURE
+Group 'test' (RID: 5101) has member: Could not connect to server 10.10.10.161
+Group 'test' (RID: 5101) has member: The username or password was not correct.
+Group 'test' (RID: 5101) has member: Connection failed: NT_STATUS_LOGON_FAILURE
+Group 'Domain Guests' (RID: 514) has member: Could not connect to server 10.10.10.161
+Group 'Domain Guests' (RID: 514) has member: The username or password was not correct.
+Group 'Domain Guests' (RID: 514) has member: Connection failed: NT_STATUS_LOGON_FAILURE
+Group 'View-Only Organization Management' (RID: 1106) has member: Could not connect to server 10.10.10.161
+Group 'View-Only Organization Management' (RID: 1106) has member: The username or password was not correct.
+Group 'View-Only Organization Management' (RID: 1106) has member: Connection failed: NT_STATUS_LOGON_FAILURE
+Group 'Enterprise Key Admins' (RID: 527) has member: Could not connect to server 10.10.10.161
+Group 'Enterprise Key Admins' (RID: 527) has member: The username or password was not correct.
+Group 'Enterprise Key Admins' (RID: 527) has member: Connection failed: NT_STATUS_LOGON_FAILURE
+Group 'Key Admins' (RID: 526) has member: Could not connect to server 10.10.10.161
+Group 'Key Admins' (RID: 526) has member: The username or password was not correct.
+Group 'Key Admins' (RID: 526) has member: Connection failed: NT_STATUS_LOGON_FAILURE
+Group 'Help Desk' (RID: 1109) has member: Could not connect to server 10.10.10.161
+Group 'Help Desk' (RID: 1109) has member: The username or password was not correct.
+Group 'Help Desk' (RID: 1109) has member: Connection failed: NT_STATUS_LOGON_FAILURE
+Group 'Group Policy Creator Owners' (RID: 520) has member: Could not connect to server 10.10.10.161
+Group 'Group Policy Creator Owners' (RID: 520) has member: The username or password was not correct.
+Group 'Group Policy Creator Owners' (RID: 520) has member: Connection failed: NT_STATUS_LOGON_FAILURE
+Group 'Privileged IT Accounts' (RID: 1149) has member: Could not connect to server 10.10.10.161
+Group 'Privileged IT Accounts' (RID: 1149) has member: The username or password was not correct.
+Group 'Privileged IT Accounts' (RID: 1149) has member: Connection failed: NT_STATUS_LOGON_FAILURE
+Group 'Cloneable Domain Controllers' (RID: 522) has member: Could not connect to server 10.10.10.161
+Group 'Cloneable Domain Controllers' (RID: 522) has member: The username or password was not correct.
+Group 'Cloneable Domain Controllers' (RID: 522) has member: Connection failed: NT_STATUS_LOGON_FAILURE
+Group '$D31000-NSEL5BRJ63V7' (RID: 1133) has member: Could not connect to server 10.10.10.161
+Group '$D31000-NSEL5BRJ63V7' (RID: 1133) has member: The username or password was not correct.
+Group '$D31000-NSEL5BRJ63V7' (RID: 1133) has member: Connection failed: NT_STATUS_LOGON_FAILURE
+Group 'Protected Users' (RID: 525) has member: Could not connect to server 10.10.10.161
+Group 'Protected Users' (RID: 525) has member: The username or password was not correct.
+Group 'Protected Users' (RID: 525) has member: Connection failed: NT_STATUS_LOGON_FAILURE
+Group 'Managed Availability Servers' (RID: 1120) has member: Could not connect to server 10.10.10.161
+Group 'Managed Availability Servers' (RID: 1120) has member: The username or password was not correct.
+Group 'Managed Availability Servers' (RID: 1120) has member: Connection failed: NT_STATUS_LOGON_FAILURE
+Group 'Organization Management' (RID: 1104) has member: Could not connect to server 10.10.10.161
+Group 'Organization Management' (RID: 1104) has member: The username or password was not correct.
+Group 'Organization Management' (RID: 1104) has member: Connection failed: NT_STATUS_LOGON_FAILURE
+Group 'Exchange Windows Permissions' (RID: 1121) has member: Could not connect to server 10.10.10.161
+Group 'Exchange Windows Permissions' (RID: 1121) has member: The username or password was not correct.
+Group 'Exchange Windows Permissions' (RID: 1121) has member: Connection failed: NT_STATUS_LOGON_FAILURE
+Group 'Schema Admins' (RID: 518) has member: Could not connect to server 10.10.10.161
+Group 'Schema Admins' (RID: 518) has member: The username or password was not correct.
+Group 'Schema Admins' (RID: 518) has member: Connection failed: NT_STATUS_LOGON_FAILURE
+Group 'Hygiene Management' (RID: 1114) has member: Could not connect to server 10.10.10.161
+Group 'Hygiene Management' (RID: 1114) has member: The username or password was not correct.
+Group 'Hygiene Management' (RID: 1114) has member: Connection failed: NT_STATUS_LOGON_FAILURE
+Group 'Discovery Management' (RID: 1111) has member: Could not connect to server 10.10.10.161
+Group 'Discovery Management' (RID: 1111) has member: The username or password was not correct.
+Group 'Discovery Management' (RID: 1111) has member: Connection failed: NT_STATUS_LOGON_FAILURE
+Group 'Public Folder Management' (RID: 1107) has member: Could not connect to server 10.10.10.161
+Group 'Public Folder Management' (RID: 1107) has member: The username or password was not correct.
+Group 'Public Folder Management' (RID: 1107) has member: Connection failed: NT_STATUS_LOGON_FAILURE
+
+ ======================================================================= 
+|    Users on 10.10.10.161 via RID cycling (RIDS: 500-550,1000-1050)    |
+ ======================================================================= 
+[E] Couldn't get SID: NT_STATUS_ACCESS_DENIED.  RID cycling not possible.
+
+ ============================================= 
+|    Getting printer info for 10.10.10.161    |
+ ============================================= 
+Could not initialise spoolss. Error was NT_STATUS_ACCESS_DENIED
+
+
+enum4linux complete on Tue Aug 24 20:23:04 2021
+

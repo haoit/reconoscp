@@ -1,0 +1,3 @@
+crackmapexec smb 10.10.10.161 -u sa -p sa --shares
+[1m[34mSMB[0m         10.10.10.161    445    FOREST           [1m[34m[*][0m Windows Server 2016 Standard 14393 x64 (name:FOREST) (domain:htb.local) (signing:True) (SMBv1:True)
+[1m[34mSMB[0m         10.10.10.161    445    FOREST           [1m[31m[-][0m htb.local\sa:sa STATUS_LOGON_FAILURE 

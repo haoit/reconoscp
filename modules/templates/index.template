@@ -1,0 +1,61 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Report Auto-Recon OSCP by HaoNH</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</head>
+<body>
+​
+<div class="jumbotron text-center">
+  <h1>OSCP-AUTO-RECON</h1>
+  <p>Report For {{{IP}}}</p> 
+</div>
+  
+<div class="container">
+  
+    <div id="accordion-main">
+        <div class="card">
+          <div class="card-header" id="headingOne">
+            <h5 class="mb-0">
+              <button class="btn btn-link" data-toggle="collapse" data-target="#Nmap" aria-expanded="true" aria-controls="collapseOne">
+                Nmap
+              </button>
+            </h5>
+          </div>
+      
+          <div id="Nmap" class="collapse show" aria-labelledby="headingOne" data-parent="#accordion-main">
+            <div class="card-body">
+                {{{nmap_content}}}
+            </div>
+          </div>
+       </div>  <!-- End block nmap -->
+
+        {{{data_detail}}}
+       
+      </div>
+
+</div>
+​
+<!-- Footer -->
+<footer class="page-footer font-small blue pt-4">
+
+    <!-- Footer Links -->
+    <div class="container-fluid text-center jumbotron">
+  
+      <p>Develop by HaoNH</p>
+  
+    </div>
+    <!-- Footer Links -->
+  
+</footer>
+<!-- Footer -->
+
+</body>
+</html>
+​

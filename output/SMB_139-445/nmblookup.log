@@ -1,0 +1,4 @@
+nmblookup -A 10.10.10.161
+Looking up status of 10.10.10.161
+No reply from 10.10.10.161
+

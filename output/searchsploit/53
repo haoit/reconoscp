@@ -1,0 +1,111 @@
+searchsploit domain
+------------------------------------------------------- ---------------------------------
+ Exploit Title                                         |  Path
+------------------------------------------------------- ---------------------------------
+Adobe Flash Player - [01;31m[Kdomain[m[KMemory ByteArray Use-After- | windows/remote/36956.rb
+Adobe Flash Player 7.0.x/8.0.x/9.0.x - ActiveX Control | linux/remote/30907.txt
+Alabanza Control Panel 3.0 - [01;31m[KDomain[m[K Modification       | cgi/remote/20238.txt
+Apple macOS/iOS Kernel - Use-After-Free Due to Bad Loc | multiple/dos/42054.c
+Apple Safari 2.0.4 - Cross-[01;31m[KDomain[m[K Browser Location Inf | multiple/remote/30078.js
+BlackBoard Academic Suite 6.2.3.23 - Frameset.jsp Cros | jsp/webapps/26778.txt
+Cacheflow CacheOS 3.1.x/4.0.x/4.1 - Unresolved [01;31m[KDomain[m[K  | multiple/remote/21649.txt
+Cachelogic Expired [01;31m[KDomain[m[Ks Script 1.0 - Multiple Vulne | php/webapps/17428.txt
+C[01;31m[Kdomain[m[KFree 2.4 - Remote Command Execution             | multiple/remote/19242.txt
+CentOS Web Panel 0.9.8.12 - 'row_id' / '[01;31m[Kdomain[m[K' SQL In | php/webapps/43855.txt
+CentOS Web Panel 0.9.8.793 (Free) / v0.9.8.753 (Pro) / | linux/webapps/46784.txt
+Core FTP/SFTP Server 1.2 Build 589.42 - 'User [01;31m[Kdomain[m[K'  | windows/dos/46371.py
+cPanel - (Authenticated) 'lastvisit.html [01;31m[KDomain[m[K' Arbit | multiple/remote/9039.txt
+cPanel WebHost Manager 3.1 - 'domts2?[01;31m[Kdomain[m[K' Cross-Sit | php/webapps/29185.txt
+cPanel WebHost Manager 3.1 - 'editzone?[01;31m[Kdomain[m[K' Cross-S | php/webapps/29186.txt
+cPanel WebHost Manager 3.1 - 'park?n[01;31m[Kdomain[m[K' Cross-Site | php/webapps/29188.txt
+Cyberoam Transparent Authentication Suite 2.1.2.5 - 'F | windows/dos/46925.py
+D-Link DCS Series Cameras - Insecure Cross[01;31m[Kdomain[m[K       | hardware/webapps/42074.txt
+Digi[01;31m[KDomain[m[K 2.2 - 'lookup_result.asp?[01;31m[Kdomain[m[K' Cross-Site | asp/webapps/31546.txt
+Digi[01;31m[KDomain[m[K 2.2 - 'suggest_result.asp' Multiple Cross-S | asp/webapps/31547.txt
+Dnss [01;31m[KDomain[m[K Name Search Software - 'Key' Denial of Ser | windows/dos/47856.py
+Dnss [01;31m[KDomain[m[K Name Search Software - 'Name' Denial of Se | windows/dos/47861.py
+[01;31m[KDomain[m[K Group Network GooCMS 1.02 - 'index.php' Cross-S | php/webapps/32218.txt
+[01;31m[KDomain[m[K Marketplace Script - SQL Injection              | php/webapps/41582.txt
+[01;31m[KDomain[m[K Quester Pro 6.02 - Stack Overflow (SEH)         | windows/local/47825.py
+[01;31m[KDomain[m[K Seller Pro 1.5 - 'id' SQL Injection             | php/webapps/7052.txt
+[01;31m[KDomain[m[K Shop - 'index.php' Cross-Site Scripting         | php/webapps/36272.txt
+[01;31m[KDomain[m[K Trader 2.0 - 'catalog.php' Cross-Site Scripting | php/webapps/31091.txt
+[01;31m[KDomain[m[K Verkaus & Auktions Portal - 'index.php' SQL Inj | php/webapps/33763.txt
+[01;31m[KDomain[m[KMod 4.09.03 - 'oid' Cross-Site Scripting         | php/webapps/44782.txt
+[01;31m[KDomain[m[KMod 4.09.03 - 'sslpaid' Cross-Site Scripting     | php/webapps/44783.txt
+[01;31m[KDomain[m[KMOD 4.11.01 - 'assets/add/dns.php' Cross-Site Sc | php/webapps/46375.txt
+[01;31m[KDomain[m[KMOD 4.11.01 - 'assets/edit/host.php?whid=5' Cros | php/webapps/46376.txt
+[01;31m[KDomain[m[KMOD 4.11.01 - 'category.php CatagoryName_ StakeH | php/webapps/46374.txt
+[01;31m[KDomain[m[KMOD 4.11.01 - 'DisplayName' Cross-Site Scripting | php/webapps/45959.txt
+[01;31m[KDomain[m[KMOD 4.11.01 - 'raid' Cross-Site Scripting        | php/webapps/45883.txt
+[01;31m[KDomain[m[KMOD 4.11.01 - 'ssl-accounts.php username' Cross- | php/webapps/46373.txt
+[01;31m[KDomain[m[KMOD 4.11.01 - 'ssl-provider-name' Cross-Site Scr | php/webapps/46372.txt
+[01;31m[KDomain[m[KMOD 4.11.01 - Cross-Site Scripting               | php/webapps/45967.txt
+[01;31m[KDomain[m[KMOD 4.11.01 - Custom [01;31m[KDomain[m[K Fields Cross-Site Sc | php/webapps/45946.txt
+[01;31m[KDomain[m[KMOD 4.11.01 - Custom SSL Fields Cross-Site Scrip | php/webapps/45947.txt
+[01;31m[KDomain[m[KMOD 4.11.01 - Owner name Field Cross-Site Script | php/webapps/45941.txt
+[01;31m[KDomain[m[KMOD 4.11.01 - Registrar Cross-Site Scripting     | php/webapps/45949.txt
+[01;31m[KDomain[m[KMod 4.13 - Cross-Site Scripting                  | php/webapps/47325.txt
+[01;31m[KDomain[m[Ks & Hostings Manager PRO 3.0 - 'entries' SQL Inj | php/webapps/41319.txt
+[01;31m[KDomain[m[Ks & Hostings Manager PRO 3.0 - Authentication By | php/webapps/43569.txt
+[01;31m[KDomain[m[Ks Marketplace Script 1.1 - Authentication Bypass | php/webapps/41133.txt
+[01;31m[KDomain[m[KSale PHP Script 1.0 - 'id' SQL Injection         | php/webapps/43235.txt
+FreeBSD 3.0 - UNIX-[01;31m[Kdomain[m[K Panic (Denial of Service)    | freebsd/dos/19130.c
+FreeBSD 3.1 / Solaris 2.6 - [01;31m[KDomain[m[K Socket              | freebsd/local/19346.c
+GNOME esound 0.2.19 - Unix [01;31m[KDomain[m[K Socket Race Conditio | unix/local/20212.txt
+Grandstream Budge Tone-200 IP Phone - Digest [01;31m[Kdomain[m[K De | hardware/dos/3535.pl
+Hosting Controller 6.1 HotFix 2.2 - Add [01;31m[KDomain[m[K without | asp/webapps/1112.txt
+HP ProCurve Manager - SNAC Update[01;31m[KDomain[m[KControllerServl | windows/remote/28336.rb
+IBM Tivoli Access Manager for E-Business - '/ibm/wpm/d | multiple/webapps/34909.txt
+JBMC Software DirectAdmin 1.403 - '[01;31m[Kdomain[m[K' Cross-Site  | java/webapps/37033.txt
+ManageEngine ADManager Plus 5.2 Build 5210 - '[01;31m[Kdomain[m[KNa | java/webapps/36667.txt
+Microsoft Internet Explorer 5 - Classic Mode FTP Clien | windows/remote/22728.txt
+Microsoft Internet Explorer 5.0.1 - Cached Content Cro | windows/remote/33024.txt
+Microsoft Internet Explorer 5.0.1 - JavaScript Method  | windows/remote/24265.html
+Microsoft Internet Explorer 5/6 - Cross-[01;31m[KDomain[m[K Event L | windows/remote/23766.html
+Microsoft Internet Explorer 6 - Meta Data Foreign Doma | windows/remote/24069.html
+Microsoft Internet Explorer 7/8 - CSS Handling Cross D | windows/dos/34602.html
+Microsoft Internet Explorer 7/8 Beta 1 - Frame Locatio | windows/remote/31996.txt
+Microsoft Windows - Wkssvc NetrJoin[01;31m[KDomain[m[K2 Stack Overf | windows/remote/2800.cpp
+Microsoft XML Core Services DTD - Cross-[01;31m[KDomain[m[K Scripti | windows/remote/7196.html
+Mozilla 1.x / opera 6/7 - Timed document.write Method  | multiple/remote/22751.txt
+Mozilla Firefox 1.0/1.5 XBL - MOZ-BINDING Property Cro | linux/remote/27150.txt
+Mozilla Firefox 2.0.0.1 - 'location.hostname' Cross-Do | windows/remote/3340.html
+Mozilla Firefox 3.6.8 - 'Math.random()' Cross [01;31m[KDomain[m[K I | unix/remote/34621.c
+MyPHP CMS 0.3 - '[01;31m[Kdomain[m[K' Remote File Inclusion         | php/webapps/1983.txt
+Netscape Navigator 4.0.8 - 'about:' [01;31m[KDomain[m[K Information | unix/remote/20791.php
+OpenSSH < 7.4 - 'UsePrivilegeSeparation Disabled' Forw | linux/local/40962.txt
+PHP[01;31m[KDomain[m[KRegister 0.4a-RC2-dev - Multiple Vulnerabilit | php/webapps/18374.txt
+PHPpool media [01;31m[KDomain[m[K Verkaufs und Auktions Portal - 'i | php/webapps/11733.txt
+Planet Script 1.x - 'i[01;31m[Kdomain[m[Ks.php' Cross-Site Scriptin | php/webapps/33993.txt
+QNAP QTS < 4.2.4 - [01;31m[KDomain[m[K Privilege Escalation         | hardware/local/41745.txt
+Research In Motion BlackBerry Device Software 4.7.1 -  | hardware/remote/34802.html
+Rumble Mail Server 0.51.3135 - '[01;31m[Kdomain[m[K and path' Store | multiple/webapps/49254.txt
+Scripts Genie [01;31m[KDomain[m[K Trader - 'catalog.php?id' SQL Inj | php/webapps/24510.txt
+SiteTurn [01;31m[KDomain[m[K Manager Pro - Admin Panel Cross-Site S | php/webapps/26391.html
+Solaris 2.3/2.4/2.5/2.5.1/2.6/7.0 snoop - 'print_domai | solaris/remote/19663.c
+Ubiquiti Networks UniFi Video Default - 'cross[01;31m[Kdomain[m[K.x | php/webapps/39268.java
+Ucenter Projekt 2.0 - Insecure cross[01;31m[Kdomain[m[K (Cross-Site | php/webapps/12455.txt
+Web Host Automation Ltd. Helm 3.2.10 Beta - '[01;31m[Kdomain[m[Ks.a | asp/webapps/27486.txt
+WEBB[01;31m[KDOMAIN[m[K Petition 1.02/2.0/3.0 - Authentication Bypa | php/webapps/6983.txt
+WEBB[01;31m[KDOMAIN[m[K Polls 1.01 - Authentication Bypass          | php/webapps/6984.txt
+WEBB[01;31m[KDOMAIN[m[K Post Card 1.02 - 'catid' SQL Injection      | php/webapps/6977.txt
+WEBB[01;31m[KDOMAIN[m[K Post Card 1.02 - Authentication Bypass      | php/webapps/6989.txt
+WEBB[01;31m[KDOMAIN[m[K Quiz 1.02 - Authentication Bypass           | php/webapps/6985.txt
+WEBB[01;31m[KDOMAIN[m[K Webshop 1.02 - Authentication Bypass        | php/webapps/6986.txt
+WEBB[01;31m[KDOMAIN[m[K WebShop 1.02 - SQL Injection / Cross-Site S | php/webapps/6974.txt
+WebKit - 'parent/top' Cross [01;31m[KDomain[m[K Scripting           | multiple/remote/33047.html
+WebKit - JavaScript 'onload()' Event Cross [01;31m[KDomain[m[K Scri | multiple/remote/33033.html
+WebKit 1.2.x - Local Webpage Cross [01;31m[KDomain[m[K Information  | windows/remote/35434.txt
+WordPress Plugin OneSignal 1.17.5 - 'sub[01;31m[Kdomain[m[K' Persis | linux/webapps/47136.txt
+WordPress Plugin oQey-Gallery 0.2 - 'tbpv_[01;31m[Kdomain[m[K' Cros | php/webapps/35288.txt
+Wordpress Plugin Powie's WHOIS [01;31m[KDomain[m[K Check 0.9.31 - P | php/webapps/48656.txt
+WordPress Plugin WHOIS 1.4.2 3 - '[01;31m[Kdomain[m[K' Cross-Site S | php/webapps/36488.txt
+WordPress Plugin WP24 [01;31m[KDomain[m[K Check 1.6.2 - 'fieldnameD | php/webapps/49377.txt
+Xen 3.3 - XenStore [01;31m[KDomain[m[K Configuration Data Unsafe St | linux/local/32446.txt
+------------------------------------------------------- ---------------------------------
+------------------------------------------------------- ---------------------------------
+ Shellcode Title                                       |  Path
+------------------------------------------------------- ---------------------------------
+Linux/x86 - set[01;31m[Kdomain[m[Kname(th1s s3rv3r h4s b33n h1j4ck3 | linux_x86/43692.c
+------------------------------------------------------- ---------------------------------
