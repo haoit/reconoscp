@@ -1,4 +1,5 @@
 import os
+import argparse
 from loguru import logger
 from  modules.scanports import *
 from  modules.searchsploit import *
@@ -16,13 +17,19 @@ if __name__ == "__main__":
     ip = '10.10.10.161'
     base_path = os.getcwd()
     path_output = base_path + "/output/"
-    ports = scan_nmap(ip, path_output)
-    print("Done scan nmap")
-    run_searchsploit(path_output)
-    if "445" in ports:
-        logger.info("[i] Enumarate SMB")
-        enum_smb(ip ,path_output)
-    genarate_html_report(ip, base_path)
+    parser = argparse.ArgumentParser(description='OSCP Auto Enum')
+    parser.add_argument('-i', '--ip', default='foobar', help="IP of target", required=True)
+    args = parser.parse_args()
+    ip = args.ip
+
+
+    # ports = scan_nmap(ip, path_output)
+    # print("Done scan nmap")
+    # run_searchsploit(path_output)
+    # if "445" in ports:
+    #     logger.info("[i] Enumarate SMB")
+    #     enum_smb(ip ,path_output)
+    # genarate_html_report(ip, base_path)
 
 
         
