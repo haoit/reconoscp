@@ -1,10 +1,7 @@
-# Nmap 7.91 scan initiated Fri Aug 27 10:06:41 2021 as: nmap -vv --reason -Pn -A --osscan-guess --version-all -p- -oN /media/psf/Home/projects/oscp_auto/output/scans/_full_tcp_nmap.txt -oX /media/psf/Home/projects/oscp_auto/output/scans/xml/_full_tcp_nmap.xml 10.10.10.37
-Increasing send delay for 10.10.10.37 from 0 to 5 due to 53 out of 176 dropped probes since last increase.
-Increasing send delay for 10.10.10.37 from 5 to 10 due to 11 out of 33 dropped probes since last increase.
-Increasing send delay for 10.10.10.37 from 10 to 20 due to 89 out of 295 dropped probes since last increase.
+# Nmap 7.91 scan initiated Fri Aug 27 12:16:52 2021 as: nmap -vv --reason -Pn -A --osscan-guess --version-all -p- -oN /media/psf/Home/projects/oscp_auto/output/10.10.10.37/scans/_full_tcp_nmap.txt -oX /media/psf/Home/projects/oscp_auto/output/10.10.10.37/scans/xml/_full_tcp_nmap.xml 10.10.10.37
 Nmap scan report for 10.10.10.37
-Host is up, received user-set (0.22s latency).
-Scanned at 2021-08-27 10:06:42 +07 for 2293s
+Host is up, received user-set (0.26s latency).
+Scanned at 2021-08-27 12:16:53 +07 for 473s
 Not shown: 65530 filtered ports
 Reason: 65530 no-responses
 PORT      STATE  SERVICE   REASON       VERSION
@@ -29,4 +26,4 @@ Service Info: OSs: Unix, Linux; CPE: cpe:/o:linux:linux_kernel
 
 Read data files from: /usr/bin/../share/nmap
 Service detection performed. Please report any incorrect results at https://nmap.org/submit/ .
-# Nmap done at Fri Aug 27 10:44:55 2021 -- 1 IP address (1 host up) scanned in 2293.66 seconds
+# Nmap done at Fri Aug 27 12:24:46 2021 -- 1 IP address (1 host up) scanned in 473.68 seconds

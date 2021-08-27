@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE nmaprun>
+<?xml-stylesheet href="file:///usr/bin/../share/nmap/nmap.xsl" type="text/xsl"?>
+<!-- Nmap 7.91 scan initiated Fri Aug 27 12:16:30 2021 as: nmap -p 22,21,80,25565 -&#45;script vuln -oA /media/psf/Home/projects/oscp_auto/output/10.10.10.37/nmap/nmap-vuln-port 10.10.10.37 -->
+<nmaprun scanner="nmap" args="nmap -p 22,21,80,25565 -&#45;script vuln -oA /media/psf/Home/projects/oscp_auto/output/10.10.10.37/nmap/nmap-vuln-port 10.10.10.37" start="1630041390" startstr="Fri Aug 27 12:16:30 2021" version="7.91" xmloutputversion="1.05">
+<scaninfo type="connect" protocol="tcp" numservices="4" services="21-22,80,25565"/>
+<verbose level="0"/>
+<debugging level="0"/>
+<prescript><script id="broadcast-avahi-dos" output="&#xa;  Discovered hosts:&#xa;    224.0.0.251&#xa;  After NULL UDP avahi packet DoS (CVE-2011-1002).&#xa;  Hosts are all up (not vulnerable).&#xa;"/></prescript><hosthint><status state="up" reason="unknown-response" reason_ttl="0"/>
+<address addr="10.10.10.37" addrtype="ipv4"/>
+<hostnames>
+</hostnames>
+</hosthint>
+<host starttime="1630041425" endtime="1630041741"><status state="up" reason="syn-ack" reason_ttl="0"/>
+<address addr="10.10.10.37" addrtype="ipv4"/>
+<hostnames>
+</hostnames>
+<ports><port protocol="tcp" portid="21"><state state="open" reason="syn-ack" reason_ttl="0"/><service name="ftp" method="table" conf="3"/><script id="sslv2-drown" output="&#xa;"></script></port>
+<port protocol="tcp" portid="22"><state state="open" reason="syn-ack" reason_ttl="0"/><service name="ssh" method="table" conf="3"/></port>
+<port protocol="tcp" portid="80"><state state="open" reason="syn-ack" reason_ttl="0"/><service name="http" method="table" conf="3"/><script id="http-csrf" output="&#xa;Spidering limited to: maxdepth=3; maxpagecount=20; withinhost=10.10.10.37&#xa;  Found the following possible CSRF vulnerabilities: &#xa;    &#xa;    Path: http://10.10.10.37:80/&#xa;    Form id: search-form-612879954d7d7&#xa;    Form action: http://10.10.10.37/&#xa;    &#xa;    Path: http://10.10.10.37:80/index.php/2017/07/&#xa;    Form id: search-form-6128799692167&#xa;    Form action: http://10.10.10.37/&#xa;    &#xa;    Path: http://10.10.10.37:80/wp-login.php&#xa;    Form id: loginform&#xa;    Form action: http://10.10.10.37/wp-login.php&#xa;    &#xa;    Path: http://10.10.10.37:80/index.php/category/uncategorized/&#xa;    Form id: search-form-6128799e9c2aa&#xa;    Form action: http://10.10.10.37/&#xa;    &#xa;    Path: http://10.10.10.37:80/index.php/2017/07/%5c%22&#xa;    Form id: search-form-612879a30b3f3&#xa;    Form action: http://10.10.10.37/&#xa;    &#xa;    Path: http://10.10.10.37:80/wp-login.php?action=lostpassword&#xa;    Form id: lostpasswordform&#xa;    Form action: http://10.10.10.37/wp-login.php?action=lostpassword&#xa;    &#xa;    Path: http://10.10.10.37:80/index.php/category/uncategorized/%5c%22&#xa;    Form id: search-form-612879a63b1d5&#xa;    Form action: http://10.10.10.37/&#xa;"/><script id="http-dombased-xss" output="Couldn&apos;t find any DOM based XSS."/><script id="http-enum" output="&#xa;  /wiki/: Wiki&#xa;  /wp-login.php: Possible admin folder&#xa;  /phpmyadmin/: phpMyAdmin&#xa;  /readme.html: Wordpress version: 2 &#xa;  /: WordPress version: 4.8&#xa;  /wp-includes/images/rss.png: Wordpress version 2.2 found.&#xa;  /wp-includes/js/jquery/suggest.js: Wordpress version 2.5 found.&#xa;  /wp-includes/images/blank.gif: Wordpress version 2.6 found.&#xa;  /wp-includes/js/comment-reply.js: Wordpress version 2.7 found.&#xa;  /wp-login.php: Wordpress login page.&#xa;  /wp-admin/upgrade.php: Wordpress login page.&#xa;  /readme.html: Interesting, a readme.&#xa;"/><script id="http-slowloris-check" output="&#xa;  VULNERABLE:&#xa;  Slowloris DOS attack&#xa;    State: LIKELY VULNERABLE&#xa;    IDs:  CVE:CVE-2007-6750&#xa;      Slowloris tries to keep many connections to the target web server open and hold&#xa;      them open as long as possible.  It accomplishes this by opening connections to&#xa;      the target web server and sending a partial request. By doing so, it starves&#xa;      the http server&apos;s resources causing Denial Of Service.&#xa;      &#xa;    Disclosure date: 2009-09-17&#xa;    References:&#xa;      http://ha.ckers.org/slowloris/&#xa;      https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2007-6750&#xa;"><table key="CVE-2007-6750">
+<elem key="title">Slowloris DOS attack</elem>
+<elem key="state">LIKELY VULNERABLE</elem>
+<table key="ids">
+<elem>CVE:CVE-2007-6750</elem>
+</table>
+<table key="description">
+<elem>Slowloris tries to keep many connections to the target web server open and hold&#xa;them open as long as possible.  It accomplishes this by opening connections to&#xa;the target web server and sending a partial request. By doing so, it starves&#xa;the http server&apos;s resources causing Denial Of Service.&#xa;</elem>
+</table>
+<table key="dates">
+<table key="disclosure">
+<elem key="year">2009</elem>
+<elem key="month">09</elem>
+<elem key="day">17</elem>
+</table>
+</table>
+<elem key="disclosure">2009-09-17</elem>
+<table key="exploit_results">
+</table>
+<table key="refs">
+<elem>http://ha.ckers.org/slowloris/</elem>
+<elem>https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2007-6750</elem>
+</table>
+</table>
+</script><script id="http-sql-injection" output="&#xa;  Possible sqli for queries:&#xa;    http://10.10.10.37:80/wp-includes/js/jquery/?C=D%3bO%3dA%27%20OR%20sqlspider&#xa;    http://10.10.10.37:80/wp-includes/js/jquery/?C=S%3bO%3dA%27%20OR%20sqlspider&#xa;    http://10.10.10.37:80/wp-includes/js/jquery/?C=M%3bO%3dA%27%20OR%20sqlspider&#xa;    http://10.10.10.37:80/wp-includes/js/jquery/?C=N%3bO%3dD%27%20OR%20sqlspider&#xa;"/><script id="http-stored-xss" output="Couldn&apos;t find any stored XSS vulnerabilities."/><script id="http-wordpress-users" output="&#xa;Username found: notch&#xa;Search stopped at ID #25. Increase the upper limit if necessary with &apos;http-wordpress-users.limit&apos;"/></port>
+<port protocol="tcp" portid="25565"><state state="open" reason="syn-ack" reason_ttl="0"/><service name="minecraft" method="table" conf="3"/></port>
+</ports>
+<times srtt="225720" rttvar="72571" to="516004"/>
+</host>
+<runstats><finished time="1630041741" timestr="Fri Aug 27 12:22:21 2021" summary="Nmap done at Fri Aug 27 12:22:21 2021; 1 IP address (1 host up) scanned in 350.81 seconds" elapsed="350.81" exit="success"/><hosts up="1" down="0" total="1"/>
+</runstats>
+</nmaprun>

@@ -154,7 +154,7 @@ def scan_nmap(ip, path_output):
     ports1,services = scan_all_tcp_port(directory_output_nmap, ip)
     ports2 = naabu_scan(directory_output_naabu,ip)
     ports = list(set(ports1) | set(ports2))
-    scan_detail_service_v1(directory_output_nmap, ip)
+    # scan_detail_service_v1(directory_output_nmap, ip)
     thread_detail  = threading.Thread(target=scan_detail_service, args=(directory_output_nmap, ip, ports))
     thread_vuln  = threading.Thread(target=scan_vuln_service, args=(directory_output_nmap, ip, ports))
     # thread_udp  = threading.Thread(target=scan_top_20_udp, args=(directory_output_nmap, ip, ports))
@@ -162,6 +162,5 @@ def scan_nmap(ip, path_output):
     thread_vuln.start()
     # thread_udp.start()
     thread_detail.join()
-    thread_vuln.join()
     logger.info("[i] Finish Nmap scan.")
     return ports,services

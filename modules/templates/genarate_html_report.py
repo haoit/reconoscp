@@ -115,23 +115,23 @@ def gen_nmap_report(path_output):
     toggle_content = output_all_port
     data_type_3 = template_toggle_content().replace("{{{toggle_target}}}", toggle_target).replace("{{{toggle_name}}}", toggle_name).replace("{{{toggle_content}}}", toggle_content).replace("{{{toggle_id}}}", toggle_id)
 
-    #Gen type 4
-    with open("%s/nmap/nmap-detail-service-v1.nmap"%path_output) as f:
-        output_all_port = f.read().replace("\n","</br>")
-    toggle_target = "nmapdetailservicev1"
-    toggle_name = report_type_4
-    toggle_content = output_all_port
-    data_type_4 = template_toggle_content().replace("{{{toggle_target}}}", toggle_target).replace("{{{toggle_name}}}", toggle_name).replace("{{{toggle_content}}}", toggle_content).replace("{{{toggle_id}}}", toggle_id)
+    # #Gen type 4
+    # with open("%s/nmap/nmap-detail-service-v1.nmap"%path_output) as f:
+    #     output_all_port = f.read().replace("\n","</br>")
+    # toggle_target = "nmapdetailservicev1"
+    # toggle_name = report_type_4
+    # toggle_content = output_all_port
+    # data_type_4 = template_toggle_content().replace("{{{toggle_target}}}", toggle_target).replace("{{{toggle_name}}}", toggle_name).replace("{{{toggle_content}}}", toggle_content).replace("{{{toggle_id}}}", toggle_id)
 
-    #Gen type 5
-    with open("%s/nmap/nmap-top20-udp.nmap"%path_output) as f:
-        output_all_port = f.read().replace("\n","</br>")
-    toggle_target = "nmaptopudp"
-    toggle_name = report_type_5
-    toggle_content = output_all_port
-    data_type_5 = template_toggle_content().replace("{{{toggle_target}}}", toggle_target).replace("{{{toggle_name}}}", toggle_name).replace("{{{toggle_content}}}", toggle_content).replace("{{{toggle_id}}}", toggle_id)
+    # #Gen type 5
+    # with open("%s/nmap/nmap-top20-udp.nmap"%path_output) as f:
+    #     output_all_port = f.read().replace("\n","</br>")
+    # toggle_target = "nmaptopudp"
+    # toggle_name = report_type_5
+    # toggle_content = output_all_port
+    # data_type_5 = template_toggle_content().replace("{{{toggle_target}}}", toggle_target).replace("{{{toggle_name}}}", toggle_name).replace("{{{toggle_content}}}", toggle_content).replace("{{{toggle_id}}}", toggle_id)
 
-    block_content = data_type_1 + data_type_2 + data_type_3 + data_type_4 + data_type_5
+    block_content = data_type_1 + data_type_2 + data_type_3  
     data = template_toggle_in_block().replace("{{{toggle_id}}}", toggle_id).replace("{{{block_content}}}", block_content)
     return data
 
@@ -171,19 +171,22 @@ def genarate_html_from_forlder(namefolder , path_folder):
     
 
 def genarate_html_report(ip, base_path):
-    path_output = base_path +"/output/"
+    path_output = base_path +"/output/%s/" % ip
     list_dir = run_os_scandir(path_output)
+    print(path_output)
+    print(list_dir)
     list_dir.remove('nmap')
     data_detail = ""
     for folder in list_dir:
-        data_detail += genarate_html_from_forlder(folder, path_output + folder)
+        if len(os.listdir(path_output + folder)) != 0:
+            data_detail += genarate_html_from_forlder(folder, path_output + folder)
 
 
     #Gen report 
     with open(base_path+"/modules/templates/index.template") as f:
         template = f.read() 
 
-    with open(base_path+ "/output/output.html","w") as f:
+    with open(base_path+ "/output/%s/output.html"%ip,"w") as f:
         nmap_content = gen_nmap_report(path_output)
         # nmap_content = "xxx"
         template = template.replace("{{{IP}}}",ip).replace("{{{nmap_content}}}",nmap_content).replace("{{{data_detail}}}",data_detail)

@@ -1,0 +1,4 @@
+# Nmap 7.91 scan initiated Fri Aug 27 12:16:30 2021 as: nmap -p 22,21,80,25565 --script vuln -oA /media/psf/Home/projects/oscp_auto/output/10.10.10.37/nmap/nmap-vuln-port 10.10.10.37
+Host: 10.10.10.37 ()	Status: Up
+Host: 10.10.10.37 ()	Ports: 21/open/tcp//ftp///, 22/open/tcp//ssh///, 80/open/tcp//http///, 25565/open/tcp//minecraft///
+# Nmap done at Fri Aug 27 12:22:21 2021 -- 1 IP address (1 host up) scanned in 350.81 seconds

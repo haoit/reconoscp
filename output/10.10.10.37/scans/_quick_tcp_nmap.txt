@@ -1,7 +1,7 @@
-# Nmap 7.91 scan initiated Fri Aug 27 10:06:41 2021 as: nmap -vv --reason -Pn -sV -sC --version-all -oN /media/psf/Home/projects/oscp_auto/output/scans/_quick_tcp_nmap.txt -oX /media/psf/Home/projects/oscp_auto/output/scans/xml/_quick_tcp_nmap.xml 10.10.10.37
+# Nmap 7.91 scan initiated Fri Aug 27 12:16:52 2021 as: nmap -vv --reason -Pn -sV -sC --version-all -oN /media/psf/Home/projects/oscp_auto/output/10.10.10.37/scans/_quick_tcp_nmap.txt -oX /media/psf/Home/projects/oscp_auto/output/10.10.10.37/scans/xml/_quick_tcp_nmap.xml 10.10.10.37
 Nmap scan report for 10.10.10.37
-Host is up, received user-set (0.40s latency).
-Scanned at 2021-08-27 10:06:42 +07 for 80s
+Host is up, received user-set (0.23s latency).
+Scanned at 2021-08-27 12:16:53 +07 for 33s
 Not shown: 996 filtered ports
 Reason: 996 no-responses
 PORT     STATE  SERVICE REASON       VERSION
@@ -25,4 +25,4 @@ Service Info: OSs: Unix, Linux; CPE: cpe:/o:linux:linux_kernel
 
 Read data files from: /usr/bin/../share/nmap
 Service detection performed. Please report any incorrect results at https://nmap.org/submit/ .
-# Nmap done at Fri Aug 27 10:08:02 2021 -- 1 IP address (1 host up) scanned in 80.37 seconds
+# Nmap done at Fri Aug 27 12:17:26 2021 -- 1 IP address (1 host up) scanned in 34.02 seconds

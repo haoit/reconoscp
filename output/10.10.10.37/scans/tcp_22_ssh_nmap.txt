@@ -1,7 +1,7 @@
-# Nmap 7.91 scan initiated Fri Aug 27 10:08:02 2021 as: nmap -vv --reason -Pn -sV -p 22 --script=banner,ssh2-enum-algos,ssh-hostkey,ssh-auth-methods -oN /media/psf/Home/projects/oscp_auto/output/scans/tcp_22_ssh_nmap.txt -oX /media/psf/Home/projects/oscp_auto/output/scans/xml/tcp_22_ssh_nmap.xml 10.10.10.37
+# Nmap 7.91 scan initiated Fri Aug 27 12:17:26 2021 as: nmap -vv --reason -Pn -sV -p 22 --script=banner,ssh2-enum-algos,ssh-hostkey,ssh-auth-methods -oN /media/psf/Home/projects/oscp_auto/output/10.10.10.37/scans/tcp_22_ssh_nmap.txt -oX /media/psf/Home/projects/oscp_auto/output/10.10.10.37/scans/xml/tcp_22_ssh_nmap.xml 10.10.10.37
 Nmap scan report for 10.10.10.37
-Host is up, received user-set (0.26s latency).
-Scanned at 2021-08-27 10:08:02 +07 for 12s
+Host is up, received user-set (0.22s latency).
+Scanned at 2021-08-27 12:17:26 +07 for 8s
 
 PORT   STATE SERVICE REASON  VERSION
 22/tcp open  ssh     syn-ack OpenSSH 7.2p2 Ubuntu 4ubuntu2.2 (Ubuntu Linux; protocol 2.0)
@@ -56,4 +56,4 @@ Service Info: OS: Linux; CPE: cpe:/o:linux:linux_kernel
 
 Read data files from: /usr/bin/../share/nmap
 Service detection performed. Please report any incorrect results at https://nmap.org/submit/ .
-# Nmap done at Fri Aug 27 10:08:14 2021 -- 1 IP address (1 host up) scanned in 12.64 seconds
+# Nmap done at Fri Aug 27 12:17:34 2021 -- 1 IP address (1 host up) scanned in 7.40 seconds

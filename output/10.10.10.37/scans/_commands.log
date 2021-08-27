@@ -1,0 +1,18 @@
+nmap -vv --reason -Pn -sV -sC --version-all -oN "/media/psf/Home/projects/oscp_auto/output/10.10.10.37/scans/_quick_tcp_nmap.txt" -oX "/media/psf/Home/projects/oscp_auto/output/10.10.10.37/scans/xml/_quick_tcp_nmap.xml" 10.10.10.37
+
+nmap -vv --reason -Pn -A --osscan-guess --version-all -p- -oN "/media/psf/Home/projects/oscp_auto/output/10.10.10.37/scans/_full_tcp_nmap.txt" -oX "/media/psf/Home/projects/oscp_auto/output/10.10.10.37/scans/xml/_full_tcp_nmap.xml" 10.10.10.37
+
+nmap -vv --reason -Pn -sU -A --top-ports=20 --version-all -oN "/media/psf/Home/projects/oscp_auto/output/10.10.10.37/scans/_top_20_udp_nmap.txt" -oX "/media/psf/Home/projects/oscp_auto/output/10.10.10.37/scans/xml/_top_20_udp_nmap.xml" 10.10.10.37
+
+if [ "False" == "True" ]; then sslscan --show-certificate --no-colour 10.10.10.37:21 2>&1 | tee "/media/psf/Home/projects/oscp_auto/output/10.10.10.37/scans/tcp_21_sslscan.txt"; fi
+
+nmap -vv --reason -Pn -sV -p 21 --script="banner,(ftp* or ssl*) and not (brute or broadcast or dos or external or fuzzer)" -oN "/media/psf/Home/projects/oscp_auto/output/10.10.10.37/scans/tcp_21_ftp_nmap.txt" -oX "/media/psf/Home/projects/oscp_auto/output/10.10.10.37/scans/xml/tcp_21_ftp_nmap.xml" 10.10.10.37
+
+if [ "False" == "True" ]; then sslscan --show-certificate --no-colour 10.10.10.37:22 2>&1 | tee "/media/psf/Home/projects/oscp_auto/output/10.10.10.37/scans/tcp_22_sslscan.txt"; fi
+
+nmap -vv --reason -Pn -sV -p 22 --script="banner,ssh2-enum-algos,ssh-hostkey,ssh-auth-methods" -oN "/media/psf/Home/projects/oscp_auto/output/10.10.10.37/scans/tcp_22_ssh_nmap.txt" -oX "/media/psf/Home/projects/oscp_auto/output/10.10.10.37/scans/xml/tcp_22_ssh_nmap.xml" 10.10.10.37
+
+if [ "False" == "True" ]; then sslscan --show-certificate --no-colour 10.10.10.37:80 2>&1 | tee "/media/psf/Home/projects/oscp_auto/output/10.10.10.37/scans/tcp_80_sslscan.txt"; fi
+
+if [ "False" == "True" ]; then sslscan --show-certificate --no-colour 10.10.10.37:25565 2>&1 | tee "/media/psf/Home/projects/oscp_auto/output/10.10.10.37/scans/tcp_25565_sslscan.txt"; fi
+

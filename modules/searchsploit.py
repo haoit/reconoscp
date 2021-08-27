@@ -4,8 +4,7 @@ import xmltodict
 import json
 from loguru import logger
 
-directory_output = "searchsploit"
-outfile_detail_port = "nmap-detail-service"
+directory_output = "/searchsploit/"
 
 
 
@@ -36,7 +35,10 @@ def get_ports_from_nmap(out_path):
 
 def init_scan_searchsploit(out_path):
     if not os.path.exists(out_path + directory_output):
-        os.makedirs(out_path + directory_output)
+        try:
+            os.makedirs(out_path + directory_output)
+        except:
+            pass
 
 def remove_none_file(path_folder):
     command = """grep -Ril "Exploits: No Results" %s | xargs rm -f"""%path_folder
@@ -45,8 +47,8 @@ def remove_none_file(path_folder):
 def searchsploit_service(port, out_path ,nameservice, version=''):
     #searchsploit apache tomcat 2.4
    
-    final_command = "searchsploit %s %s | sed 's/\x1B\[[0-9;]\{1,\}[A-Za-z]//g' | tee -a %s/%s" % (nameservice, version, out_path + directory_output, port)
-    save_command = "echo searchsploit %s %s | sed 's/\x1B\[[0-9;]\{1,\}[A-Za-z]//g' |tee -a %s/%s" % (nameservice, version, out_path + directory_output, port)
+    final_command = "searchsploit %s %s | sed 's/\x1B\[[0-9;]\{1,\}[A-Za-z]//g' | tee -a %s" % (nameservice, version, out_path + directory_output + "searchsploit.log")
+    save_command = "echo searchsploit %s %s | sed 's/\x1B\[[0-9;]\{1,\}[A-Za-z]//g' |tee -a %s" % (nameservice, version, out_path + directory_output + "searchsploit.log")
     subprocess.Popen(save_command , shell=True, stdout=subprocess.PIPE, stderr=subprocess.STDOUT)
     p = subprocess.Popen(final_command , shell=True, stdout=subprocess.PIPE, stderr=subprocess.STDOUT)    
     logger.opt(colors=True).info("[i] Start searchsploit: <yellow>%s</yellow> ." % final_command)

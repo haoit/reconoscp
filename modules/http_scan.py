@@ -33,7 +33,7 @@ def dirsearch_scan(url, directory_output):
 def ffuf_scan(url, directory_output):
     output = directory_output + Fileoutput_Dirsearch
     #ffuf -w /usr/share/wordlists/dirbuster/directory-list-2.3-medium.txt -u http://10.10.10.37/FUZZ -t 50 - o test.log
-    command = "ffuf -w /usr/share/wordlists/dirbuster/directory-list-2.3-medium.txt -u %s/FUZZ -t 50 -o %s" % (url,  directory_output + Fileoutput_FFUF)
+    command = "ffuf -w /usr/share/wordlists/dirbuster/directory-list-2.3-medium.txt -u %s/FUZZ -t 50 -of md -o %s" % (url,  directory_output + Fileoutput_FFUF)
     run_command("FFUF", command, output)
 
 def nikto_scan(url, directory_output):
