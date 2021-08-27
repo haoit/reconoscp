@@ -37,7 +37,38 @@ if __name__ == "__main__":
     threads = []
 
 
-    # 1
+    ports,services = scan_nmap(ip, path_output)
+
+    # search_sploit scan 
+    t  = threading.Thread(target=run_searchsploit, args=(path_output,))
+    t.start()
+    threads.append(t)
+    run_searchsploit(path_output)
+    if "445" in ports:
+        logger.info("[i] Enumarate SMB")
+        t  = threading.Thread(target=enum_smb, args=(ip, path_output,))
+        t.start()
+        threads.append(t)
+    if ("http" in services):
+        for http_port in services["http"]:
+            t  = threading.Thread(target=scan_http_service, args=(ip, http_port, "http", path_output))
+            t.start()
+            threads.append(t)
+    if ("https" in services):
+        for https_port in services["https"]:
+            t  = threading.Thread(target=scan_http_service, args=(ip, https_port, "https", path_output))
+            t.start()
+            threads.append(t)
+    t  = threading.Thread(target=run_auto_recon, args=(ip, path_output,))
+    t.start()
+    threads.append(t)
+    while True:
+        genarate_html_report(ip, base_path)
+        threads = [t for t in threads if t.is_alive()]
+        if len(threads) < 1:
+            print("break while loop")
+            break
+        time.sleep(30)
         
 
     genarate_html_report(ip, base_path)

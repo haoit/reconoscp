@@ -152,12 +152,13 @@ def genarate_html_from_forlder(namefolder , path_folder):
     toggle_id = gen_random_string()
     for i in files:
         with open("%s/%s" % (path_folder, i)) as f:
-            flines = f.read().split('\n')
-        toggle_name = i
-        toggle_target = gen_random_string()
-        toggle_content = '</br>'.join(flines)
-        data_type = template_toggle_content().replace("{{{toggle_target}}}", toggle_target).replace("{{{toggle_name}}}", toggle_name).replace("{{{toggle_content}}}", toggle_content).replace("{{{toggle_id}}}", toggle_id)
-        block_content += data_type
+            file_content = f.read()
+        if len(file_content) > 1:
+            toggle_name = i
+            toggle_target = gen_random_string()
+            toggle_content = file_content.replace('\n','</br>')
+            data_type = template_toggle_content().replace("{{{toggle_target}}}", toggle_target).replace("{{{toggle_name}}}", toggle_name).replace("{{{toggle_content}}}", toggle_content).replace("{{{toggle_id}}}", toggle_id)
+            block_content += data_type
     
     data = template_toggle_in_block().replace("{{{toggle_id}}}", toggle_id).replace("{{{block_content}}}", block_content)
     
