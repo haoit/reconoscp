@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE nmaprun>
+<?xml-stylesheet href="file:///usr/bin/../share/nmap/nmap.xsl" type="text/xsl"?>
+<!-- Nmap 7.91 scan initiated Fri Aug 27 11:29:00 2021 as: nmap -vv -&#45;reason -Pn -A -&#45;osscan-guess -&#45;version-all -p- -oN /media/psf/Home/projects/oscp_auto/output/10.10.10.161/scans/_full_tcp_nmap.txt -oX /media/psf/Home/projects/oscp_auto/output/10.10.10.161/scans/xml/_full_tcp_nmap.xml 10.10.10.37 -->
+<nmaprun scanner="nmap" args="nmap -vv -&#45;reason -Pn -A -&#45;osscan-guess -&#45;version-all -p- -oN /media/psf/Home/projects/oscp_auto/output/10.10.10.161/scans/_full_tcp_nmap.txt -oX /media/psf/Home/projects/oscp_auto/output/10.10.10.161/scans/xml/_full_tcp_nmap.xml 10.10.10.37" start="1630038540" startstr="Fri Aug 27 11:29:00 2021" version="7.91" xmloutputversion="1.05">
+<scaninfo type="connect" protocol="tcp" numservices="65535" services="1-65535"/>
+<verbose level="2"/>
+<debugging level="0"/>
+<taskbegin task="NSE" time="1630038540"/>
+<taskend task="NSE" time="1630038540"/>
+<taskbegin task="NSE" time="1630038540"/>
+<taskend task="NSE" time="1630038540"/>
+<taskbegin task="NSE" time="1630038540"/>
+<taskend task="NSE" time="1630038540"/>
+<taskbegin task="Parallel DNS resolution of 1 host." time="1630038540"/>
+<taskend task="Parallel DNS resolution of 1 host." time="1630038540"/>
+<taskbegin task="Connect Scan" time="1630038540"/>

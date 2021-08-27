@@ -45,8 +45,8 @@ def remove_none_file(path_folder):
 def searchsploit_service(port, out_path ,nameservice, version=''):
     #searchsploit apache tomcat 2.4
    
-    final_command = "searchsploit %s %s | tee -a %s/%s" % (nameservice, version, out_path + directory_output, port)
-    save_command = "echo searchsploit %s %s | tee -a %s/%s" % (nameservice, version, out_path + directory_output, port)
+    final_command = "searchsploit %s %s | sed 's/\x1B\[[0-9;]\{1,\}[A-Za-z]//g' | tee -a %s/%s" % (nameservice, version, out_path + directory_output, port)
+    save_command = "echo searchsploit %s %s | sed 's/\x1B\[[0-9;]\{1,\}[A-Za-z]//g' |tee -a %s/%s" % (nameservice, version, out_path + directory_output, port)
     subprocess.Popen(save_command , shell=True, stdout=subprocess.PIPE, stderr=subprocess.STDOUT)
     p = subprocess.Popen(final_command , shell=True, stdout=subprocess.PIPE, stderr=subprocess.STDOUT)    
     logger.opt(colors=True).info("[i] Start searchsploit: <yellow>%s</yellow> ." % final_command)

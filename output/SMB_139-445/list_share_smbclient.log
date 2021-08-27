@@ -1,7 +1,0 @@
-echo exit | smbclient -L \10.10.10.161
-Enter WORKGROUP\parallels's password: 
-Anonymous login successful
-
-	Sharename       Type      Comment
-	---------       ----      -------
-SMB1 disabled -- no workgroup available

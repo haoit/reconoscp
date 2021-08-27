@@ -14,7 +14,7 @@
 ​
 <div class="jumbotron text-center">
   <h1>OSCP-AUTO-RECON</h1>
-  <p>Report For 10.10.10.161</p> 
+  <p>Report For 10.10.10.37</p> 
 </div>
   
 <div class="container">
@@ -31,115 +31,59 @@
       
           <div id="Nmap" class="collapse show" aria-labelledby="headingOne" data-parent="#accordion-main">
             <div class="card-body">
-                
-    <div id="namp-result">
-              
-     <div class="card">
-                  <div class="card-header" id="headingOne">
-                    <h5 class="mb-0">
-                      <button class="btn btn-link" data-toggle="collapse" data-target="#nmapallport" aria-expanded="true" aria-controls="collapseOne">
-                        NMAP ALL PORT
-                      </button>
-                    </h5>
-                  </div>
-              
-                  <div id="nmapallport" class="collapse" aria-labelledby="headingOne" data-parent="#namp-result">
-                    <div class="card-body">
-                        <code>
-                        # Nmap 7.91 scan initiated Tue Aug 24 20:11:00 2021 as: nmap -p- --min-rate 10000 -oA /media/psf/Home/projects/oscp_auto/output//nmap/nmap-alltcp 10.10.10.161</br>Warning: 10.10.10.161 giving up on port because retransmission cap hit (10).</br>Nmap scan report for 10.10.10.161</br>Host is up (0.25s latency).</br>Not shown: 46947 filtered ports, 18575 closed ports</br>PORT      STATE SERVICE</br>53/tcp    open  domain</br>88/tcp    open  kerberos-sec</br>135/tcp   open  msrpc</br>139/tcp   open  netbios-ssn</br>445/tcp   open  microsoft-ds</br>464/tcp   open  kpasswd5</br>593/tcp   open  http-rpc-epmap</br>636/tcp   open  ldapssl</br>9389/tcp  open  adws</br>49664/tcp open  unknown</br>49665/tcp open  unknown</br>49684/tcp open  unknown</br>49703/tcp open  unknown</br></br># Nmap done at Tue Aug 24 20:13:31 2021 -- 1 IP address (1 host up) scanned in 151.71 seconds</br>
-                        </code>
-                    </div>
-                  </div>
-    </div> 
-    
-     <div class="card">
-                  <div class="card-header" id="headingOne">
-                    <h5 class="mb-0">
-                      <button class="btn btn-link" data-toggle="collapse" data-target="#nmapdetailport" aria-expanded="true" aria-controls="collapseOne">
-                        NMAP DETAIL SERVICE
-                      </button>
-                    </h5>
-                  </div>
-              
-                  <div id="nmapdetailport" class="collapse" aria-labelledby="headingOne" data-parent="#namp-result">
-                    <div class="card-body">
-                        <code>
-                        # Nmap 7.91 scan initiated Tue Aug 24 20:15:27 2021 as: nmap -sC -sV -p 88,139,53,389,49703,9389,49665,49664,49684,593,445,464,636,135 -oA /media/psf/Home/projects/oscp_auto/output//nmap/nmap-detail-service 10.10.10.161</br>Nmap scan report for 10.10.10.161</br>Host is up (0.55s latency).</br></br>PORT      STATE SERVICE      VERSION</br>53/tcp    open  domain?</br>88/tcp    open  kerberos-sec Microsoft Windows Kerberos (server time: 2021-08-24 13:40:23Z)</br>135/tcp   open  msrpc        Microsoft Windows RPC</br>139/tcp   open  netbios-ssn  Microsoft Windows netbios-ssn</br>389/tcp   open  ldap         Microsoft Windows Active Directory LDAP (Domain: htb.local, Site: Default-First-Site-Name)</br>445/tcp   open  microsoft-ds Windows Server 2016 Standard 14393 microsoft-ds (workgroup: HTB)</br>464/tcp   open  kpasswd5?</br>593/tcp   open  ncacn_http   Microsoft Windows RPC over HTTP 1.0</br>636/tcp   open  tcpwrapped</br>9389/tcp  open  mc-nmf       .NET Message Framing</br>49664/tcp open  msrpc        Microsoft Windows RPC</br>49665/tcp open  msrpc        Microsoft Windows RPC</br>49684/tcp open  msrpc        Microsoft Windows RPC</br>49703/tcp open  msrpc        Microsoft Windows RPC</br>Service Info: Host: FOREST; OS: Windows; CPE: cpe:/o:microsoft:windows</br></br>Host script results:</br>|_clock-skew: mean: 2h44m48s, deviation: 4h02m30s, median: 24m47s</br>| smb-os-discovery: </br>|   OS: Windows Server 2016 Standard 14393 (Windows Server 2016 Standard 6.3)</br>|   Computer name: FOREST</br>|   NetBIOS computer name: FOREST\x00</br>|   Domain name: htb.local</br>|   Forest name: htb.local</br>|   FQDN: FOREST.htb.local</br>|_  System time: 2021-08-24T06:42:52-07:00</br>| smb-security-mode: </br>|   account_used: <blank></br>|   authentication_level: user</br>|   challenge_response: supported</br>|_  message_signing: required</br>| smb2-security-mode: </br>|   2.02: </br>|_    Message signing enabled and required</br>| smb2-time: </br>|   date: 2021-08-24T13:42:54</br>|_  start_date: 2021-08-24T09:07:43</br></br>Service detection performed. Please report any incorrect results at https://nmap.org/submit/ .</br># Nmap done at Tue Aug 24 20:18:25 2021 -- 1 IP address (1 host up) scanned in 178.81 seconds</br>
-                        </code>
-                    </div>
-                  </div>
-    </div> 
-    
-     <div class="card">
-                  <div class="card-header" id="headingOne">
-                    <h5 class="mb-0">
-                      <button class="btn btn-link" data-toggle="collapse" data-target="#nmapvulnport" aria-expanded="true" aria-controls="collapseOne">
-                        NMAP VULN SERVICE
-                      </button>
-                    </h5>
-                  </div>
-              
-                  <div id="nmapvulnport" class="collapse" aria-labelledby="headingOne" data-parent="#namp-result">
-                    <div class="card-body">
-                        <code>
-                        # Nmap 7.91 scan initiated Tue Aug 24 20:15:27 2021 as: nmap -p 88,139,53,389,49703,9389,49665,49664,49684,593,445,464,636,135 --script vuln -oA /media/psf/Home/projects/oscp_auto/output//nmap/nmap-vuln-port 10.10.10.161</br>Pre-scan script results:</br>| broadcast-avahi-dos: </br>|   Discovered hosts:</br>|     224.0.0.251</br>|   After NULL UDP avahi packet DoS (CVE-2011-1002).</br>|_  Hosts are all up (not vulnerable).</br>Nmap scan report for 10.10.10.161</br>Host is up (0.43s latency).</br></br>PORT      STATE SERVICE</br>53/tcp    open  domain</br>88/tcp    open  kerberos-sec</br>135/tcp   open  msrpc</br>139/tcp   open  netbios-ssn</br>389/tcp   open  ldap</br>|_sslv2-drown: </br>445/tcp   open  microsoft-ds</br>464/tcp   open  kpasswd5</br>593/tcp   open  http-rpc-epmap</br>636/tcp   open  ldapssl</br>|_ssl-ccs-injection: No reply from server (TIMEOUT)</br>|_sslv2-drown: </br>9389/tcp  open  adws</br>49664/tcp open  unknown</br>49665/tcp open  unknown</br>49684/tcp open  unknown</br>49703/tcp open  unknown</br></br>Host script results:</br>|_smb-vuln-ms10-054: false</br>|_smb-vuln-ms10-061: NT_STATUS_ACCESS_DENIED</br></br># Nmap done at Tue Aug 24 20:17:54 2021 -- 1 IP address (1 host up) scanned in 147.03 seconds</br>
-                        </code>
-                    </div>
-                  </div>
-    </div> 
-    
-     <div class="card">
-                  <div class="card-header" id="headingOne">
-                    <h5 class="mb-0">
-                      <button class="btn btn-link" data-toggle="collapse" data-target="#nmapdetailservicev1" aria-expanded="true" aria-controls="collapseOne">
-                        NMAP  DETAIL SERVICE NORMAL SCAN
-                      </button>
-                    </h5>
-                  </div>
-              
-                  <div id="nmapdetailservicev1" class="collapse" aria-labelledby="headingOne" data-parent="#namp-result">
-                    <div class="card-body">
-                        <code>
-                        # Nmap 7.91 scan initiated Tue Aug 24 20:13:34 2021 as: nmap -sC -sV -oA /media/psf/Home/projects/oscp_auto/output//nmap/nmap-detail-service-v1 10.10.10.161</br>Nmap scan report for 10.10.10.161</br>Host is up (0.47s latency).</br>Not shown: 989 closed ports</br>PORT     STATE SERVICE      VERSION</br>53/tcp   open  domain       Simple DNS Plus</br>88/tcp   open  kerberos-sec Microsoft Windows Kerberos (server time: 2021-08-24 13:39:32Z)</br>135/tcp  open  msrpc        Microsoft Windows RPC</br>139/tcp  open  netbios-ssn  Microsoft Windows netbios-ssn</br>389/tcp  open  ldap         Microsoft Windows Active Directory LDAP (Domain: htb.local, Site: Default-First-Site-Name)</br>445/tcp  open  microsoft-ds Windows Server 2016 Standard 14393 microsoft-ds (workgroup: HTB)</br>464/tcp  open  kpasswd5?</br>593/tcp  open  ncacn_http   Microsoft Windows RPC over HTTP 1.0</br>636/tcp  open  tcpwrapped</br>3268/tcp open  ldap         Microsoft Windows Active Directory LDAP (Domain: htb.local, Site: Default-First-Site-Name)</br>3269/tcp open  tcpwrapped</br>Service Info: Host: FOREST; OS: Windows; CPE: cpe:/o:microsoft:windows</br></br>Host script results:</br>|_clock-skew: mean: 2h44m48s, deviation: 4h02m31s, median: 24m47s</br>| smb-os-discovery: </br>|   OS: Windows Server 2016 Standard 14393 (Windows Server 2016 Standard 6.3)</br>|   Computer name: FOREST</br>|   NetBIOS computer name: FOREST\x00</br>|   Domain name: htb.local</br>|   Forest name: htb.local</br>|   FQDN: FOREST.htb.local</br>|_  System time: 2021-08-24T06:39:52-07:00</br>| smb-security-mode: </br>|   account_used: <blank></br>|   authentication_level: user</br>|   challenge_response: supported</br>|_  message_signing: required</br>| smb2-security-mode: </br>|   2.02: </br>|_    Message signing enabled and required</br>| smb2-time: </br>|   date: 2021-08-24T13:39:50</br>|_  start_date: 2021-08-24T09:07:43</br></br>Service detection performed. Please report any incorrect results at https://nmap.org/submit/ .</br># Nmap done at Tue Aug 24 20:15:27 2021 -- 1 IP address (1 host up) scanned in 112.61 seconds</br>
-                        </code>
-                    </div>
-                  </div>
-    </div> 
-    
-    </div>
-    
+                xxx
             </div>
           </div>
        </div>  <!-- End block nmap -->
 
         
-    <div class="card WGAFGOZCDNXOXSSAFHUXBWAXBIMDZBOK">
+    <div class="card ZGJQOSTBDMLEFORMYMVRLNCLKVRBDYMF">
             <div class="card-header" id="headingOne">
               <h5 class="mb-0">
-                <button class="btn btn-link" data-toggle="collapse" data-target="#NGOYMQXJMEZVROSICYKRXCBHCKPOIFFE" aria-expanded="true" aria-controls="collapseOne">
-                 searchsploit
+                <button class="btn btn-link" data-toggle="collapse" data-target="#IFAZKTUDHGFYDXGYBGKBQUHQQLBSMGIN" aria-expanded="true" aria-controls="collapseOne">
+                 exploit
                 </button>
               </h5>
             </div>
         
-            <div id="NGOYMQXJMEZVROSICYKRXCBHCKPOIFFE" class="collapse" aria-labelledby="headingOne" data-parent="#accordion-main">
+            <div id="IFAZKTUDHGFYDXGYBGKBQUHQQLBSMGIN" class="collapse" aria-labelledby="headingOne" data-parent="#accordion-main">
               <div class="card-body">
                   
-    <div id="YJTUSGSLGWBGFRNTNQOLYKZTYFMHNQRF">
+    <div id="GUKMXSFHPWQYJJMNDRLKEZMZWZXKSXAD">
+              
+    </div>
+    
+              </div>
+            </div>
+        </div>
+    
+    <div class="card FQKPJWJUQZUJWBSQYVPGZUFKCKYSCACK">
+            <div class="card-header" id="headingOne">
+              <h5 class="mb-0">
+                <button class="btn btn-link" data-toggle="collapse" data-target="#XCQGTSXXKZONCGEBMOSRNNHVESCVPKYG" aria-expanded="true" aria-controls="collapseOne">
+                 scans
+                </button>
+              </h5>
+            </div>
+        
+            <div id="XCQGTSXXKZONCGEBMOSRNNHVESCVPKYG" class="collapse" aria-labelledby="headingOne" data-parent="#accordion-main">
+              <div class="card-body">
+                  
+    <div id="BWHJFIZKRNBTWDKZMAGFZCYGSVMMZBIG">
               
      <div class="card">
                   <div class="card-header" id="headingOne">
                     <h5 class="mb-0">
-                      <button class="btn btn-link" data-toggle="collapse" data-target="#GNBOINAMTQKHZRFWPAZCMVIFWWABEOCO" aria-expanded="true" aria-controls="collapseOne">
-                        searchsploit domain
+                      <button class="btn btn-link" data-toggle="collapse" data-target="#TGTDLPJLBTMDKXKYXQWYDHOLILMNBXEC" aria-expanded="true" aria-controls="collapseOne">
+                        _commands.log
                       </button>
                     </h5>
                   </div>
               
-                  <div id="GNBOINAMTQKHZRFWPAZCMVIFWWABEOCO" class="collapse" aria-labelledby="headingOne" data-parent="#YJTUSGSLGWBGFRNTNQOLYKZTYFMHNQRF">
+                  <div id="TGTDLPJLBTMDKXKYXQWYDHOLILMNBXEC" class="collapse" aria-labelledby="headingOne" data-parent="#BWHJFIZKRNBTWDKZMAGFZCYGSVMMZBIG">
                     <div class="card-body">
                         <code>
-                        searchsploit domain</br>------------------------------------------------------- ---------------------------------</br> Exploit Title                                         |  Path</br>------------------------------------------------------- ---------------------------------</br>Adobe Flash Player - [01;31m[Kdomain[m[KMemory ByteArray Use-After- | windows/remote/36956.rb</br>Adobe Flash Player 7.0.x/8.0.x/9.0.x - ActiveX Control | linux/remote/30907.txt</br>Alabanza Control Panel 3.0 - [01;31m[KDomain[m[K Modification       | cgi/remote/20238.txt</br>Apple macOS/iOS Kernel - Use-After-Free Due to Bad Loc | multiple/dos/42054.c</br>Apple Safari 2.0.4 - Cross-[01;31m[KDomain[m[K Browser Location Inf | multiple/remote/30078.js</br>BlackBoard Academic Suite 6.2.3.23 - Frameset.jsp Cros | jsp/webapps/26778.txt</br>Cacheflow CacheOS 3.1.x/4.0.x/4.1 - Unresolved [01;31m[KDomain[m[K  | multiple/remote/21649.txt</br>Cachelogic Expired [01;31m[KDomain[m[Ks Script 1.0 - Multiple Vulne | php/webapps/17428.txt</br>C[01;31m[Kdomain[m[KFree 2.4 - Remote Command Execution             | multiple/remote/19242.txt</br>CentOS Web Panel 0.9.8.12 - 'row_id' / '[01;31m[Kdomain[m[K' SQL In | php/webapps/43855.txt</br>CentOS Web Panel 0.9.8.793 (Free) / v0.9.8.753 (Pro) / | linux/webapps/46784.txt</br>Core FTP/SFTP Server 1.2 Build 589.42 - 'User [01;31m[Kdomain[m[K'  | windows/dos/46371.py</br>cPanel - (Authenticated) 'lastvisit.html [01;31m[KDomain[m[K' Arbit | multiple/remote/9039.txt</br>cPanel WebHost Manager 3.1 - 'domts2?[01;31m[Kdomain[m[K' Cross-Sit | php/webapps/29185.txt</br>cPanel WebHost Manager 3.1 - 'editzone?[01;31m[Kdomain[m[K' Cross-S | php/webapps/29186.txt</br>cPanel WebHost Manager 3.1 - 'park?n[01;31m[Kdomain[m[K' Cross-Site | php/webapps/29188.txt</br>Cyberoam Transparent Authentication Suite 2.1.2.5 - 'F | windows/dos/46925.py</br>D-Link DCS Series Cameras - Insecure Cross[01;31m[Kdomain[m[K       | hardware/webapps/42074.txt</br>Digi[01;31m[KDomain[m[K 2.2 - 'lookup_result.asp?[01;31m[Kdomain[m[K' Cross-Site | asp/webapps/31546.txt</br>Digi[01;31m[KDomain[m[K 2.2 - 'suggest_result.asp' Multiple Cross-S | asp/webapps/31547.txt</br>Dnss [01;31m[KDomain[m[K Name Search Software - 'Key' Denial of Ser | windows/dos/47856.py</br>Dnss [01;31m[KDomain[m[K Name Search Software - 'Name' Denial of Se | windows/dos/47861.py</br>[01;31m[KDomain[m[K Group Network GooCMS 1.02 - 'index.php' Cross-S | php/webapps/32218.txt</br>[01;31m[KDomain[m[K Marketplace Script - SQL Injection              | php/webapps/41582.txt</br>[01;31m[KDomain[m[K Quester Pro 6.02 - Stack Overflow (SEH)         | windows/local/47825.py</br>[01;31m[KDomain[m[K Seller Pro 1.5 - 'id' SQL Injection             | php/webapps/7052.txt</br>[01;31m[KDomain[m[K Shop - 'index.php' Cross-Site Scripting         | php/webapps/36272.txt</br>[01;31m[KDomain[m[K Trader 2.0 - 'catalog.php' Cross-Site Scripting | php/webapps/31091.txt</br>[01;31m[KDomain[m[K Verkaus & Auktions Portal - 'index.php' SQL Inj | php/webapps/33763.txt</br>[01;31m[KDomain[m[KMod 4.09.03 - 'oid' Cross-Site Scripting         | php/webapps/44782.txt</br>[01;31m[KDomain[m[KMod 4.09.03 - 'sslpaid' Cross-Site Scripting     | php/webapps/44783.txt</br>[01;31m[KDomain[m[KMOD 4.11.01 - 'assets/add/dns.php' Cross-Site Sc | php/webapps/46375.txt</br>[01;31m[KDomain[m[KMOD 4.11.01 - 'assets/edit/host.php?whid=5' Cros | php/webapps/46376.txt</br>[01;31m[KDomain[m[KMOD 4.11.01 - 'category.php CatagoryName_ StakeH | php/webapps/46374.txt</br>[01;31m[KDomain[m[KMOD 4.11.01 - 'DisplayName' Cross-Site Scripting | php/webapps/45959.txt</br>[01;31m[KDomain[m[KMOD 4.11.01 - 'raid' Cross-Site Scripting        | php/webapps/45883.txt</br>[01;31m[KDomain[m[KMOD 4.11.01 - 'ssl-accounts.php username' Cross- | php/webapps/46373.txt</br>[01;31m[KDomain[m[KMOD 4.11.01 - 'ssl-provider-name' Cross-Site Scr | php/webapps/46372.txt</br>[01;31m[KDomain[m[KMOD 4.11.01 - Cross-Site Scripting               | php/webapps/45967.txt</br>[01;31m[KDomain[m[KMOD 4.11.01 - Custom [01;31m[KDomain[m[K Fields Cross-Site Sc | php/webapps/45946.txt</br>[01;31m[KDomain[m[KMOD 4.11.01 - Custom SSL Fields Cross-Site Scrip | php/webapps/45947.txt</br>[01;31m[KDomain[m[KMOD 4.11.01 - Owner name Field Cross-Site Script | php/webapps/45941.txt</br>[01;31m[KDomain[m[KMOD 4.11.01 - Registrar Cross-Site Scripting     | php/webapps/45949.txt</br>[01;31m[KDomain[m[KMod 4.13 - Cross-Site Scripting                  | php/webapps/47325.txt</br>[01;31m[KDomain[m[Ks & Hostings Manager PRO 3.0 - 'entries' SQL Inj | php/webapps/41319.txt</br>[01;31m[KDomain[m[Ks & Hostings Manager PRO 3.0 - Authentication By | php/webapps/43569.txt</br>[01;31m[KDomain[m[Ks Marketplace Script 1.1 - Authentication Bypass | php/webapps/41133.txt</br>[01;31m[KDomain[m[KSale PHP Script 1.0 - 'id' SQL Injection         | php/webapps/43235.txt</br>FreeBSD 3.0 - UNIX-[01;31m[Kdomain[m[K Panic (Denial of Service)    | freebsd/dos/19130.c</br>FreeBSD 3.1 / Solaris 2.6 - [01;31m[KDomain[m[K Socket              | freebsd/local/19346.c</br>GNOME esound 0.2.19 - Unix [01;31m[KDomain[m[K Socket Race Conditio | unix/local/20212.txt</br>Grandstream Budge Tone-200 IP Phone - Digest [01;31m[Kdomain[m[K De | hardware/dos/3535.pl</br>Hosting Controller 6.1 HotFix 2.2 - Add [01;31m[KDomain[m[K without | asp/webapps/1112.txt</br>HP ProCurve Manager - SNAC Update[01;31m[KDomain[m[KControllerServl | windows/remote/28336.rb</br>IBM Tivoli Access Manager for E-Business - '/ibm/wpm/d | multiple/webapps/34909.txt</br>JBMC Software DirectAdmin 1.403 - '[01;31m[Kdomain[m[K' Cross-Site  | java/webapps/37033.txt</br>ManageEngine ADManager Plus 5.2 Build 5210 - '[01;31m[Kdomain[m[KNa | java/webapps/36667.txt</br>Microsoft Internet Explorer 5 - Classic Mode FTP Clien | windows/remote/22728.txt</br>Microsoft Internet Explorer 5.0.1 - Cached Content Cro | windows/remote/33024.txt</br>Microsoft Internet Explorer 5.0.1 - JavaScript Method  | windows/remote/24265.html</br>Microsoft Internet Explorer 5/6 - Cross-[01;31m[KDomain[m[K Event L | windows/remote/23766.html</br>Microsoft Internet Explorer 6 - Meta Data Foreign Doma | windows/remote/24069.html</br>Microsoft Internet Explorer 7/8 - CSS Handling Cross D | windows/dos/34602.html</br>Microsoft Internet Explorer 7/8 Beta 1 - Frame Locatio | windows/remote/31996.txt</br>Microsoft Windows - Wkssvc NetrJoin[01;31m[KDomain[m[K2 Stack Overf | windows/remote/2800.cpp</br>Microsoft XML Core Services DTD - Cross-[01;31m[KDomain[m[K Scripti | windows/remote/7196.html</br>Mozilla 1.x / opera 6/7 - Timed document.write Method  | multiple/remote/22751.txt</br>Mozilla Firefox 1.0/1.5 XBL - MOZ-BINDING Property Cro | linux/remote/27150.txt</br>Mozilla Firefox 2.0.0.1 - 'location.hostname' Cross-Do | windows/remote/3340.html</br>Mozilla Firefox 3.6.8 - 'Math.random()' Cross [01;31m[KDomain[m[K I | unix/remote/34621.c</br>MyPHP CMS 0.3 - '[01;31m[Kdomain[m[K' Remote File Inclusion         | php/webapps/1983.txt</br>Netscape Navigator 4.0.8 - 'about:' [01;31m[KDomain[m[K Information | unix/remote/20791.php</br>OpenSSH < 7.4 - 'UsePrivilegeSeparation Disabled' Forw | linux/local/40962.txt</br>PHP[01;31m[KDomain[m[KRegister 0.4a-RC2-dev - Multiple Vulnerabilit | php/webapps/18374.txt</br>PHPpool media [01;31m[KDomain[m[K Verkaufs und Auktions Portal - 'i | php/webapps/11733.txt</br>Planet Script 1.x - 'i[01;31m[Kdomain[m[Ks.php' Cross-Site Scriptin | php/webapps/33993.txt</br>QNAP QTS < 4.2.4 - [01;31m[KDomain[m[K Privilege Escalation         | hardware/local/41745.txt</br>Research In Motion BlackBerry Device Software 4.7.1 -  | hardware/remote/34802.html</br>Rumble Mail Server 0.51.3135 - '[01;31m[Kdomain[m[K and path' Store | multiple/webapps/49254.txt</br>Scripts Genie [01;31m[KDomain[m[K Trader - 'catalog.php?id' SQL Inj | php/webapps/24510.txt</br>SiteTurn [01;31m[KDomain[m[K Manager Pro - Admin Panel Cross-Site S | php/webapps/26391.html</br>Solaris 2.3/2.4/2.5/2.5.1/2.6/7.0 snoop - 'print_domai | solaris/remote/19663.c</br>Ubiquiti Networks UniFi Video Default - 'cross[01;31m[Kdomain[m[K.x | php/webapps/39268.java</br>Ucenter Projekt 2.0 - Insecure cross[01;31m[Kdomain[m[K (Cross-Site | php/webapps/12455.txt</br>Web Host Automation Ltd. Helm 3.2.10 Beta - '[01;31m[Kdomain[m[Ks.a | asp/webapps/27486.txt</br>WEBB[01;31m[KDOMAIN[m[K Petition 1.02/2.0/3.0 - Authentication Bypa | php/webapps/6983.txt</br>WEBB[01;31m[KDOMAIN[m[K Polls 1.01 - Authentication Bypass          | php/webapps/6984.txt</br>WEBB[01;31m[KDOMAIN[m[K Post Card 1.02 - 'catid' SQL Injection      | php/webapps/6977.txt</br>WEBB[01;31m[KDOMAIN[m[K Post Card 1.02 - Authentication Bypass      | php/webapps/6989.txt</br>WEBB[01;31m[KDOMAIN[m[K Quiz 1.02 - Authentication Bypass           | php/webapps/6985.txt</br>WEBB[01;31m[KDOMAIN[m[K Webshop 1.02 - Authentication Bypass        | php/webapps/6986.txt</br>WEBB[01;31m[KDOMAIN[m[K WebShop 1.02 - SQL Injection / Cross-Site S | php/webapps/6974.txt</br>WebKit - 'parent/top' Cross [01;31m[KDomain[m[K Scripting           | multiple/remote/33047.html</br>WebKit - JavaScript 'onload()' Event Cross [01;31m[KDomain[m[K Scri | multiple/remote/33033.html</br>WebKit 1.2.x - Local Webpage Cross [01;31m[KDomain[m[K Information  | windows/remote/35434.txt</br>WordPress Plugin OneSignal 1.17.5 - 'sub[01;31m[Kdomain[m[K' Persis | linux/webapps/47136.txt</br>WordPress Plugin oQey-Gallery 0.2 - 'tbpv_[01;31m[Kdomain[m[K' Cros | php/webapps/35288.txt</br>Wordpress Plugin Powie's WHOIS [01;31m[KDomain[m[K Check 0.9.31 - P | php/webapps/48656.txt</br>WordPress Plugin WHOIS 1.4.2 3 - '[01;31m[Kdomain[m[K' Cross-Site S | php/webapps/36488.txt</br>WordPress Plugin WP24 [01;31m[KDomain[m[K Check 1.6.2 - 'fieldnameD | php/webapps/49377.txt</br>Xen 3.3 - XenStore [01;31m[KDomain[m[K Configuration Data Unsafe St | linux/local/32446.txt</br>------------------------------------------------------- ---------------------------------</br>------------------------------------------------------- ---------------------------------</br> Shellcode Title                                       |  Path</br>------------------------------------------------------- ---------------------------------</br>Linux/x86 - set[01;31m[Kdomain[m[Kname(th1s s3rv3r h4s b33n h1j4ck3 | linux_x86/43692.c</br>------------------------------------------------------- ---------------------------------</br>
+                        nmap -vv --reason -Pn -sU -A --top-ports=20 --version-all -oN "/media/psf/Home/projects/oscp_auto/output/scans/_top_20_udp_nmap.txt" -oX "/media/psf/Home/projects/oscp_auto/output/scans/xml/_top_20_udp_nmap.xml" 10.10.10.37</br></br>nmap -vv --reason -Pn -sV -sC --version-all -oN "/media/psf/Home/projects/oscp_auto/output/scans/_quick_tcp_nmap.txt" -oX "/media/psf/Home/projects/oscp_auto/output/scans/xml/_quick_tcp_nmap.xml" 10.10.10.37</br></br>nmap -vv --reason -Pn -A --osscan-guess --version-all -p- -oN "/media/psf/Home/projects/oscp_auto/output/scans/_full_tcp_nmap.txt" -oX "/media/psf/Home/projects/oscp_auto/output/scans/xml/_full_tcp_nmap.xml" 10.10.10.37</br></br>if [ "False" == "True" ]; then sslscan --show-certificate --no-colour 10.10.10.37:21 2>&1 | tee "/media/psf/Home/projects/oscp_auto/output/scans/tcp_21_sslscan.txt"; fi</br></br>nmap -vv --reason -Pn -sV -p 21 --script="banner,(ftp* or ssl*) and not (brute or broadcast or dos or external or fuzzer)" -oN "/media/psf/Home/projects/oscp_auto/output/scans/tcp_21_ftp_nmap.txt" -oX "/media/psf/Home/projects/oscp_auto/output/scans/xml/tcp_21_ftp_nmap.xml" 10.10.10.37</br></br>if [ "False" == "True" ]; then sslscan --show-certificate --no-colour 10.10.10.37:22 2>&1 | tee "/media/psf/Home/projects/oscp_auto/output/scans/tcp_22_sslscan.txt"; fi</br></br>nmap -vv --reason -Pn -sV -p 22 --script="banner,ssh2-enum-algos,ssh-hostkey,ssh-auth-methods" -oN "/media/psf/Home/projects/oscp_auto/output/scans/tcp_22_ssh_nmap.txt" -oX "/media/psf/Home/projects/oscp_auto/output/scans/xml/tcp_22_ssh_nmap.xml" 10.10.10.37</br></br>if [ "False" == "True" ]; then sslscan --show-certificate --no-colour 10.10.10.37:80 2>&1 | tee "/media/psf/Home/projects/oscp_auto/output/scans/tcp_80_sslscan.txt"; fi</br></br>if [ "False" == "True" ]; then sslscan --show-certificate --no-colour 10.10.10.37:25565 2>&1 | tee "/media/psf/Home/projects/oscp_auto/output/scans/tcp_25565_sslscan.txt"; fi</br></br>
                         </code>
                     </div>
                   </div>
@@ -148,16 +92,106 @@
      <div class="card">
                   <div class="card-header" id="headingOne">
                     <h5 class="mb-0">
-                      <button class="btn btn-link" data-toggle="collapse" data-target="#DACVDLSLBVPTFOMGKPBXKUZFFYAPREOP" aria-expanded="true" aria-controls="collapseOne">
-                        searchsploit ldap
+                      <button class="btn btn-link" data-toggle="collapse" data-target="#VKPREODVEVEVPJRFIWPJKNCGPCOTONYG" aria-expanded="true" aria-controls="collapseOne">
+                        _manual_commands.txt
                       </button>
                     </h5>
                   </div>
               
-                  <div id="DACVDLSLBVPTFOMGKPBXKUZFFYAPREOP" class="collapse" aria-labelledby="headingOne" data-parent="#YJTUSGSLGWBGFRNTNQOLYKZTYFMHNQRF">
+                  <div id="VKPREODVEVEVPJRFIWPJKNCGPCOTONYG" class="collapse" aria-labelledby="headingOne" data-parent="#BWHJFIZKRNBTWDKZMAGFZCYGSVMMZBIG">
                     <div class="card-body">
                         <code>
-                        searchsploit ldap</br>------------------------------------------------------- ---------------------------------</br> Exploit Title                                         |  Path</br>------------------------------------------------------- ---------------------------------</br>Apache mod_rewrite - [01;31m[KLDAP[m[K protocol Buffer Overflow (Me | windows/remote/16752.rb</br>Apple Mac OSX 10.4.x - Open[01;31m[KLDAP[m[K Denial of Service      | osx/dos/28135.pl</br>Barracuda Spam Firewall 3.5.11 - '[01;31m[Kldap[m[K_test.cgi' Cross | hardware/remote/31828.txt</br>Claroline E-Learning 1.75 - '[01;31m[Kldap[m[K.inc.php' Remote File | php/webapps/1766.pl</br>CommuniGate Pro 5.0.6 - Server [01;31m[KLDAP[m[K Denial of Service  | linux/dos/27144.py</br>Dokeos Lms 1.6.4 - 'auth[01;31m[Kldap[m[K.php' Remote File Inclusio | php/webapps/1765.pl</br>FortiGate FortiOS < 6.0.3 - [01;31m[KLDAP[m[K Credential Disclosure | hardware/webapps/46171.py</br>IBM iSeries AS400 [01;31m[KLDAP[m[K Server - Remote Information Dis | unix/remote/25335.txt</br>IBM Lotus Domino [01;31m[KLDAP[m[K - Bind Request Remote Code Execu | windows/dos/16190.pl</br>IBM Tivoli Directory Server 6.0 - [01;31m[KLDAP[m[K Memory Corrupti | multiple/dos/27196.txt</br>Intel Corporation Shiva Access Manager 5.0 - Solaris W | solaris/local/20003.txt</br>Ipswitch IMail 5.0 - [01;31m[KLDAP[m[K Buffer Overflow (Denial of S | multiple/dos/19378.txt</br>IPSwitch IMail [01;31m[KLDAP[m[K Daemon/Service - Remote Buffer Ove | windows/remote/157.c</br>IPSwitch IMail [01;31m[KLDAP[m[K Daemon/Service - Remote Buffer Ove | windows/remote/16824.rb</br>Isode M-Vault Server 11.3 - [01;31m[KLDAP[m[K Memory Corruption     | multiple/dos/27212.txt</br>Kerio MailServer 5.x/6.x - Remote [01;31m[KLDAP[m[K Denial of Servi | windows/dos/29039.py</br>[01;31m[KLDAP[m[K - Injection                                       | multiple/local/11364.txt</br>[01;31m[KLDAP[m[K Account Manager 3.4.0 - 'selfserviceSaveOk' Cross | php/webapps/35684.txt</br>Lemon[01;31m[KLDAP[m[K:NG 0.9.3.1 - User Enumeration / Cross-Site S | cgi/webapps/32734.txt</br>Lotus Domino 7.0.x/8.0/8.5 - [01;31m[KLDAP[m[K Message Remote Denia | multiple/dos/27730.py</br>McAfee Security Center IsO[01;31m[KldAp[m[KpInstalled - ActiveX Buf | windows/remote/3893.c</br>Microsoft Active Directory [01;31m[KLDAP[m[K Server - 'Username' En | windows/remote/32586.py</br>Microsoft Windows Server 2008/2012 - [01;31m[KLDAP[m[K RootDSE Netl | windows/dos/40703.pl</br>NetIQ Privileged User Manager 2.3.1 - '[01;31m[Kldap[m[Kagnt_eval() | windows/remote/22903.rb</br>Netscape Professional Services FTP Server ([01;31m[KLDAP[m[K Aware) | unix/remote/20046.txt</br>Network Associates PGP KeyServer 7 - [01;31m[KLDAP[m[K Buffer Overf | windows/remote/16823.rb</br>Novell eDirectory 8.8 and Netware [01;31m[KLDAP[m[K-SSL Daemon - De | multiple/dos/35753.pl</br>Novell eDirectory 883ftf3 - n[01;31m[Kldap[m[K module Denial of Ser | windows/dos/10062.py</br>Novell Groupwise Internet Agent - [01;31m[KLDAP[m[K BIND Request Ov | windows/dos/22707.txt</br>Novell NetIQ Privileged User Manager 2.3.1 - '[01;31m[Kldap[m[Kagnt | windows/remote/22738.txt</br>Open[01;31m[KLDAP[m[K 1.2.7/1.2.8/1.2.9/1.2.10 - '/usr/tmp/' Symlin | linux/local/19946.txt</br>Open[01;31m[KLDAP[m[K 2.2.29 - Remote Denial of Service (Metasploit | linux/dos/2730.pm</br>Open[01;31m[KLDAP[m[K 2.3.39 - MODRDN Remote Denial of Service      | multiple/dos/10077.txt</br>Open[01;31m[KLDAP[m[K 2.3.41 - BER Decoding Remote Denial of Servic | linux/dos/32000.txt</br>Open[01;31m[KLDAP[m[K 2.4.22 - 'modrdn' Multiple Vulnerabilities    | linux/dos/34348.txt</br>Open[01;31m[KLDAP[m[K 2.4.3 - 'KBIND' Remote Buffer Overflow        | linux/remote/2933.c</br>Open[01;31m[KLDAP[m[K 2.4.42 - ber_get_next Denial of Service       | linux/dos/38145.txt</br>Open[01;31m[KLDAP[m[K 2.4.x - 'modrdn' NULL OldDN Remote Denial of  | linux/dos/35445.txt</br>Oracle (oid[01;31m[Kldap[m[Kd connect) - Local Command Line Overflo | linux/local/183.c</br>Oracle Internet Directory 10.1.2.0.2 - 'oid[01;31m[Kldap[m[Kd' Remo | multiple/dos/33532.txt</br>Oracle Internet Directory 2.0.6 - oid[01;31m[Kldap[m[K              | linux/local/20312.c</br>php[01;31m[KLDAP[m[Kadmin - Local File Inclusion                    | php/webapps/10410.txt</br>php[01;31m[KLDAP[m[Kadmin 0.9.4b - Denial of Service                | php/dos/18023.java</br>php[01;31m[KLDAP[m[Kadmin 0.9.6/0.9.7 - 'welcome.php' Arbitrary Fil | php/webapps/26211.txt</br>php[01;31m[KLDAP[m[Kadmin 0.9.8 - 'compare_form.php' Cross-Site Scr | php/webapps/27717.txt</br>php[01;31m[KLDAP[m[Kadmin 0.9.8 - 'copy_form.php' Cross-Site Script | php/webapps/27718.txt</br>php[01;31m[KLDAP[m[Kadmin 0.9.8 - 'rename_form.php' Cross-Site Scri | php/webapps/27719.txt</br>php[01;31m[KLDAP[m[Kadmin 0.9.8 - 'search.php' Cross-Site Scripting | php/webapps/27721.txt</br>php[01;31m[KLDAP[m[Kadmin 0.9.8 - 'template_engine.php' Cross-Site  | php/webapps/27722.txt</br>php[01;31m[KLDAP[m[Kadmin 1.2.0.5-2 - 'server_id' Cross-Site Script | php/webapps/36655.txt</br>php[01;31m[KLDAP[m[Kadmin 1.2.1.1 - Remote PHP Code Injection (1)   | php/webapps/18021.php</br>php[01;31m[KLDAP[m[Kadmin 1.2.1.1 - Remote PHP Code Injection (Meta | php/webapps/18031.rb</br>php[01;31m[KLDAP[m[Kadmin 1.2.2 - 'base' Cross-Site Scripting       | php/webapps/36654.txt</br>php[01;31m[KLDAP[m[Kadmin 1.2.2 - 'server_id' [01;31m[KLDAP[m[K Injection (Usern | php/webapps/44926.txt</br>PineApp Mail-SeCure - '[01;31m[Kldap[m[Ksyncnow.php' Arbitrary Comm | php/remote/27294.rb</br>SIDVault [01;31m[KLDAP[m[K Server - Remote Buffer Overflow          | linux/remote/4315.py</br>SmarterMail < 7.2.3925 - [01;31m[KLDAP[m[K Injection                | asp/webapps/15189.txt</br>Solaris 8 libs[01;31m[Kldap[m[K - Local Buffer Overflow (1)         | solaris/local/20969.c</br>Solaris 8 libs[01;31m[Kldap[m[K - Local Buffer Overflow (2)         | solaris/local/20970.c</br>Sun SUNWl[01;31m[Kldap[m[K Library Hostname - Local Buffer Overflow | solaris/local/4.c</br>Surge[01;31m[KLDAP[m[K 1.0 - 'User.cgi' Directory Traversal         | cgi/remote/23987.txt</br>Surge[01;31m[KLDAP[m[K 1.0 - Web Administration Authentication Bypa | cgi/webapps/24094.txt</br>Surge[01;31m[KLDAP[m[K 1.0 d - 'User.cgi' Cross-Site Scripting      | cgi/webapps/23025.txt</br>Surge[01;31m[KLDAP[m[K 1.0 d - Full Path Disclosure                 | multiple/remote/23024.txt</br>Symantec Brightmail 10.6.0-7 - [01;31m[KLDAP[m[K Credentials Disclo | java/webapps/39715.rb</br>WeBid - Multiple Cross-Site Scripting / [01;31m[KLDAP[m[K Injection | php/webapps/39249.txt</br>Wireshark 0.99.8 - [01;31m[KLDAP[m[K Dissector Denial of Service    | linux/dos/31553.txt</br>yaplap 0.6.1b - '[01;31m[Kldap[m[K.php' Remote File Inclusion       | php/webapps/2930.pl</br>Zabbix 2.0.5 - Cleartext [01;31m[Kldap[m[K_bind_Password Password D | php/webapps/36157.rb</br>------------------------------------------------------- ---------------------------------</br>Shellcodes: No Results</br>
+                        [*] ftp on tcp/21</br></br>	[-] Bruteforce logins:</br></br>		hydra -L "/usr/share/seclists/Usernames/top-usernames-shortlist.txt" -P "/usr/share/seclists/Passwords/darkweb2017-top100.txt" -e nsr -s 21 -o "/media/psf/Home/projects/oscp_auto/output/scans/tcp_21_ftp_hydra.txt" ftp://10.10.10.37</br></br>		medusa -U "/usr/share/seclists/Usernames/top-usernames-shortlist.txt" -P "/usr/share/seclists/Passwords/darkweb2017-top100.txt" -e ns -n 21 -O "/media/psf/Home/projects/oscp_auto/output/scans/tcp_21_ftp_medusa.txt" -M ftp -h 10.10.10.37</br></br></br>[*] ssh on tcp/22</br></br>	[-] Bruteforce logins:</br></br>		hydra -L "/usr/share/seclists/Usernames/top-usernames-shortlist.txt" -P "/usr/share/seclists/Passwords/darkweb2017-top100.txt" -e nsr -s 22 -o "/media/psf/Home/projects/oscp_auto/output/scans/tcp_22_ssh_hydra.txt" ssh://10.10.10.37</br></br>		medusa -U "/usr/share/seclists/Usernames/top-usernames-shortlist.txt" -P "/usr/share/seclists/Passwords/darkweb2017-top100.txt" -e ns -n 22 -O "/media/psf/Home/projects/oscp_auto/output/scans/tcp_22_ssh_medusa.txt" -M ssh -h 10.10.10.37</br></br></br>
+                        </code>
+                    </div>
+                  </div>
+    </div> 
+    
+     <div class="card">
+                  <div class="card-header" id="headingOne">
+                    <h5 class="mb-0">
+                      <button class="btn btn-link" data-toggle="collapse" data-target="#MWVXNHOOQXOFEMAMDZZUHEVZRQTSOCDK" aria-expanded="true" aria-controls="collapseOne">
+                        _quick_tcp_nmap.txt
+                      </button>
+                    </h5>
+                  </div>
+              
+                  <div id="MWVXNHOOQXOFEMAMDZZUHEVZRQTSOCDK" class="collapse" aria-labelledby="headingOne" data-parent="#BWHJFIZKRNBTWDKZMAGFZCYGSVMMZBIG">
+                    <div class="card-body">
+                        <code>
+                        # Nmap 7.91 scan initiated Fri Aug 27 10:06:41 2021 as: nmap -vv --reason -Pn -sV -sC --version-all -oN /media/psf/Home/projects/oscp_auto/output/scans/_quick_tcp_nmap.txt -oX /media/psf/Home/projects/oscp_auto/output/scans/xml/_quick_tcp_nmap.xml 10.10.10.37</br>Nmap scan report for 10.10.10.37</br>Host is up, received user-set (0.40s latency).</br>Scanned at 2021-08-27 10:06:42 +07 for 80s</br>Not shown: 996 filtered ports</br>Reason: 996 no-responses</br>PORT     STATE  SERVICE REASON       VERSION</br>21/tcp   open   ftp     syn-ack      ProFTPD 1.3.5a</br>22/tcp   open   ssh     syn-ack      OpenSSH 7.2p2 Ubuntu 4ubuntu2.2 (Ubuntu Linux; protocol 2.0)</br>| ssh-hostkey: </br>|   2048 d6:2b:99:b4:d5:e7:53:ce:2b:fc:b5:d7:9d:79:fb:a2 (RSA)</br>| ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDXqVh031OUgTdcXsDwffHKL6T9f1GfJ1/x/b/dywX42sDZ5m1Hz46bKmbnWa0YD3LSRkStJDtyNXptzmEp31Fs2DUndVKui3LCcyKXY6FSVWp9ZDBzlW3aY8qa+y339OS3gp3aq277zYDnnA62U7rIltYp91u5VPBKi3DITVaSgzA8mcpHRr30e3cEGaLCxty58U2/lyCnx3I0Lh5rEbipQ1G7Cr6NMgmGtW6LrlJRQiWA1OK2/tDZbLhwtkjB82pjI/0T2gpA/vlZJH0elbMXW40Et6bOs2oK/V2bVozpoRyoQuts8zcRmCViVs8B3p7T1Qh/Z+7Ki91vgicfy4fl</br>|   256 5d:7f:38:95:70:c9:be:ac:67:a0:1e:86:e7:97:84:03 (ECDSA)</br>| ecdsa-sha2-nistp256 AAAAE2VjZHNhLXNoYTItbmlzdHAyNTYAAAAIbmlzdHAyNTYAAABBBNgEpgEZGGbtm5suOAio9ut2hOQYLN39Uhni8i4E/Wdir1gHxDCLMoNPQXDOnEUO1QQVbioUUMgFRAXYLhilNF8=</br>|   256 09:d5:c2:04:95:1a:90:ef:87:56:25:97:df:83:70:67 (ED25519)</br>|_ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAILqVrP5vDD4MdQ2v3ozqDPxG1XXZOp5VPpVsFUROL6Vj</br>80/tcp   open   http    syn-ack      Apache httpd 2.4.18 ((Ubuntu))</br>|_http-generator: WordPress 4.8</br>| http-methods: </br>|_  Supported Methods: GET HEAD POST OPTIONS</br>|_http-server-header: Apache/2.4.18 (Ubuntu)</br>|_http-title: BlockyCraft &#8211; Under Construction!</br>8192/tcp closed sophos  conn-refused</br>Service Info: OSs: Unix, Linux; CPE: cpe:/o:linux:linux_kernel</br></br>Read data files from: /usr/bin/../share/nmap</br>Service detection performed. Please report any incorrect results at https://nmap.org/submit/ .</br># Nmap done at Fri Aug 27 10:08:02 2021 -- 1 IP address (1 host up) scanned in 80.37 seconds</br>
+                        </code>
+                    </div>
+                  </div>
+    </div> 
+    
+     <div class="card">
+                  <div class="card-header" id="headingOne">
+                    <h5 class="mb-0">
+                      <button class="btn btn-link" data-toggle="collapse" data-target="#ZENSFIOHVPQUTRKMFRXWWTKMUTCGOVCM" aria-expanded="true" aria-controls="collapseOne">
+                        _full_tcp_nmap.txt
+                      </button>
+                    </h5>
+                  </div>
+              
+                  <div id="ZENSFIOHVPQUTRKMFRXWWTKMUTCGOVCM" class="collapse" aria-labelledby="headingOne" data-parent="#BWHJFIZKRNBTWDKZMAGFZCYGSVMMZBIG">
+                    <div class="card-body">
+                        <code>
+                        # Nmap 7.91 scan initiated Fri Aug 27 10:06:41 2021 as: nmap -vv --reason -Pn -A --osscan-guess --version-all -p- -oN /media/psf/Home/projects/oscp_auto/output/scans/_full_tcp_nmap.txt -oX /media/psf/Home/projects/oscp_auto/output/scans/xml/_full_tcp_nmap.xml 10.10.10.37</br>Increasing send delay for 10.10.10.37 from 0 to 5 due to 53 out of 176 dropped probes since last increase.</br>Increasing send delay for 10.10.10.37 from 5 to 10 due to 11 out of 33 dropped probes since last increase.</br>Increasing send delay for 10.10.10.37 from 10 to 20 due to 89 out of 295 dropped probes since last increase.</br>Nmap scan report for 10.10.10.37</br>Host is up, received user-set (0.22s latency).</br>Scanned at 2021-08-27 10:06:42 +07 for 2293s</br>Not shown: 65530 filtered ports</br>Reason: 65530 no-responses</br>PORT      STATE  SERVICE   REASON       VERSION</br>21/tcp    open   ftp       syn-ack      ProFTPD 1.3.5a</br>22/tcp    open   ssh       syn-ack      OpenSSH 7.2p2 Ubuntu 4ubuntu2.2 (Ubuntu Linux; protocol 2.0)</br>| ssh-hostkey: </br>|   2048 d6:2b:99:b4:d5:e7:53:ce:2b:fc:b5:d7:9d:79:fb:a2 (RSA)</br>| ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDXqVh031OUgTdcXsDwffHKL6T9f1GfJ1/x/b/dywX42sDZ5m1Hz46bKmbnWa0YD3LSRkStJDtyNXptzmEp31Fs2DUndVKui3LCcyKXY6FSVWp9ZDBzlW3aY8qa+y339OS3gp3aq277zYDnnA62U7rIltYp91u5VPBKi3DITVaSgzA8mcpHRr30e3cEGaLCxty58U2/lyCnx3I0Lh5rEbipQ1G7Cr6NMgmGtW6LrlJRQiWA1OK2/tDZbLhwtkjB82pjI/0T2gpA/vlZJH0elbMXW40Et6bOs2oK/V2bVozpoRyoQuts8zcRmCViVs8B3p7T1Qh/Z+7Ki91vgicfy4fl</br>|   256 5d:7f:38:95:70:c9:be:ac:67:a0:1e:86:e7:97:84:03 (ECDSA)</br>| ecdsa-sha2-nistp256 AAAAE2VjZHNhLXNoYTItbmlzdHAyNTYAAAAIbmlzdHAyNTYAAABBBNgEpgEZGGbtm5suOAio9ut2hOQYLN39Uhni8i4E/Wdir1gHxDCLMoNPQXDOnEUO1QQVbioUUMgFRAXYLhilNF8=</br>|   256 09:d5:c2:04:95:1a:90:ef:87:56:25:97:df:83:70:67 (ED25519)</br>|_ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAILqVrP5vDD4MdQ2v3ozqDPxG1XXZOp5VPpVsFUROL6Vj</br>80/tcp    open   http      syn-ack      Apache httpd 2.4.18 ((Ubuntu))</br>|_http-generator: WordPress 4.8</br>| http-methods: </br>|_  Supported Methods: GET HEAD POST OPTIONS</br>|_http-server-header: Apache/2.4.18 (Ubuntu)</br>|_http-title: BlockyCraft &#8211; Under Construction!</br>8192/tcp  closed sophos    conn-refused</br>25565/tcp open   minecraft syn-ack      Minecraft 1.11.2 (Protocol: 127, Message: A Minecraft Server, Users: 0/20)</br>Service Info: OSs: Unix, Linux; CPE: cpe:/o:linux:linux_kernel</br></br>Read data files from: /usr/bin/../share/nmap</br>Service detection performed. Please report any incorrect results at https://nmap.org/submit/ .</br># Nmap done at Fri Aug 27 10:44:55 2021 -- 1 IP address (1 host up) scanned in 2293.66 seconds</br>
+                        </code>
+                    </div>
+                  </div>
+    </div> 
+    
+     <div class="card">
+                  <div class="card-header" id="headingOne">
+                    <h5 class="mb-0">
+                      <button class="btn btn-link" data-toggle="collapse" data-target="#VUUJNZFHDRDUAULWJFKLQGNACHMRGJAA" aria-expanded="true" aria-controls="collapseOne">
+                        tcp_22_ssh_nmap.txt
+                      </button>
+                    </h5>
+                  </div>
+              
+                  <div id="VUUJNZFHDRDUAULWJFKLQGNACHMRGJAA" class="collapse" aria-labelledby="headingOne" data-parent="#BWHJFIZKRNBTWDKZMAGFZCYGSVMMZBIG">
+                    <div class="card-body">
+                        <code>
+                        # Nmap 7.91 scan initiated Fri Aug 27 10:08:02 2021 as: nmap -vv --reason -Pn -sV -p 22 --script=banner,ssh2-enum-algos,ssh-hostkey,ssh-auth-methods -oN /media/psf/Home/projects/oscp_auto/output/scans/tcp_22_ssh_nmap.txt -oX /media/psf/Home/projects/oscp_auto/output/scans/xml/tcp_22_ssh_nmap.xml 10.10.10.37</br>Nmap scan report for 10.10.10.37</br>Host is up, received user-set (0.26s latency).</br>Scanned at 2021-08-27 10:08:02 +07 for 12s</br></br>PORT   STATE SERVICE REASON  VERSION</br>22/tcp open  ssh     syn-ack OpenSSH 7.2p2 Ubuntu 4ubuntu2.2 (Ubuntu Linux; protocol 2.0)</br>|_banner: SSH-2.0-OpenSSH_7.2p2 Ubuntu-4ubuntu2.2</br>| ssh-auth-methods: </br>|   Supported authentication methods: </br>|     publickey</br>|_    password</br>| ssh-hostkey: </br>|   2048 d6:2b:99:b4:d5:e7:53:ce:2b:fc:b5:d7:9d:79:fb:a2 (RSA)</br>| ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDXqVh031OUgTdcXsDwffHKL6T9f1GfJ1/x/b/dywX42sDZ5m1Hz46bKmbnWa0YD3LSRkStJDtyNXptzmEp31Fs2DUndVKui3LCcyKXY6FSVWp9ZDBzlW3aY8qa+y339OS3gp3aq277zYDnnA62U7rIltYp91u5VPBKi3DITVaSgzA8mcpHRr30e3cEGaLCxty58U2/lyCnx3I0Lh5rEbipQ1G7Cr6NMgmGtW6LrlJRQiWA1OK2/tDZbLhwtkjB82pjI/0T2gpA/vlZJH0elbMXW40Et6bOs2oK/V2bVozpoRyoQuts8zcRmCViVs8B3p7T1Qh/Z+7Ki91vgicfy4fl</br>|   256 5d:7f:38:95:70:c9:be:ac:67:a0:1e:86:e7:97:84:03 (ECDSA)</br>| ecdsa-sha2-nistp256 AAAAE2VjZHNhLXNoYTItbmlzdHAyNTYAAAAIbmlzdHAyNTYAAABBBNgEpgEZGGbtm5suOAio9ut2hOQYLN39Uhni8i4E/Wdir1gHxDCLMoNPQXDOnEUO1QQVbioUUMgFRAXYLhilNF8=</br>|   256 09:d5:c2:04:95:1a:90:ef:87:56:25:97:df:83:70:67 (ED25519)</br>|_ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAILqVrP5vDD4MdQ2v3ozqDPxG1XXZOp5VPpVsFUROL6Vj</br>| ssh2-enum-algos: </br>|   kex_algorithms: (6)</br>|       curve25519-sha256@libssh.org</br>|       ecdh-sha2-nistp256</br>|       ecdh-sha2-nistp384</br>|       ecdh-sha2-nistp521</br>|       diffie-hellman-group-exchange-sha256</br>|       diffie-hellman-group14-sha1</br>|   server_host_key_algorithms: (5)</br>|       ssh-rsa</br>|       rsa-sha2-512</br>|       rsa-sha2-256</br>|       ecdsa-sha2-nistp256</br>|       ssh-ed25519</br>|   encryption_algorithms: (6)</br>|       chacha20-poly1305@openssh.com</br>|       aes128-ctr</br>|       aes192-ctr</br>|       aes256-ctr</br>|       aes128-gcm@openssh.com</br>|       aes256-gcm@openssh.com</br>|   mac_algorithms: (10)</br>|       umac-64-etm@openssh.com</br>|       umac-128-etm@openssh.com</br>|       hmac-sha2-256-etm@openssh.com</br>|       hmac-sha2-512-etm@openssh.com</br>|       hmac-sha1-etm@openssh.com</br>|       umac-64@openssh.com</br>|       umac-128@openssh.com</br>|       hmac-sha2-256</br>|       hmac-sha2-512</br>|       hmac-sha1</br>|   compression_algorithms: (2)</br>|       none</br>|_      zlib@openssh.com</br>Service Info: OS: Linux; CPE: cpe:/o:linux:linux_kernel</br></br>Read data files from: /usr/bin/../share/nmap</br>Service detection performed. Please report any incorrect results at https://nmap.org/submit/ .</br># Nmap done at Fri Aug 27 10:08:14 2021 -- 1 IP address (1 host up) scanned in 12.64 seconds</br>
+                        </code>
+                    </div>
+                  </div>
+    </div> 
+    
+     <div class="card">
+                  <div class="card-header" id="headingOne">
+                    <h5 class="mb-0">
+                      <button class="btn btn-link" data-toggle="collapse" data-target="#MMXAOMERAPERLNMZMAIAFKFMRSLINHKU" aria-expanded="true" aria-controls="collapseOne">
+                        _errors.log
+                      </button>
+                    </h5>
+                  </div>
+              
+                  <div id="MMXAOMERAPERLNMZMAIAFKFMRSLINHKU" class="collapse" aria-labelledby="headingOne" data-parent="#BWHJFIZKRNBTWDKZMAGFZCYGSVMMZBIG">
+                    <div class="card-body">
+                        <code>
+                        [*] Service detection nmap-top-20-udp returned non-zero exit code: 1. Command: nmap -vv --reason -Pn -sU -A --top-ports=20 --version-all -oN "/media/psf/Home/projects/oscp_auto/output/scans/_top_20_udp_nmap.txt" -oX "/media/psf/Home/projects/oscp_auto/output/scans/xml/_top_20_udp_nmap.xml" 10.10.10.37</br>
+                        </code>
+                    </div>
+                  </div>
+    </div> 
+    
+     <div class="card">
+                  <div class="card-header" id="headingOne">
+                    <h5 class="mb-0">
+                      <button class="btn btn-link" data-toggle="collapse" data-target="#BDSOVFXBRADZIPIIEYPQVIQPVVYUZQSO" aria-expanded="true" aria-controls="collapseOne">
+                        tcp_21_ftp_nmap.txt
+                      </button>
+                    </h5>
+                  </div>
+              
+                  <div id="BDSOVFXBRADZIPIIEYPQVIQPVVYUZQSO" class="collapse" aria-labelledby="headingOne" data-parent="#BWHJFIZKRNBTWDKZMAGFZCYGSVMMZBIG">
+                    <div class="card-body">
+                        <code>
+                        # Nmap 7.91 scan initiated Fri Aug 27 10:08:02 2021 as: nmap -vv --reason -Pn -sV -p 21 "--script=banner,(ftp* or ssl*) and not (brute or broadcast or dos or external or fuzzer)" -oN /media/psf/Home/projects/oscp_auto/output/scans/tcp_21_ftp_nmap.txt -oX /media/psf/Home/projects/oscp_auto/output/scans/xml/tcp_21_ftp_nmap.xml 10.10.10.37</br>Nmap scan report for 10.10.10.37</br>Host is up, received user-set (0.43s latency).</br>Scanned at 2021-08-27 10:08:02 +07 for 7s</br></br>PORT   STATE SERVICE REASON  VERSION</br>21/tcp open  ftp     syn-ack ProFTPD 1.3.5a</br>|_banner: 220 ProFTPD 1.3.5a Server (Debian) [::ffff:10.10.10.37]</br>|_sslv2-drown: </br>Service Info: OS: Unix</br></br>Read data files from: /usr/bin/../share/nmap</br>Service detection performed. Please report any incorrect results at https://nmap.org/submit/ .</br># Nmap done at Fri Aug 27 10:08:09 2021 -- 1 IP address (1 host up) scanned in 6.78 seconds</br>
                         </code>
                     </div>
                   </div>
@@ -169,269 +203,89 @@
             </div>
         </div>
     
-    <div class="card CHWNGDTAGSBRJEIPLLMSJPVMQOFMKNGH">
+    <div class="card GPUBIUHWRCFGSDLWQNLUTENYTXGFENAP">
             <div class="card-header" id="headingOne">
               <h5 class="mb-0">
-                <button class="btn btn-link" data-toggle="collapse" data-target="#ZUALDEQSFNVLUFEELDWPGKOXZQWZXPSK" aria-expanded="true" aria-controls="collapseOne">
-                 SMB_139-445
+                <button class="btn btn-link" data-toggle="collapse" data-target="#NLWHQTTYPWSUKBUICDXIQDCGLPFBMCMY" aria-expanded="true" aria-controls="collapseOne">
+                 loot
                 </button>
               </h5>
             </div>
         
-            <div id="ZUALDEQSFNVLUFEELDWPGKOXZQWZXPSK" class="collapse" aria-labelledby="headingOne" data-parent="#accordion-main">
+            <div id="NLWHQTTYPWSUKBUICDXIQDCGLPFBMCMY" class="collapse" aria-labelledby="headingOne" data-parent="#accordion-main">
               <div class="card-body">
                   
-    <div id="EAKDQRHRWIFNJKZVKMTONQKHNPPLJRSL">
+    <div id="PMPIESYGGZBMCAWLPQASMMIWWTYDTKCT">
               
-     <div class="card">
-                  <div class="card-header" id="headingOne">
-                    <h5 class="mb-0">
-                      <button class="btn btn-link" data-toggle="collapse" data-target="#UINNLNYGVYAKLQNMDVXDUZEVFRHMHIVA" aria-expanded="true" aria-controls="collapseOne">
-                        nmblookup -A 10.10.10.161
-                      </button>
-                    </h5>
-                  </div>
-              
-                  <div id="UINNLNYGVYAKLQNMDVXDUZEVFRHMHIVA" class="collapse" aria-labelledby="headingOne" data-parent="#EAKDQRHRWIFNJKZVKMTONQKHNPPLJRSL">
-                    <div class="card-body">
-                        <code>
-                        nmblookup -A 10.10.10.161</br>Looking up status of 10.10.10.161</br>No reply from 10.10.10.161</br></br>
-                        </code>
-                    </div>
-                  </div>
-    </div> 
-    
-     <div class="card">
-                  <div class="card-header" id="headingOne">
-                    <h5 class="mb-0">
-                      <button class="btn btn-link" data-toggle="collapse" data-target="#WPWLQBSGXPQIGGUPCPJTLVLUDZMYWUZS" aria-expanded="true" aria-controls="collapseOne">
-                        nmap --script smb-vuln* -p 139,445 10.10.10.161
-                      </button>
-                    </h5>
-                  </div>
-              
-                  <div id="WPWLQBSGXPQIGGUPCPJTLVLUDZMYWUZS" class="collapse" aria-labelledby="headingOne" data-parent="#EAKDQRHRWIFNJKZVKMTONQKHNPPLJRSL">
-                    <div class="card-body">
-                        <code>
-                        nmap --script smb-vuln* -p 139,445 10.10.10.161</br>Starting Nmap 7.91 ( https://nmap.org ) at 2021-08-24 20:18 +07</br>Nmap scan report for 10.10.10.161</br>Host is up (0.31s latency).</br></br>PORT    STATE SERVICE</br>139/tcp open  netbios-ssn</br>445/tcp open  microsoft-ds</br></br>Host script results:</br>|_smb-vuln-ms10-054: false</br>|_smb-vuln-ms10-061: NT_STATUS_ACCESS_DENIED</br></br>Nmap done: 1 IP address (1 host up) scanned in 18.27 seconds</br>
-                        </code>
-                    </div>
-                  </div>
-    </div> 
-    
-     <div class="card">
-                  <div class="card-header" id="headingOne">
-                    <h5 class="mb-0">
-                      <button class="btn btn-link" data-toggle="collapse" data-target="#ULJCUJVLHJMVMILHZEVRQKJAPJJYSMPT" aria-expanded="true" aria-controls="collapseOne">
-                        smbmap -H 10.10.10.161
-                      </button>
-                    </h5>
-                  </div>
-              
-                  <div id="ULJCUJVLHJMVMILHZEVRQKJAPJJYSMPT" class="collapse" aria-labelledby="headingOne" data-parent="#EAKDQRHRWIFNJKZVKMTONQKHNPPLJRSL">
-                    <div class="card-body">
-                        <code>
-                        smbmap -H 10.10.10.161</br>[\] Working on it...</br>[+] IP: 10.10.10.161:445	Name: 10.10.10.161                                      </br>[|] Working on it...</br>[/] Working on it...</br>[-] Working on it...</br>[\] Working on it...</br>[|] Working on it...</br>[/] Working on it...</br>[-] Working on it...</br>[\] Working on it...</br>[|] Working on it...</br>[/] Working on it...</br>[-] Working on it...</br>[\] Working on it...</br>[|] Working on it...</br>[/] Working on it...</br>[-] Working on it...</br>[\] Working on it...</br>[|] Working on it...</br>[/] Working on it...</br>[-] Working on it...</br>[\] Working on it...</br>[|] Working on it...</br>[/] Working on it...</br>[-] Working on it...</br>                                </br>
-                        </code>
-                    </div>
-                  </div>
-    </div> 
-    
-     <div class="card">
-                  <div class="card-header" id="headingOne">
-                    <h5 class="mb-0">
-                      <button class="btn btn-link" data-toggle="collapse" data-target="#KCKYSHEHGZIQAWCFMJIWDGOXVRFPKPRO" aria-expanded="true" aria-controls="collapseOne">
-                        crackmapexec smb 10.10.10.161 -u  -p  --shares
-                      </button>
-                    </h5>
-                  </div>
-              
-                  <div id="KCKYSHEHGZIQAWCFMJIWDGOXVRFPKPRO" class="collapse" aria-labelledby="headingOne" data-parent="#EAKDQRHRWIFNJKZVKMTONQKHNPPLJRSL">
-                    <div class="card-body">
-                        <code>
-                        crackmapexec smb 10.10.10.161 -u  -p  --shares</br>[1m[34mSMB[0m         10.10.10.161    445    FOREST           [1m[34m[*][0m Windows Server 2016 Standard 14393 x64 (name:FOREST) (domain:htb.local) (signing:True) (SMBv1:True)</br>[1m[34mSMB[0m         10.10.10.161    445    FOREST           [1m[35m[-][0m htb.local\: STATUS_ACCESS_DENIED </br>
-                        </code>
-                    </div>
-                  </div>
-    </div> 
-    
-     <div class="card">
-                  <div class="card-header" id="headingOne">
-                    <h5 class="mb-0">
-                      <button class="btn btn-link" data-toggle="collapse" data-target="#OYBYMTOHAYBGJXIKAYTFFHSYYXPANITG" aria-expanded="true" aria-controls="collapseOne">
-                        nmap --script smb-enum-shares -p 139,445 10.10.10.161
-                      </button>
-                    </h5>
-                  </div>
-              
-                  <div id="OYBYMTOHAYBGJXIKAYTFFHSYYXPANITG" class="collapse" aria-labelledby="headingOne" data-parent="#EAKDQRHRWIFNJKZVKMTONQKHNPPLJRSL">
-                    <div class="card-body">
-                        <code>
-                        nmap --script smb-enum-shares -p 139,445 10.10.10.161</br>Starting Nmap 7.91 ( https://nmap.org ) at 2021-08-24 20:18 +07</br>Stats: 0:02:09 elapsed; 0 hosts completed (1 up), 1 undergoing Script Scan</br>NSE Timing: About 0.00% done</br>Stats: 0:02:10 elapsed; 0 hosts completed (1 up), 1 undergoing Script Scan</br>NSE Timing: About 0.00% done</br>Nmap scan report for 10.10.10.161</br>Host is up (0.35s latency).</br></br>PORT    STATE SERVICE</br>139/tcp open  netbios-ssn</br>445/tcp open  microsoft-ds</br></br>Host script results:</br>| smb-enum-shares: </br>|   note: ERROR: Enumerating shares failed, guessing at common ones (NT_STATUS_ACCESS_DENIED)</br>|   account_used: <blank></br>|   \\10.10.10.161\ADMIN$: </br>|     warning: Couldn't get details for share: NT_STATUS_ACCESS_DENIED</br>|     Anonymous access: <none></br>|   \\10.10.10.161\C$: </br>|     warning: Couldn't get details for share: NT_STATUS_ACCESS_DENIED</br>|     Anonymous access: <none></br>|   \\10.10.10.161\IPC$: </br>|     warning: Couldn't get details for share: NT_STATUS_ACCESS_DENIED</br>|     Anonymous access: READ</br>|   \\10.10.10.161\NETLOGON: </br>|     warning: Couldn't get details for share: NT_STATUS_ACCESS_DENIED</br>|_    Anonymous access: <none></br></br>Nmap done: 1 IP address (1 host up) scanned in 492.03 seconds</br>
-                        </code>
-                    </div>
-                  </div>
-    </div> 
-    
-     <div class="card">
-                  <div class="card-header" id="headingOne">
-                    <h5 class="mb-0">
-                      <button class="btn btn-link" data-toggle="collapse" data-target="#DQZXIDOPDZPNMEDCUMMZSLFLNUJCZTSS" aria-expanded="true" aria-controls="collapseOne">
-                        crackmapexec smb 10.10.10.161 -u sa -p sa --shares
-                      </button>
-                    </h5>
-                  </div>
-              
-                  <div id="DQZXIDOPDZPNMEDCUMMZSLFLNUJCZTSS" class="collapse" aria-labelledby="headingOne" data-parent="#EAKDQRHRWIFNJKZVKMTONQKHNPPLJRSL">
-                    <div class="card-body">
-                        <code>
-                        crackmapexec smb 10.10.10.161 -u sa -p sa --shares</br>[1m[34mSMB[0m         10.10.10.161    445    FOREST           [1m[34m[*][0m Windows Server 2016 Standard 14393 x64 (name:FOREST) (domain:htb.local) (signing:True) (SMBv1:True)</br>[1m[34mSMB[0m         10.10.10.161    445    FOREST           [1m[31m[-][0m htb.local\sa:sa STATUS_LOGON_FAILURE </br>
-                        </code>
-                    </div>
-                  </div>
-    </div> 
-    
-     <div class="card">
-                  <div class="card-header" id="headingOne">
-                    <h5 class="mb-0">
-                      <button class="btn btn-link" data-toggle="collapse" data-target="#HZDGPPDIERBCXUDBQMVQCOGGUQMMXOGA" aria-expanded="true" aria-controls="collapseOne">
-                        smbmap -H 10.10.10.161 -u  -p 
-                      </button>
-                    </h5>
-                  </div>
-              
-                  <div id="HZDGPPDIERBCXUDBQMVQCOGGUQMMXOGA" class="collapse" aria-labelledby="headingOne" data-parent="#EAKDQRHRWIFNJKZVKMTONQKHNPPLJRSL">
-                    <div class="card-body">
-                        <code>
-                        smbmap -H 10.10.10.161 -u  -p </br>[\] Working on it...</br>[+] IP: 10.10.10.161:445	Name: 10.10.10.161                                      </br>[|] Working on it...</br>[/] Working on it...</br>[-] Working on it...</br>[\] Working on it...</br>[|] Working on it...</br>[/] Working on it...</br>[-] Working on it...</br>[\] Working on it...</br>[|] Working on it...</br>[/] Working on it...</br>[-] Working on it...</br>[\] Working on it...</br>[|] Working on it...</br>[/] Working on it...</br>[-] Working on it...</br>[\] Working on it...</br>[|] Working on it...</br>[/] Working on it...</br>[-] Working on it...</br>[\] Working on it...</br>[|] Working on it...</br>[/] Working on it...</br>[-] Working on it...</br>                                </br>
-                        </code>
-                    </div>
-                  </div>
-    </div> 
-    
-     <div class="card">
-                  <div class="card-header" id="headingOne">
-                    <h5 class="mb-0">
-                      <button class="btn btn-link" data-toggle="collapse" data-target="#PXWWNDWVATRJVKWTEYKUMIRSWVDOLDFG" aria-expanded="true" aria-controls="collapseOne">
-                        crackmapexec smb 10.10.10.161 -u sa -p  --shares
-                      </button>
-                    </h5>
-                  </div>
-              
-                  <div id="PXWWNDWVATRJVKWTEYKUMIRSWVDOLDFG" class="collapse" aria-labelledby="headingOne" data-parent="#EAKDQRHRWIFNJKZVKMTONQKHNPPLJRSL">
-                    <div class="card-body">
-                        <code>
-                        crackmapexec smb 10.10.10.161 -u sa -p  --shares</br>[1m[34mSMB[0m         10.10.10.161    445    FOREST           [1m[34m[*][0m Windows Server 2016 Standard 14393 x64 (name:FOREST) (domain:htb.local) (signing:True) (SMBv1:True)</br>[1m[34mSMB[0m         10.10.10.161    445    FOREST           [1m[31m[-][0m htb.local\sa: STATUS_LOGON_FAILURE </br>
-                        </code>
-                    </div>
-                  </div>
-    </div> 
-    
-     <div class="card">
-                  <div class="card-header" id="headingOne">
-                    <h5 class="mb-0">
-                      <button class="btn btn-link" data-toggle="collapse" data-target="#YXFUHMIEZAAUEZSAUHYXDWLDRRYWKMWA" aria-expanded="true" aria-controls="collapseOne">
-                        enum4linux -a 10.10.10.161
-                      </button>
-                    </h5>
-                  </div>
-              
-                  <div id="YXFUHMIEZAAUEZSAUHYXDWLDRRYWKMWA" class="collapse" aria-labelledby="headingOne" data-parent="#EAKDQRHRWIFNJKZVKMTONQKHNPPLJRSL">
-                    <div class="card-body">
-                        <code>
-                        enum4linux -a 10.10.10.161</br>Starting enum4linux v0.8.9 ( http://labs.portcullis.co.uk/application/enum4linux/ ) on Tue Aug 24 20:18:27 2021</br></br> ========================== </br>|    Target Information    |</br> ========================== </br>Target ........... 10.10.10.161</br>RID Range ........ 500-550,1000-1050</br>Username ......... ''</br>Password ......... ''</br>Known Usernames .. administrator, guest, krbtgt, domain admins, root, bin, none</br></br></br> ==================================================== </br>|    Enumerating Workgroup/Domain on 10.10.10.161    |</br> ==================================================== </br>[E] Can't find workgroup/domain</br></br></br> ============================================ </br>|    Nbtstat Information for 10.10.10.161    |</br> ============================================ </br>Looking up status of 10.10.10.161</br>No reply from 10.10.10.161</br></br> ===================================== </br>|    Session Check on 10.10.10.161    |</br> ===================================== </br>[+] Server 10.10.10.161 allows sessions using username '', password ''</br>[+] Got domain/workgroup name: </br></br> =========================================== </br>|    Getting domain SID for 10.10.10.161    |</br> =========================================== </br>Domain Name: HTB</br>Domain Sid: S-1-5-21-3072663084-364016917-1341370565</br>[+] Host is part of a domain (not a workgroup)</br></br> ====================================== </br>|    OS information on 10.10.10.161    |</br> ====================================== </br>[+] Got OS info for 10.10.10.161 from smbclient: </br>[+] Got OS info for 10.10.10.161 from srvinfo:</br>Could not initialise srvsvc. Error was NT_STATUS_ACCESS_DENIED</br></br> ============================= </br>|    Users on 10.10.10.161    |</br> ============================= </br>index: 0x2137 RID: 0x463 acb: 0x00020015 Account: $331000-VK4ADACQNUCA	Name: (null)	Desc: (null)</br>index: 0xfbc RID: 0x1f4 acb: 0x00020010 Account: Administrator	Name: Administrator	Desc: Built-in account for administering the computer/domain</br>index: 0x2369 RID: 0x47e acb: 0x00000210 Account: andy	Name: Andy Hislip	Desc: (null)</br>index: 0xfbe RID: 0x1f7 acb: 0x00000215 Account: DefaultAccount	Name: (null)	Desc: A user account managed by the system.</br>index: 0xfbd RID: 0x1f5 acb: 0x00000215 Account: Guest	Name: (null)	Desc: Built-in account for guest access to the computer/domain</br>index: 0x2352 RID: 0x478 acb: 0x00000210 Account: HealthMailbox0659cc1	Name: HealthMailbox-EXCH01-010	Desc: (null)</br>index: 0x234b RID: 0x471 acb: 0x00000210 Account: HealthMailbox670628e	Name: HealthMailbox-EXCH01-003	Desc: (null)</br>index: 0x234d RID: 0x473 acb: 0x00000210 Account: HealthMailbox6ded678	Name: HealthMailbox-EXCH01-005	Desc: (null)</br>index: 0x2351 RID: 0x477 acb: 0x00000210 Account: HealthMailbox7108a4e	Name: HealthMailbox-EXCH01-009	Desc: (null)</br>index: 0x234e RID: 0x474 acb: 0x00000210 Account: HealthMailbox83d6781	Name: HealthMailbox-EXCH01-006	Desc: (null)</br>index: 0x234c RID: 0x472 acb: 0x00000210 Account: HealthMailbox968e74d	Name: HealthMailbox-EXCH01-004	Desc: (null)</br>index: 0x2350 RID: 0x476 acb: 0x00000210 Account: HealthMailboxb01ac64	Name: HealthMailbox-EXCH01-008	Desc: (null)</br>index: 0x234a RID: 0x470 acb: 0x00000210 Account: HealthMailboxc0a90c9	Name: HealthMailbox-EXCH01-002	Desc: (null)</br>index: 0x2348 RID: 0x46e acb: 0x00000210 Account: HealthMailboxc3d7722	Name: HealthMailbox-EXCH01-Mailbox-Database-1118319013	Desc: (null)</br>index: 0x2349 RID: 0x46f acb: 0x00000210 Account: HealthMailboxfc9daad	Name: HealthMailbox-EXCH01-001	Desc: (null)</br>index: 0x234f RID: 0x475 acb: 0x00000210 Account: HealthMailboxfd87238	Name: HealthMailbox-EXCH01-007	Desc: (null)</br>index: 0xff4 RID: 0x1f6 acb: 0x00020011 Account: krbtgt	Name: (null)	Desc: Key Distribution Center Service Account</br>index: 0x2360 RID: 0x47a acb: 0x00000210 Account: lucinda	Name: Lucinda Berger	Desc: (null)</br>index: 0x236a RID: 0x47f acb: 0x00000210 Account: mark	Name: Mark Brandt	Desc: (null)</br>index: 0x236b RID: 0x480 acb: 0x00000210 Account: santi	Name: Santi Rodriguez	Desc: (null)</br>index: 0x235c RID: 0x479 acb: 0x00000210 Account: sebastien	Name: Sebastien Caron	Desc: (null)</br>index: 0x215a RID: 0x468 acb: 0x00020011 Account: SM_1b41c9286325456bb	Name: Microsoft Exchange Migration	Desc: (null)</br>index: 0x2161 RID: 0x46c acb: 0x00020011 Account: SM_1ffab36a2f5f479cb	Name: SystemMailbox{8cc370d3-822a-4ab8-a926-bb94bd0641a9}	Desc: (null)</br>index: 0x2156 RID: 0x464 acb: 0x00020011 Account: SM_2c8eef0a09b545acb	Name: Microsoft Exchange Approval Assistant	Desc: (null)</br>index: 0x2159 RID: 0x467 acb: 0x00020011 Account: SM_681f53d4942840e18	Name: Discovery Search Mailbox	Desc: (null)</br>index: 0x2158 RID: 0x466 acb: 0x00020011 Account: SM_75a538d3025e4db9a	Name: Microsoft Exchange	Desc: (null)</br>index: 0x215c RID: 0x46a acb: 0x00020011 Account: SM_7c96b981967141ebb	Name: E4E Encryption Store - Active	Desc: (null)</br>index: 0x215b RID: 0x469 acb: 0x00020011 Account: SM_9b69f1b9d2cc45549	Name: Microsoft Exchange Federation Mailbox	Desc: (null)</br>index: 0x215d RID: 0x46b acb: 0x00020011 Account: SM_c75ee099d0a64c91b	Name: Microsoft Exchange	Desc: (null)</br>index: 0x2157 RID: 0x465 acb: 0x00020011 Account: SM_ca8c2ed5bdab4dc9b	Name: Microsoft Exchange	Desc: (null)</br>index: 0x2365 RID: 0x47b acb: 0x00010210 Account: svc-alfresco	Name: svc-alfresco	Desc: (null)</br></br>user:[Administrator] rid:[0x1f4]</br>user:[Guest] rid:[0x1f5]</br>user:[krbtgt] rid:[0x1f6]</br>user:[DefaultAccount] rid:[0x1f7]</br>user:[$331000-VK4ADACQNUCA] rid:[0x463]</br>user:[SM_2c8eef0a09b545acb] rid:[0x464]</br>user:[SM_ca8c2ed5bdab4dc9b] rid:[0x465]</br>user:[SM_75a538d3025e4db9a] rid:[0x466]</br>user:[SM_681f53d4942840e18] rid:[0x467]</br>user:[SM_1b41c9286325456bb] rid:[0x468]</br>user:[SM_9b69f1b9d2cc45549] rid:[0x469]</br>user:[SM_7c96b981967141ebb] rid:[0x46a]</br>user:[SM_c75ee099d0a64c91b] rid:[0x46b]</br>user:[SM_1ffab36a2f5f479cb] rid:[0x46c]</br>user:[HealthMailboxc3d7722] rid:[0x46e]</br>user:[HealthMailboxfc9daad] rid:[0x46f]</br>user:[HealthMailboxc0a90c9] rid:[0x470]</br>user:[HealthMailbox670628e] rid:[0x471]</br>user:[HealthMailbox968e74d] rid:[0x472]</br>user:[HealthMailbox6ded678] rid:[0x473]</br>user:[HealthMailbox83d6781] rid:[0x474]</br>user:[HealthMailboxfd87238] rid:[0x475]</br>user:[HealthMailboxb01ac64] rid:[0x476]</br>user:[HealthMailbox7108a4e] rid:[0x477]</br>user:[HealthMailbox0659cc1] rid:[0x478]</br>user:[sebastien] rid:[0x479]</br>user:[lucinda] rid:[0x47a]</br>user:[svc-alfresco] rid:[0x47b]</br>user:[andy] rid:[0x47e]</br>user:[mark] rid:[0x47f]</br>user:[santi] rid:[0x480]</br></br> ========================================= </br>|    Share Enumeration on 10.10.10.161    |</br> ========================================= </br></br>	Sharename       Type      Comment</br>	---------       ----      -------</br>SMB1 disabled -- no workgroup available</br></br>[+] Attempting to map shares on 10.10.10.161</br></br> ==================================================== </br>|    Password Policy Information for 10.10.10.161    |</br> ==================================================== </br></br></br>[+] Attaching to 10.10.10.161 using a NULL share</br></br>[+] Trying protocol 139/SMB...</br></br>	[!] Protocol failed: Cannot request session (Called Name:10.10.10.161)</br></br>[+] Trying protocol 445/SMB...</br></br>[+] Found domain(s):</br></br>	[+] HTB</br>	[+] Builtin</br></br>[+] Password Info for Domain: HTB</br></br>	[+] Minimum password length: 7</br>	[+] Password history length: 24</br>	[+] Maximum password age: 41 days 23 hours 53 minutes </br>	[+] Password Complexity Flags: 000000</br></br>		[+] Domain Refuse Password Change: 0</br>		[+] Domain Password Store Cleartext: 0</br>		[+] Domain Password Lockout Admins: 0</br>		[+] Domain Password No Clear Change: 0</br>		[+] Domain Password No Anon Change: 0</br>		[+] Domain Password Complex: 0</br></br>	[+] Minimum password age: 1 day 4 minutes </br>	[+] Reset Account Lockout Counter: 30 minutes </br>	[+] Locked Account Duration: 30 minutes </br>	[+] Account Lockout Threshold: None</br>	[+] Forced Log off Time: Not Set</br></br></br>[+] Retieved partial password policy with rpcclient:</br></br>Password Complexity: Disabled</br>Minimum Password Length: 7</br></br></br> ============================== </br>|    Groups on 10.10.10.161    |</br> ============================== </br></br>[+] Getting builtin groups:</br>group:[Account Operators] rid:[0x224]</br>group:[Pre-Windows 2000 Compatible Access] rid:[0x22a]</br>group:[Incoming Forest Trust Builders] rid:[0x22d]</br>group:[Windows Authorization Access Group] rid:[0x230]</br>group:[Terminal Server License Servers] rid:[0x231]</br>group:[Administrators] rid:[0x220]</br>group:[Users] rid:[0x221]</br>group:[Guests] rid:[0x222]</br>group:[Print Operators] rid:[0x226]</br>group:[Backup Operators] rid:[0x227]</br>group:[Replicator] rid:[0x228]</br>group:[Remote Desktop Users] rid:[0x22b]</br>group:[Network Configuration Operators] rid:[0x22c]</br>group:[Performance Monitor Users] rid:[0x22e]</br>group:[Performance Log Users] rid:[0x22f]</br>group:[Distributed COM Users] rid:[0x232]</br>group:[IIS_IUSRS] rid:[0x238]</br>group:[Cryptographic Operators] rid:[0x239]</br>group:[Event Log Readers] rid:[0x23d]</br>group:[Certificate Service DCOM Access] rid:[0x23e]</br>group:[RDS Remote Access Servers] rid:[0x23f]</br>group:[RDS Endpoint Servers] rid:[0x240]</br>group:[RDS Management Servers] rid:[0x241]</br>group:[Hyper-V Administrators] rid:[0x242]</br>group:[Access Control Assistance Operators] rid:[0x243]</br>group:[Remote Management Users] rid:[0x244]</br>group:[System Managed Accounts Group] rid:[0x245]</br>group:[Storage Replica Administrators] rid:[0x246]</br>group:[Server Operators] rid:[0x225]</br></br>[+] Getting builtin group memberships:</br>Group 'RDS Endpoint Servers' (RID: 576) has member: Could not connect to server 10.10.10.161</br>Group 'RDS Endpoint Servers' (RID: 576) has member: The username or password was not correct.</br>Group 'RDS Endpoint Servers' (RID: 576) has member: Connection failed: NT_STATUS_LOGON_FAILURE</br>Group 'Print Operators' (RID: 550) has member: Could not connect to server 10.10.10.161</br>Group 'Print Operators' (RID: 550) has member: The username or password was not correct.</br>Group 'Print Operators' (RID: 550) has member: Connection failed: NT_STATUS_LOGON_FAILURE</br>Group 'Storage Replica Administrators' (RID: 582) has member: Could not connect to server 10.10.10.161</br>Group 'Storage Replica Administrators' (RID: 582) has member: The username or password was not correct.</br>Group 'Storage Replica Administrators' (RID: 582) has member: Connection failed: NT_STATUS_LOGON_FAILURE</br>Group 'Certificate Service DCOM Access' (RID: 574) has member: Could not connect to server 10.10.10.161</br>Group 'Certificate Service DCOM Access' (RID: 574) has member: The username or password was not correct.</br>Group 'Certificate Service DCOM Access' (RID: 574) has member: Connection failed: NT_STATUS_LOGON_FAILURE</br>Group 'Remote Management Users' (RID: 580) has member: Could not connect to server 10.10.10.161</br>Group 'Remote Management Users' (RID: 580) has member: The username or password was not correct.</br>Group 'Remote Management Users' (RID: 580) has member: Connection failed: NT_STATUS_LOGON_FAILURE</br>Group 'Terminal Server License Servers' (RID: 561) has member: Could not connect to server 10.10.10.161</br>Group 'Terminal Server License Servers' (RID: 561) has member: The username or password was not correct.</br>Group 'Terminal Server License Servers' (RID: 561) has member: Connection failed: NT_STATUS_LOGON_FAILURE</br>Group 'Performance Log Users' (RID: 559) has member: Could not connect to server 10.10.10.161</br>Group 'Performance Log Users' (RID: 559) has member: The username or password was not correct.</br>Group 'Performance Log Users' (RID: 559) has member: Connection failed: NT_STATUS_LOGON_FAILURE</br>Group 'System Managed Accounts Group' (RID: 581) has member: Could not connect to server 10.10.10.161</br>Group 'System Managed Accounts Group' (RID: 581) has member: The username or password was not correct.</br>Group 'System Managed Accounts Group' (RID: 581) has member: Connection failed: NT_STATUS_LOGON_FAILURE</br>Group 'Backup Operators' (RID: 551) has member: Could not connect to server 10.10.10.161</br>Group 'Backup Operators' (RID: 551) has member: The username or password was not correct.</br>Group 'Backup Operators' (RID: 551) has member: Connection failed: NT_STATUS_LOGON_FAILURE</br>Group 'Users' (RID: 545) has member: Could not connect to server 10.10.10.161</br>Group 'Users' (RID: 545) has member: The username or password was not correct.</br>Group 'Users' (RID: 545) has member: Connection failed: NT_STATUS_LOGON_FAILURE</br>Group 'RDS Management Servers' (RID: 577) has member: Could not connect to server 10.10.10.161</br>Group 'RDS Management Servers' (RID: 577) has member: The username or password was not correct.</br>Group 'RDS Management Servers' (RID: 577) has member: Connection failed: NT_STATUS_LOGON_FAILURE</br>Group 'Administrators' (RID: 544) has member: Could not connect to server 10.10.10.161</br>Group 'Administrators' (RID: 544) has member: The username or password was not correct.</br>Group 'Administrators' (RID: 544) has member: Connection failed: NT_STATUS_LOGON_FAILURE</br>Group 'Network Configuration Operators' (RID: 556) has member: Could not connect to server 10.10.10.161</br>Group 'Network Configuration Operators' (RID: 556) has member: The username or password was not correct.</br>Group 'Network Configuration Operators' (RID: 556) has member: Connection failed: NT_STATUS_LOGON_FAILURE</br>Group 'Replicator' (RID: 552) has member: Could not connect to server 10.10.10.161</br>Group 'Replicator' (RID: 552) has member: The username or password was not correct.</br>Group 'Replicator' (RID: 552) has member: Connection failed: NT_STATUS_LOGON_FAILURE</br>Group 'Remote Desktop Users' (RID: 555) has member: Could not connect to server 10.10.10.161</br>Group 'Remote Desktop Users' (RID: 555) has member: The username or password was not correct.</br>Group 'Remote Desktop Users' (RID: 555) has member: Connection failed: NT_STATUS_LOGON_FAILURE</br>Group 'Incoming Forest Trust Builders' (RID: 557) has member: Could not connect to server 10.10.10.161</br>Group 'Incoming Forest Trust Builders' (RID: 557) has member: The username or password was not correct.</br>Group 'Incoming Forest Trust Builders' (RID: 557) has member: Connection failed: NT_STATUS_LOGON_FAILURE</br>Group 'Performance Monitor Users' (RID: 558) has member: Could not connect to server 10.10.10.161</br>Group 'Performance Monitor Users' (RID: 558) has member: The username or password was not correct.</br>Group 'Performance Monitor Users' (RID: 558) has member: Connection failed: NT_STATUS_LOGON_FAILURE</br>Group 'Distributed COM Users' (RID: 562) has member: Could not connect to server 10.10.10.161</br>Group 'Distributed COM Users' (RID: 562) has member: The username or password was not correct.</br>Group 'Distributed COM Users' (RID: 562) has member: Connection failed: NT_STATUS_LOGON_FAILURE</br>Group 'Event Log Readers' (RID: 573) has member: Could not connect to server 10.10.10.161</br>Group 'Event Log Readers' (RID: 573) has member: The username or password was not correct.</br>Group 'Event Log Readers' (RID: 573) has member: Connection failed: NT_STATUS_LOGON_FAILURE</br>Group 'Hyper-V Administrators' (RID: 578) has member: Could not connect to server 10.10.10.161</br>Group 'Hyper-V Administrators' (RID: 578) has member: The username or password was not correct.</br>Group 'Hyper-V Administrators' (RID: 578) has member: Connection failed: NT_STATUS_LOGON_FAILURE</br>Group 'Pre-Windows 2000 Compatible Access' (RID: 554) has member: Could not connect to server 10.10.10.161</br>Group 'Pre-Windows 2000 Compatible Access' (RID: 554) has member: The username or password was not correct.</br>Group 'Pre-Windows 2000 Compatible Access' (RID: 554) has member: Connection failed: NT_STATUS_LOGON_FAILURE</br>Group 'Windows Authorization Access Group' (RID: 560) has member: Could not connect to server 10.10.10.161</br>Group 'Windows Authorization Access Group' (RID: 560) has member: The username or password was not correct.</br>Group 'Windows Authorization Access Group' (RID: 560) has member: Connection failed: NT_STATUS_LOGON_FAILURE</br>Group 'RDS Remote Access Servers' (RID: 575) has member: Could not connect to server 10.10.10.161</br>Group 'RDS Remote Access Servers' (RID: 575) has member: The username or password was not correct.</br>Group 'RDS Remote Access Servers' (RID: 575) has member: Connection failed: NT_STATUS_LOGON_FAILURE</br>Group 'Account Operators' (RID: 548) has member: Could not connect to server 10.10.10.161</br>Group 'Account Operators' (RID: 548) has member: The username or password was not correct.</br>Group 'Account Operators' (RID: 548) has member: Connection failed: NT_STATUS_LOGON_FAILURE</br>Group 'IIS_IUSRS' (RID: 568) has member: Could not connect to server 10.10.10.161</br>Group 'IIS_IUSRS' (RID: 568) has member: The username or password was not correct.</br>Group 'IIS_IUSRS' (RID: 568) has member: Connection failed: NT_STATUS_LOGON_FAILURE</br>Group 'Guests' (RID: 546) has member: Could not connect to server 10.10.10.161</br>Group 'Guests' (RID: 546) has member: The username or password was not correct.</br>Group 'Guests' (RID: 546) has member: Connection failed: NT_STATUS_LOGON_FAILURE</br>Group 'Server Operators' (RID: 549) has member: Could not connect to server 10.10.10.161</br>Group 'Server Operators' (RID: 549) has member: The username or password was not correct.</br>Group 'Server Operators' (RID: 549) has member: Connection failed: NT_STATUS_LOGON_FAILURE</br>Group 'Access Control Assistance Operators' (RID: 579) has member: Could not connect to server 10.10.10.161</br>Group 'Access Control Assistance Operators' (RID: 579) has member: The username or password was not correct.</br>Group 'Access Control Assistance Operators' (RID: 579) has member: Connection failed: NT_STATUS_LOGON_FAILURE</br>Group 'Cryptographic Operators' (RID: 569) has member: Could not connect to server 10.10.10.161</br>Group 'Cryptographic Operators' (RID: 569) has member: The username or password was not correct.</br>Group 'Cryptographic Operators' (RID: 569) has member: Connection failed: NT_STATUS_LOGON_FAILURE</br></br>[+] Getting local groups:</br>group:[Cert Publishers] rid:[0x205]</br>group:[RAS and IAS Servers] rid:[0x229]</br>group:[Allowed RODC Password Replication Group] rid:[0x23b]</br>group:[Denied RODC Password Replication Group] rid:[0x23c]</br>group:[DnsAdmins] rid:[0x44d]</br></br>[+] Getting local group memberships:</br>Group 'Cert Publishers' (RID: 517) has member: Could not connect to server 10.10.10.161</br>Group 'Cert Publishers' (RID: 517) has member: The username or password was not correct.</br>Group 'Cert Publishers' (RID: 517) has member: Connection failed: NT_STATUS_LOGON_FAILURE</br>Group 'Allowed RODC Password Replication Group' (RID: 571) has member: Could not connect to server 10.10.10.161</br>Group 'Allowed RODC Password Replication Group' (RID: 571) has member: The username or password was not correct.</br>Group 'Allowed RODC Password Replication Group' (RID: 571) has member: Connection failed: NT_STATUS_LOGON_FAILURE</br>Group 'DnsAdmins' (RID: 1101) has member: Could not connect to server 10.10.10.161</br>Group 'DnsAdmins' (RID: 1101) has member: The username or password was not correct.</br>Group 'DnsAdmins' (RID: 1101) has member: Connection failed: NT_STATUS_LOGON_FAILURE</br>Group 'Denied RODC Password Replication Group' (RID: 572) has member: Could not connect to server 10.10.10.161</br>Group 'Denied RODC Password Replication Group' (RID: 572) has member: The username or password was not correct.</br>Group 'Denied RODC Password Replication Group' (RID: 572) has member: Connection failed: NT_STATUS_LOGON_FAILURE</br>Group 'RAS and IAS Servers' (RID: 553) has member: Could not connect to server 10.10.10.161</br>Group 'RAS and IAS Servers' (RID: 553) has member: The username or password was not correct.</br>Group 'RAS and IAS Servers' (RID: 553) has member: Connection failed: NT_STATUS_LOGON_FAILURE</br></br>[+] Getting domain groups:</br>group:[Enterprise Read-only Domain Controllers] rid:[0x1f2]</br>group:[Domain Admins] rid:[0x200]</br>group:[Domain Users] rid:[0x201]</br>group:[Domain Guests] rid:[0x202]</br>group:[Domain Computers] rid:[0x203]</br>group:[Domain Controllers] rid:[0x204]</br>group:[Schema Admins] rid:[0x206]</br>group:[Enterprise Admins] rid:[0x207]</br>group:[Group Policy Creator Owners] rid:[0x208]</br>group:[Read-only Domain Controllers] rid:[0x209]</br>group:[Cloneable Domain Controllers] rid:[0x20a]</br>group:[Protected Users] rid:[0x20d]</br>group:[Key Admins] rid:[0x20e]</br>group:[Enterprise Key Admins] rid:[0x20f]</br>group:[DnsUpdateProxy] rid:[0x44e]</br>group:[Organization Management] rid:[0x450]</br>group:[Recipient Management] rid:[0x451]</br>group:[View-Only Organization Management] rid:[0x452]</br>group:[Public Folder Management] rid:[0x453]</br>group:[UM Management] rid:[0x454]</br>group:[Help Desk] rid:[0x455]</br>group:[Records Management] rid:[0x456]</br>group:[Discovery Management] rid:[0x457]</br>group:[Server Management] rid:[0x458]</br>group:[Delegated Setup] rid:[0x459]</br>group:[Hygiene Management] rid:[0x45a]</br>group:[Compliance Management] rid:[0x45b]</br>group:[Security Reader] rid:[0x45c]</br>group:[Security Administrator] rid:[0x45d]</br>group:[Exchange Servers] rid:[0x45e]</br>group:[Exchange Trusted Subsystem] rid:[0x45f]</br>group:[Managed Availability Servers] rid:[0x460]</br>group:[Exchange Windows Permissions] rid:[0x461]</br>group:[ExchangeLegacyInterop] rid:[0x462]</br>group:[$D31000-NSEL5BRJ63V7] rid:[0x46d]</br>group:[Service Accounts] rid:[0x47c]</br>group:[Privileged IT Accounts] rid:[0x47d]</br>group:[test] rid:[0x13ed]</br></br>[+] Getting domain group memberships:</br>Group 'Security Administrator' (RID: 1117) has member: Could not connect to server 10.10.10.161</br>Group 'Security Administrator' (RID: 1117) has member: The username or password was not correct.</br>Group 'Security Administrator' (RID: 1117) has member: Connection failed: NT_STATUS_LOGON_FAILURE</br>Group 'Exchange Trusted Subsystem' (RID: 1119) has member: Could not connect to server 10.10.10.161</br>Group 'Exchange Trusted Subsystem' (RID: 1119) has member: The username or password was not correct.</br>Group 'Exchange Trusted Subsystem' (RID: 1119) has member: Connection failed: NT_STATUS_LOGON_FAILURE</br>Group 'Domain Admins' (RID: 512) has member: Could not connect to server 10.10.10.161</br>Group 'Domain Admins' (RID: 512) has member: The username or password was not correct.</br>Group 'Domain Admins' (RID: 512) has member: Connection failed: NT_STATUS_LOGON_FAILURE</br>Group 'UM Management' (RID: 1108) has member: Could not connect to server 10.10.10.161</br>Group 'UM Management' (RID: 1108) has member: The username or password was not correct.</br>Group 'UM Management' (RID: 1108) has member: Connection failed: NT_STATUS_LOGON_FAILURE</br>Group 'Domain Users' (RID: 513) has member: Could not connect to server 10.10.10.161</br>Group 'Domain Users' (RID: 513) has member: The username or password was not correct.</br>Group 'Domain Users' (RID: 513) has member: Connection failed: NT_STATUS_LOGON_FAILURE</br>Group 'Service Accounts' (RID: 1148) has member: Could not connect to server 10.10.10.161</br>Group 'Service Accounts' (RID: 1148) has member: The username or password was not correct.</br>Group 'Service Accounts' (RID: 1148) has member: Connection failed: NT_STATUS_LOGON_FAILURE</br>Group 'Enterprise Read-only Domain Controllers' (RID: 498) has member: Could not connect to server 10.10.10.161</br>Group 'Enterprise Read-only Domain Controllers' (RID: 498) has member: The username or password was not correct.</br>Group 'Enterprise Read-only Domain Controllers' (RID: 498) has member: Connection failed: NT_STATUS_LOGON_FAILURE</br>Group 'Read-only Domain Controllers' (RID: 521) has member: Could not connect to server 10.10.10.161</br>Group 'Read-only Domain Controllers' (RID: 521) has member: The username or password was not correct.</br>Group 'Read-only Domain Controllers' (RID: 521) has member: Connection failed: NT_STATUS_LOGON_FAILURE</br>Group 'Exchange Servers' (RID: 1118) has member: Could not connect to server 10.10.10.161</br>Group 'Exchange Servers' (RID: 1118) has member: The username or password was not correct.</br>Group 'Exchange Servers' (RID: 1118) has member: Connection failed: NT_STATUS_LOGON_FAILURE</br>Group 'Records Management' (RID: 1110) has member: Could not connect to server 10.10.10.161</br>Group 'Records Management' (RID: 1110) has member: The username or password was not correct.</br>Group 'Records Management' (RID: 1110) has member: Connection failed: NT_STATUS_LOGON_FAILURE</br>Group 'Enterprise Admins' (RID: 519) has member: Could not connect to server 10.10.10.161</br>Group 'Enterprise Admins' (RID: 519) has member: The username or password was not correct.</br>Group 'Enterprise Admins' (RID: 519) has member: Connection failed: NT_STATUS_LOGON_FAILURE</br>Group 'Domain Controllers' (RID: 516) has member: Could not connect to server 10.10.10.161</br>Group 'Domain Controllers' (RID: 516) has member: The username or password was not correct.</br>Group 'Domain Controllers' (RID: 516) has member: Connection failed: NT_STATUS_LOGON_FAILURE</br>Group 'Compliance Management' (RID: 1115) has member: Could not connect to server 10.10.10.161</br>Group 'Compliance Management' (RID: 1115) has member: The username or password was not correct.</br>Group 'Compliance Management' (RID: 1115) has member: Connection failed: NT_STATUS_LOGON_FAILURE</br>Group 'Server Management' (RID: 1112) has member: Could not connect to server 10.10.10.161</br>Group 'Server Management' (RID: 1112) has member: The username or password was not correct.</br>Group 'Server Management' (RID: 1112) has member: Connection failed: NT_STATUS_LOGON_FAILURE</br>Group 'ExchangeLegacyInterop' (RID: 1122) has member: Could not connect to server 10.10.10.161</br>Group 'ExchangeLegacyInterop' (RID: 1122) has member: The username or password was not correct.</br>Group 'ExchangeLegacyInterop' (RID: 1122) has member: Connection failed: NT_STATUS_LOGON_FAILURE</br>Group 'Delegated Setup' (RID: 1113) has member: Could not connect to server 10.10.10.161</br>Group 'Delegated Setup' (RID: 1113) has member: The username or password was not correct.</br>Group 'Delegated Setup' (RID: 1113) has member: Connection failed: NT_STATUS_LOGON_FAILURE</br>Group 'DnsUpdateProxy' (RID: 1102) has member: Could not connect to server 10.10.10.161</br>Group 'DnsUpdateProxy' (RID: 1102) has member: The username or password was not correct.</br>Group 'DnsUpdateProxy' (RID: 1102) has member: Connection failed: NT_STATUS_LOGON_FAILURE</br>Group 'Security Reader' (RID: 1116) has member: Could not connect to server 10.10.10.161</br>Group 'Security Reader' (RID: 1116) has member: The username or password was not correct.</br>Group 'Security Reader' (RID: 1116) has member: Connection failed: NT_STATUS_LOGON_FAILURE</br>Group 'Domain Computers' (RID: 515) has member: Could not connect to server 10.10.10.161</br>Group 'Domain Computers' (RID: 515) has member: The username or password was not correct.</br>Group 'Domain Computers' (RID: 515) has member: Connection failed: NT_STATUS_LOGON_FAILURE</br>Group 'Recipient Management' (RID: 1105) has member: Could not connect to server 10.10.10.161</br>Group 'Recipient Management' (RID: 1105) has member: The username or password was not correct.</br>Group 'Recipient Management' (RID: 1105) has member: Connection failed: NT_STATUS_LOGON_FAILURE</br>Group 'test' (RID: 5101) has member: Could not connect to server 10.10.10.161</br>Group 'test' (RID: 5101) has member: The username or password was not correct.</br>Group 'test' (RID: 5101) has member: Connection failed: NT_STATUS_LOGON_FAILURE</br>Group 'Domain Guests' (RID: 514) has member: Could not connect to server 10.10.10.161</br>Group 'Domain Guests' (RID: 514) has member: The username or password was not correct.</br>Group 'Domain Guests' (RID: 514) has member: Connection failed: NT_STATUS_LOGON_FAILURE</br>Group 'View-Only Organization Management' (RID: 1106) has member: Could not connect to server 10.10.10.161</br>Group 'View-Only Organization Management' (RID: 1106) has member: The username or password was not correct.</br>Group 'View-Only Organization Management' (RID: 1106) has member: Connection failed: NT_STATUS_LOGON_FAILURE</br>Group 'Enterprise Key Admins' (RID: 527) has member: Could not connect to server 10.10.10.161</br>Group 'Enterprise Key Admins' (RID: 527) has member: The username or password was not correct.</br>Group 'Enterprise Key Admins' (RID: 527) has member: Connection failed: NT_STATUS_LOGON_FAILURE</br>Group 'Key Admins' (RID: 526) has member: Could not connect to server 10.10.10.161</br>Group 'Key Admins' (RID: 526) has member: The username or password was not correct.</br>Group 'Key Admins' (RID: 526) has member: Connection failed: NT_STATUS_LOGON_FAILURE</br>Group 'Help Desk' (RID: 1109) has member: Could not connect to server 10.10.10.161</br>Group 'Help Desk' (RID: 1109) has member: The username or password was not correct.</br>Group 'Help Desk' (RID: 1109) has member: Connection failed: NT_STATUS_LOGON_FAILURE</br>Group 'Group Policy Creator Owners' (RID: 520) has member: Could not connect to server 10.10.10.161</br>Group 'Group Policy Creator Owners' (RID: 520) has member: The username or password was not correct.</br>Group 'Group Policy Creator Owners' (RID: 520) has member: Connection failed: NT_STATUS_LOGON_FAILURE</br>Group 'Privileged IT Accounts' (RID: 1149) has member: Could not connect to server 10.10.10.161</br>Group 'Privileged IT Accounts' (RID: 1149) has member: The username or password was not correct.</br>Group 'Privileged IT Accounts' (RID: 1149) has member: Connection failed: NT_STATUS_LOGON_FAILURE</br>Group 'Cloneable Domain Controllers' (RID: 522) has member: Could not connect to server 10.10.10.161</br>Group 'Cloneable Domain Controllers' (RID: 522) has member: The username or password was not correct.</br>Group 'Cloneable Domain Controllers' (RID: 522) has member: Connection failed: NT_STATUS_LOGON_FAILURE</br>Group '$D31000-NSEL5BRJ63V7' (RID: 1133) has member: Could not connect to server 10.10.10.161</br>Group '$D31000-NSEL5BRJ63V7' (RID: 1133) has member: The username or password was not correct.</br>Group '$D31000-NSEL5BRJ63V7' (RID: 1133) has member: Connection failed: NT_STATUS_LOGON_FAILURE</br>Group 'Protected Users' (RID: 525) has member: Could not connect to server 10.10.10.161</br>Group 'Protected Users' (RID: 525) has member: The username or password was not correct.</br>Group 'Protected Users' (RID: 525) has member: Connection failed: NT_STATUS_LOGON_FAILURE</br>Group 'Managed Availability Servers' (RID: 1120) has member: Could not connect to server 10.10.10.161</br>Group 'Managed Availability Servers' (RID: 1120) has member: The username or password was not correct.</br>Group 'Managed Availability Servers' (RID: 1120) has member: Connection failed: NT_STATUS_LOGON_FAILURE</br>Group 'Organization Management' (RID: 1104) has member: Could not connect to server 10.10.10.161</br>Group 'Organization Management' (RID: 1104) has member: The username or password was not correct.</br>Group 'Organization Management' (RID: 1104) has member: Connection failed: NT_STATUS_LOGON_FAILURE</br>Group 'Exchange Windows Permissions' (RID: 1121) has member: Could not connect to server 10.10.10.161</br>Group 'Exchange Windows Permissions' (RID: 1121) has member: The username or password was not correct.</br>Group 'Exchange Windows Permissions' (RID: 1121) has member: Connection failed: NT_STATUS_LOGON_FAILURE</br>Group 'Schema Admins' (RID: 518) has member: Could not connect to server 10.10.10.161</br>Group 'Schema Admins' (RID: 518) has member: The username or password was not correct.</br>Group 'Schema Admins' (RID: 518) has member: Connection failed: NT_STATUS_LOGON_FAILURE</br>Group 'Hygiene Management' (RID: 1114) has member: Could not connect to server 10.10.10.161</br>Group 'Hygiene Management' (RID: 1114) has member: The username or password was not correct.</br>Group 'Hygiene Management' (RID: 1114) has member: Connection failed: NT_STATUS_LOGON_FAILURE</br>Group 'Discovery Management' (RID: 1111) has member: Could not connect to server 10.10.10.161</br>Group 'Discovery Management' (RID: 1111) has member: The username or password was not correct.</br>Group 'Discovery Management' (RID: 1111) has member: Connection failed: NT_STATUS_LOGON_FAILURE</br>Group 'Public Folder Management' (RID: 1107) has member: Could not connect to server 10.10.10.161</br>Group 'Public Folder Management' (RID: 1107) has member: The username or password was not correct.</br>Group 'Public Folder Management' (RID: 1107) has member: Connection failed: NT_STATUS_LOGON_FAILURE</br></br> ======================================================================= </br>|    Users on 10.10.10.161 via RID cycling (RIDS: 500-550,1000-1050)    |</br> ======================================================================= </br>[E] Couldn't get SID: NT_STATUS_ACCESS_DENIED.  RID cycling not possible.</br></br> ============================================= </br>|    Getting printer info for 10.10.10.161    |</br> ============================================= </br>Could not initialise spoolss. Error was NT_STATUS_ACCESS_DENIED</br></br></br>enum4linux complete on Tue Aug 24 20:23:04 2021</br></br>
-                        </code>
-                    </div>
-                  </div>
-    </div> 
-    
-     <div class="card">
-                  <div class="card-header" id="headingOne">
-                    <h5 class="mb-0">
-                      <button class="btn btn-link" data-toggle="collapse" data-target="#VBBQMSBDSLGEYHEPVQJZDVPCAXJAJDKV" aria-expanded="true" aria-controls="collapseOne">
-                        echo enumdomusers | rpcclient -U  -N 10.10.10.161
-                      </button>
-                    </h5>
-                  </div>
-              
-                  <div id="VBBQMSBDSLGEYHEPVQJZDVPCAXJAJDKV" class="collapse" aria-labelledby="headingOne" data-parent="#EAKDQRHRWIFNJKZVKMTONQKHNPPLJRSL">
-                    <div class="card-body">
-                        <code>
-                        echo enumdomusers | rpcclient -U  -N 10.10.10.161</br>user:[Administrator] rid:[0x1f4]</br>user:[Guest] rid:[0x1f5]</br>user:[krbtgt] rid:[0x1f6]</br>user:[DefaultAccount] rid:[0x1f7]</br>user:[$331000-VK4ADACQNUCA] rid:[0x463]</br>user:[SM_2c8eef0a09b545acb] rid:[0x464]</br>user:[SM_ca8c2ed5bdab4dc9b] rid:[0x465]</br>user:[SM_75a538d3025e4db9a] rid:[0x466]</br>user:[SM_681f53d4942840e18] rid:[0x467]</br>user:[SM_1b41c9286325456bb] rid:[0x468]</br>user:[SM_9b69f1b9d2cc45549] rid:[0x469]</br>user:[SM_7c96b981967141ebb] rid:[0x46a]</br>user:[SM_c75ee099d0a64c91b] rid:[0x46b]</br>user:[SM_1ffab36a2f5f479cb] rid:[0x46c]</br>user:[HealthMailboxc3d7722] rid:[0x46e]</br>user:[HealthMailboxfc9daad] rid:[0x46f]</br>user:[HealthMailboxc0a90c9] rid:[0x470]</br>user:[HealthMailbox670628e] rid:[0x471]</br>user:[HealthMailbox968e74d] rid:[0x472]</br>user:[HealthMailbox6ded678] rid:[0x473]</br>user:[HealthMailbox83d6781] rid:[0x474]</br>user:[HealthMailboxfd87238] rid:[0x475]</br>user:[HealthMailboxb01ac64] rid:[0x476]</br>user:[HealthMailbox7108a4e] rid:[0x477]</br>user:[HealthMailbox0659cc1] rid:[0x478]</br>user:[sebastien] rid:[0x479]</br>user:[lucinda] rid:[0x47a]</br>user:[svc-alfresco] rid:[0x47b]</br>user:[andy] rid:[0x47e]</br>user:[mark] rid:[0x47f]</br>user:[santi] rid:[0x480]</br></br>
-                        </code>
-                    </div>
-                  </div>
-    </div> 
-    
-     <div class="card">
-                  <div class="card-header" id="headingOne">
-                    <h5 class="mb-0">
-                      <button class="btn btn-link" data-toggle="collapse" data-target="#HQGEETSIXPGBPWNNEFBLGFOGKNQXAGBF" aria-expanded="true" aria-controls="collapseOne">
-                        echo enumdomgroups | rpcclient -U  -N 10.10.10.161
-                      </button>
-                    </h5>
-                  </div>
-              
-                  <div id="HQGEETSIXPGBPWNNEFBLGFOGKNQXAGBF" class="collapse" aria-labelledby="headingOne" data-parent="#EAKDQRHRWIFNJKZVKMTONQKHNPPLJRSL">
-                    <div class="card-body">
-                        <code>
-                        echo enumdomgroups | rpcclient -U  -N 10.10.10.161</br>group:[Enterprise Read-only Domain Controllers] rid:[0x1f2]</br>group:[Domain Admins] rid:[0x200]</br>group:[Domain Users] rid:[0x201]</br>group:[Domain Guests] rid:[0x202]</br>group:[Domain Computers] rid:[0x203]</br>group:[Domain Controllers] rid:[0x204]</br>group:[Schema Admins] rid:[0x206]</br>group:[Enterprise Admins] rid:[0x207]</br>group:[Group Policy Creator Owners] rid:[0x208]</br>group:[Read-only Domain Controllers] rid:[0x209]</br>group:[Cloneable Domain Controllers] rid:[0x20a]</br>group:[Protected Users] rid:[0x20d]</br>group:[Key Admins] rid:[0x20e]</br>group:[Enterprise Key Admins] rid:[0x20f]</br>group:[DnsUpdateProxy] rid:[0x44e]</br>group:[Organization Management] rid:[0x450]</br>group:[Recipient Management] rid:[0x451]</br>group:[View-Only Organization Management] rid:[0x452]</br>group:[Public Folder Management] rid:[0x453]</br>group:[UM Management] rid:[0x454]</br>group:[Help Desk] rid:[0x455]</br>group:[Records Management] rid:[0x456]</br>group:[Discovery Management] rid:[0x457]</br>group:[Server Management] rid:[0x458]</br>group:[Delegated Setup] rid:[0x459]</br>group:[Hygiene Management] rid:[0x45a]</br>group:[Compliance Management] rid:[0x45b]</br>group:[Security Reader] rid:[0x45c]</br>group:[Security Administrator] rid:[0x45d]</br>group:[Exchange Servers] rid:[0x45e]</br>group:[Exchange Trusted Subsystem] rid:[0x45f]</br>group:[Managed Availability Servers] rid:[0x460]</br>group:[Exchange Windows Permissions] rid:[0x461]</br>group:[ExchangeLegacyInterop] rid:[0x462]</br>group:[$D31000-NSEL5BRJ63V7] rid:[0x46d]</br>group:[Service Accounts] rid:[0x47c]</br>group:[Privileged IT Accounts] rid:[0x47d]</br>group:[test] rid:[0x13ed]</br></br>
-                        </code>
-                    </div>
-                  </div>
-    </div> 
-    
-     <div class="card">
-                  <div class="card-header" id="headingOne">
-                    <h5 class="mb-0">
-                      <button class="btn btn-link" data-toggle="collapse" data-target="#QPSVLOHHCRBKBXBJVMNFVMPBPEZAUZVR" aria-expanded="true" aria-controls="collapseOne">
-                        echo exit | smbclient -L \10.10.10.161
-                      </button>
-                    </h5>
-                  </div>
-              
-                  <div id="QPSVLOHHCRBKBXBJVMNFVMPBPEZAUZVR" class="collapse" aria-labelledby="headingOne" data-parent="#EAKDQRHRWIFNJKZVKMTONQKHNPPLJRSL">
-                    <div class="card-body">
-                        <code>
-                        echo exit | smbclient -L \10.10.10.161</br>Enter WORKGROUP\parallels's password: </br>Anonymous login successful</br></br>	Sharename       Type      Comment</br>	---------       ----      -------</br>SMB1 disabled -- no workgroup available</br>
-                        </code>
-                    </div>
-                  </div>
-    </div> 
-    
     </div>
     
               </div>
             </div>
         </div>
     
-    <div class="card SJXVJAGTOBLELRBYTNOOKXIPSLZDMMUC">
+    <div class="card PVUMEXLTYFAKLRGKJOYPUFNIGYTSPZYX">
             <div class="card-header" id="headingOne">
               <h5 class="mb-0">
-                <button class="btn btn-link" data-toggle="collapse" data-target="#FLZVXKJMMAULMPXFDXZXUWBNRUPOFCMV" aria-expanded="true" aria-controls="collapseOne">
-                 naabu
+                <button class="btn btn-link" data-toggle="collapse" data-target="#EJVRGUJVPMCXZVSDKWDADZSBHHZYQOUE" aria-expanded="true" aria-controls="collapseOne">
+                 report
                 </button>
               </h5>
             </div>
         
-            <div id="FLZVXKJMMAULMPXFDXZXUWBNRUPOFCMV" class="collapse" aria-labelledby="headingOne" data-parent="#accordion-main">
+            <div id="EJVRGUJVPMCXZVSDKWDADZSBHHZYQOUE" class="collapse" aria-labelledby="headingOne" data-parent="#accordion-main">
               <div class="card-body">
                   
-    <div id="SNOBZHBMFRWYDSZGHFRYEBVOATOHKPKH">
+    <div id="ARJOAYATAKPNGCUCUTSWEVZRZZWZAPKI">
               
      <div class="card">
                   <div class="card-header" id="headingOne">
                     <h5 class="mb-0">
-                      <button class="btn btn-link" data-toggle="collapse" data-target="#NAAXWECXTCROLSBRJXCXVMDJJEQPNUCQ" aria-expanded="true" aria-controls="collapseOne">
-                        10.10.10.161:139
+                      <button class="btn btn-link" data-toggle="collapse" data-target="#ITEFBDBTRNYKJCCQQGOOVYDRCNIYLNZR" aria-expanded="true" aria-controls="collapseOne">
+                        notes.txt
                       </button>
                     </h5>
                   </div>
               
-                  <div id="NAAXWECXTCROLSBRJXCXVMDJJEQPNUCQ" class="collapse" aria-labelledby="headingOne" data-parent="#SNOBZHBMFRWYDSZGHFRYEBVOATOHKPKH">
+                  <div id="ITEFBDBTRNYKJCCQQGOOVYDRCNIYLNZR" class="collapse" aria-labelledby="headingOne" data-parent="#ARJOAYATAKPNGCUCUTSWEVZRZZWZAPKI">
                     <div class="card-body">
                         <code>
-                        10.10.10.161:139</br>10.10.10.161:135</br>10.10.10.161:88</br>10.10.10.161:53</br>10.10.10.161:389</br>10.10.10.161:445</br>
+                        [*] ftp found on tcp/21.</br></br></br></br>[*] ssh found on tcp/22.</br></br></br></br>[*] http found on tcp/80.</br></br></br></br>[*] minecraft found on tcp/25565.</br></br></br></br>
+                        </code>
+                    </div>
+                  </div>
+    </div> 
+    
+     <div class="card">
+                  <div class="card-header" id="headingOne">
+                    <h5 class="mb-0">
+                      <button class="btn btn-link" data-toggle="collapse" data-target="#QPVFFVMHBZSKNKRJBBYQDOJZDYACTMOP" aria-expanded="true" aria-controls="collapseOne">
+                        proof.txt
+                      </button>
+                    </h5>
+                  </div>
+              
+                  <div id="QPVFFVMHBZSKNKRJBBYQDOJZDYACTMOP" class="collapse" aria-labelledby="headingOne" data-parent="#ARJOAYATAKPNGCUCUTSWEVZRZZWZAPKI">
+                    <div class="card-body">
+                        <code>
+                        
+                        </code>
+                    </div>
+                  </div>
+    </div> 
+    
+     <div class="card">
+                  <div class="card-header" id="headingOne">
+                    <h5 class="mb-0">
+                      <button class="btn btn-link" data-toggle="collapse" data-target="#UAWMWEUTYQOSMNNRJQBMMCAMIPETUSLV" aria-expanded="true" aria-controls="collapseOne">
+                        local.txt
+                      </button>
+                    </h5>
+                  </div>
+              
+                  <div id="UAWMWEUTYQOSMNNRJQBMMCAMIPETUSLV" class="collapse" aria-labelledby="headingOne" data-parent="#ARJOAYATAKPNGCUCUTSWEVZRZZWZAPKI">
+                    <div class="card-body">
+                        <code>
+                        
                         </code>
                     </div>
                   </div>

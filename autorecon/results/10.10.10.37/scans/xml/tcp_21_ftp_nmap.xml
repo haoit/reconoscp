@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE nmaprun>
+<?xml-stylesheet href="file:///usr/bin/../share/nmap/nmap.xsl" type="text/xsl"?>
+<!-- Nmap 7.91 scan initiated Fri Aug 27 00:31:35 2021 as: nmap -vv -&#45;reason -Pn -sV -p 21 &quot;-&#45;script=banner,(ftp* or ssl*) and not (brute or broadcast or dos or external or fuzzer)&quot; -oN /media/psf/Home/projects/oscp_auto/autorecon/results/10.10.10.37/scans/tcp_21_ftp_nmap.txt -oX /media/psf/Home/projects/oscp_auto/autorecon/results/10.10.10.37/scans/xml/tcp_21_ftp_nmap.xml 10.10.10.37 -->
+<nmaprun scanner="nmap" args="nmap -vv -&#45;reason -Pn -sV -p 21 &quot;-&#45;script=banner,(ftp* or ssl*) and not (brute or broadcast or dos or external or fuzzer)&quot; -oN /media/psf/Home/projects/oscp_auto/autorecon/results/10.10.10.37/scans/tcp_21_ftp_nmap.txt -oX /media/psf/Home/projects/oscp_auto/autorecon/results/10.10.10.37/scans/xml/tcp_21_ftp_nmap.xml 10.10.10.37" start="1629999095" startstr="Fri Aug 27 00:31:35 2021" version="7.91" xmloutputversion="1.05">
+<scaninfo type="connect" protocol="tcp" numservices="1" services="21"/>
+<verbose level="2"/>
+<debugging level="0"/>
+<taskbegin task="NSE" time="1629999095"/>
+<taskend task="NSE" time="1629999095"/>
+<taskbegin task="NSE" time="1629999095"/>
+<taskend task="NSE" time="1629999095"/>
+<taskbegin task="NSE" time="1629999095"/>
+<taskend task="NSE" time="1629999095"/>
+<taskbegin task="Parallel DNS resolution of 1 host." time="1629999095"/>
