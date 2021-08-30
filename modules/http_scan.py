@@ -3,6 +3,7 @@ from loguru import logger
 import threading
 from . untils import * 
 import time
+import random
 
 base_dir = "/media/psf/Home/projects/oscp_auto/modules/"
 Fileoutput_Dirsearch = "/dirsearch.log"
@@ -24,7 +25,7 @@ Fileoutput_curlrobots = "/robots.txt"
 
 
 def dirsearch_scan(url, directory_output):
-    time.sleep(20)
+    time.sleep(random.randint(30,50))
     output = directory_output + Fileoutput_Dirsearch
     command = "dirsearch  -u %s -o %s" % (url,  output)
     run_command("DIRSEARCH", command, output)
@@ -62,7 +63,7 @@ def curl_robots(url, directory_output):
 
 def scan_http_service(ip, port, scheme, path_out):
     directory_output = path_out + "/" + scheme + "-" + port
-    if (port == "80" ) or (port == "443"):
+    if (str(port) == "80" ) or (str(port) == "443"):
         url = "%s://%s"%(scheme, ip)
     else:
         url = "%s://%s:%s"%(scheme, ip, port) 

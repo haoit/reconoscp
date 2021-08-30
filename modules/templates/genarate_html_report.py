@@ -3,6 +3,7 @@ import xmltodict
 import os
 import random
 import string
+from loguru import logger
 
 temp_random = []
 
@@ -172,9 +173,8 @@ def genarate_html_from_forlder(namefolder , path_folder):
     
 
 def genarate_html_report(ip, base_path):
-    path_output = base_path +"/output/%s/" % ip
+    path_output = os.getcwd() +"/output/%s/" % ip
     list_dir = run_os_scandir(path_output)
-    print(path_output)
     print(list_dir)
     list_dir.remove('nmap')
     data_detail = ""
@@ -187,10 +187,10 @@ def genarate_html_report(ip, base_path):
     with open(base_path+"/modules/templates/index.template") as f:
         template = f.read() 
 
-    with open(base_path+ "/output/%s/index.html"%ip,"w") as f:
+    with open(os.getcwd()+ "/output/%s/index.html"%ip,"w") as f:
         nmap_content = gen_nmap_report(path_output)
         # nmap_content = "xxx"
         template = template.replace("{{{IP}}}",ip).replace("{{{nmap_content}}}",nmap_content).replace("{{{data_detail}}}",data_detail)
         f.write(template)
-    print("[i] Genarate report done. Check report file in %s" % base_path + "/output/index.html")
+    logger.info("[i] Genarate report done. Check report file in %s" % os.getcwd() + "/output/%s/index.html"%ip)
 

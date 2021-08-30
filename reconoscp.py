@@ -21,7 +21,8 @@ def init_scan():
         # os.rmdir("output")
         # os.makedirs("output")
 def run_auto_recon(ip, output):
-    path_program = os.getcwd() + "/autorecon"
+    rootdir = os.path.dirname(os.path.realpath(__file__))
+    path_program = rootdir + "/autorecon"
     command = "python3 %s/autorecon.py %s --single-target -o  %s | tee %s" % (path_program, ip, output, output+"/scans/autorecon.log")
     run_command("AUTORECON", command, output )
 
@@ -33,7 +34,7 @@ if __name__ == "__main__":
     args = parser.parse_args()
     ip = args.ip
     ourdir = "output/"+ip
-    base_path = os.getcwd()
+    base_path = os.path.dirname(os.path.realpath(__file__))
     path_output = os.path.abspath(ourdir)
     os.makedirs(path_output, exist_ok=True)
     threads = []
@@ -68,7 +69,6 @@ if __name__ == "__main__":
         genarate_html_report(ip, base_path)
         threads = [t for t in threads if t.is_alive()]
         if len(threads) < 1:
-            print("break while loop")
             break
         time.sleep(30)
         
