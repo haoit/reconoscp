@@ -8,8 +8,10 @@ from  modules.smbenum import *
 from  modules.untils import *
 from modules.templates.genarate_html_report import *
 from modules.http_scan import *
+from modules.cheklist_resouce.genarate_checklist import *
 import threading 
-import time 
+import time
+
 
 def init_scan():
     if not os.path.exists("output"):
@@ -72,6 +74,7 @@ if __name__ == "__main__":
         
 
     genarate_html_report(ip, base_path)
+    genarate_checklist(ip, ports, path_output)
     logger.info("--- Finish scan with %s seconds ---" % (time.time() - start_time))
 
 

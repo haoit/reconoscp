@@ -1,0 +1,71 @@
+[
+    {
+    "name": "21/FTP",
+    "port":"21",
+    "link" : "",
+    "notes":"maybe brute-force",
+    "children": [
+      {
+        "name": "Anonymous Login",
+        "link": "https://stackoverflow.com/questions/3936911/how-can-i-login-anonymously-with-ftp-usr-bin-ftp/20031581",
+        "children":[
+          {
+            "name":"File Read",
+            "link":"http://www.simotime.com/ftp4cmd1.htm",
+            "children":[
+            {
+            "name":"Possible Any confidential Information",
+            "link":"https://epi052.gitlab.io/notes-to-self/blog/2018-09-30-hack-the-box-access/",
+            "children":[]
+          }
+            ]
+          },
+          {
+            "name":"File Write",
+            "link":"https://medium.com/vulnerables/hackthebox-devel-ecf86cf7822f",
+            "children":[
+            {
+            "name":"Possible Filewrite to access through Web",
+            "link":"https://medium.com/vulnerables/hackthebox-devel-ecf86cf7822f",
+            "children":[]
+          },
+          {
+            "name":"FTP to file upload ==> Execute from web == webshell",
+            "link":"",
+            "children":[]
+          }
+            ]
+          }
+          ]
+      },
+      {
+            "name":"Password Checking if you found with othe enum",
+            "link":"",
+            "children":[]
+      }
+      
+    ]
+  },
+  {
+    "name": "22/SSH",
+    "port":"22",
+    "link" : "",
+    "notes":"No Brute-Force 99.99%",
+    "children": [
+      {
+        "name": "Password Checking if you found with other enum",
+        "link": "",
+        "children":[]
+      }
+      
+    ]
+  }
+  
+  
+  ]
+
+//   {
+//     "name":"File Write",
+//     "link":"",
+//     "children":[]
+//   }

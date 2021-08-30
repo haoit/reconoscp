@@ -9,6 +9,21 @@
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  <script type="text/javascript" src="../cheklist_resouce/jsmind/js/jsmind.js"></script>
+
+  <link type="text/css" rel="stylesheet" href="../cheklist_resouce/jsmind/style/jsmind.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <style type="text/css">
+        #jsmind_container{
+            width: auto;
+            height:500px;
+            border:solid 1px #ccc;
+            /*background:#f4f4f4;*/
+            background:#f4f4f4;
+        }
+
+    </style>
+
 </head>
 <body>
 ​
@@ -113,6 +128,23 @@
             </div>
             </div>
         </div>
+
+   
+
+        <div class="card text-center">
+          <div class="card-header">
+            Featured
+          </div>
+          <div class="card-body">
+            <div id="jsmind_container"></div>
+            <h5 class="card-title">Special title treatment</h5>
+            <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+            <a href="#" class="btn btn-primary">Go somewhere</a>
+          </div>
+          <div class="card-footer text-muted">
+            2 days ago
+          </div>
+        </div>
        
     </div>
 
@@ -131,6 +163,34 @@
   
 </footer>
 <!-- Footer -->
+
+<script type="text/javascript">
+  function load_jsmind(){
+      var mind = {
+          "meta":{
+              "name":"demo",
+              "author":"hizzgdev@163.com",
+              "version":"0.2",
+          },
+          "format":"node_array",
+          "data":[{'id': 'root', 'isroot': 1, 'topic': '21/FTP'}, {'id': 'QKFYRQPUQNQLMOCUCIWBAQGYPIXAHREX', 'parentid': 'root', 'topic': "<input type='checkbox'> Anonymous Login<a href='https://stackoverflow.com/questions/3936911/how-can-i-login-anonymously-with-ftp-usr-bin-ftp/20031581' target='_blank' class='fa fa-external-link'></a> "}, {'id': 'YTKYJFBFPJYWQVYXWNPICMUCGQXMUDCT', 'parentid': 'QKFYRQPUQNQLMOCUCIWBAQGYPIXAHREX', 'topic': "<input type='checkbox'> File Read<a href='http://www.simotime.com/ftp4cmd1.htm' target='_blank' class='fa fa-external-link'></a> "}, {'id': 'GPOMERYOENIGRUTQYYLFCERHMQQJSCGS', 'parentid': 'YTKYJFBFPJYWQVYXWNPICMUCGQXMUDCT', 'topic': "<input type='checkbox'> Possible Any confidential Information<a href='https://epi052.gitlab.io/notes-to-self/blog/2018-09-30-hack-the-box-access/' target='_blank' class='fa fa-external-link'></a> "}, {'id': 'UEGQVAZNTPWXTGZXDWXJMKWCOULVMIPC', 'parentid': 'QKFYRQPUQNQLMOCUCIWBAQGYPIXAHREX', 'topic': "<input type='checkbox'> File Write<a href='https://medium.com/vulnerables/hackthebox-devel-ecf86cf7822f' target='_blank' class='fa fa-external-link'></a> "}, {'id': 'MTEFAMJQGVRCGMTOZDTWJEZQAZDDLNGR', 'parentid': 'UEGQVAZNTPWXTGZXDWXJMKWCOULVMIPC', 'topic': "<input type='checkbox'> Possible Filewrite to access through Web<a href='https://medium.com/vulnerables/hackthebox-devel-ecf86cf7822f' target='_blank' class='fa fa-external-link'></a> "}, {'id': 'FXXJMYLYJAHCSKNMVMBMXKFFDEDLHCKV', 'parentid': 'UEGQVAZNTPWXTGZXDWXJMKWCOULVMIPC', 'topic': "<input type='checkbox'> FTP to file upload ==> Execute from web == webshell "}, {'id': 'ZASLSMIWSBXGVXPHOMRWSTOTHRUXTSGL', 'parentid': 'root', 'topic': "<input type='checkbox'> Password Checking if you found with othe enum "}]
+      };
+      var options = {
+          container:'jsmind_container',
+          editable:true,
+          theme:'primary'
+      }
+      var jm = jsMind.show(options,mind);
+      // jm.set_readonly(true);
+      // var mind_data = jm.get_data();
+      // alert(mind_data);
+      // jm.add_node("sub2","sub23", "new node", {"background-color":"red"});
+      // jm.set_node_color('sub21', 'green', '#ccc');
+  }
+
+  load_jsmind();
+
+</script>
 
 </body>
 </html>

