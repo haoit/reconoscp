@@ -4,6 +4,7 @@ import xmltodict
 import json
 from loguru import logger
 import threading
+import requests
 
 
 outfile_all_port = "nmap-alltcp"
@@ -13,29 +14,88 @@ outfile_detail_port_v1 = "nmap-detail-service-v1"
 outfile_vuln_port = "nmap-vuln-port"
 host_seem_down = False
 
-def get_nmap_port_list(directory_output):
+def get_nmap_port_list(directory_output, ip):
         services = {}
         path = "%s/%s.xml" % (directory_output, outfile_all_port)
     # try:
         with open(path) as f:
-            xml = f.read()  
+            xml = f.read()
+        # print(xml)  
         output = json.loads(json.dumps(xmltodict.parse(xml)))
-        print(output)
+        #print(output)
         list_port = []
         http_service = []
         https_service = []
-        for port in output ["nmaprun"]["host"]["ports"]["port"]:
+        print(output["nmaprun"]["host"]["ports"])
+        if isinstance(output["nmaprun"]["host"]["ports"]["port"], list):
+            # print(len(output["nmaprun"]["host"]["ports"]["port"]))
+            # print(output["nmaprun"]["host"]["ports"]["port"])
+            # print("run here")
+            for port in output["nmaprun"]["host"]["ports"]["port"]:
+                if(port["state"]["@state"] == "open"):
+                    list_port.append(port["@portid"])
+                    try:
+                        if port["service"]["@name"] == "https":
+                            https_service.append(port["@portid"])
+                        elif "http" in port["service"]["@name"] :
+                            http_service.append(port["@portid"])
+                    except:
+                        pass
+                    if (port["@portid"] not in http_service) and (port["@portid"] not in https_service):
+                        port_type = check_http_port(ip, port["@portid"])
+                        if port_type == "http":
+                            http_service.append(port["@portid"])
+                        elif port_type == "https":
+                            https_service.append(port["@portid"])
+        else:
+            port = output["nmaprun"]["host"]["ports"]["port"]
             if(port["state"]["@state"] == "open"):
                 list_port.append(port["@portid"])
-            if port["service"]["@name"] == "http":
-                http_service.append(port["@portid"])
-            if port["service"]["@name"] == "https":
-                https_service.append(port["@portid"])
+                try:
+                    if port["service"]["@name"] == "https":
+                        https_service.append(port["@portid"])
+                    elif "http" in port["service"]["@name"] :
+                        http_service.append(port["@portid"])
+                    else:
+                        port_type = check_http_port(ip, port["@portid"])
+                        if port_type == "http":
+                            http_service.append(port["@portid"])
+                        elif port_type == "https":
+                            https_service.append(port["@portid"])
+                except:
+                    pass
+                if (port["@portid"] not in http_service) and (port["@portid"] not in https_service):
+                    port_type = check_http_port(ip, port["@portid"])
+                    if port_type == "http":
+                        http_service.append(port["@portid"])
+                    elif port_type == "https":
+                        https_service.append(port["@portid"])
+
         services["http"] = http_service
         services["https"] = https_service
+        print(services)
         return list_port,services
     # except:
     #     print("Error when open file output nmap %s" % outfile_all_port)
+
+def check_http_port(ip, port):
+    print("check port %s" % port)
+    try:
+        url = "http://%s:%s" %(ip, port)
+        r = requests.get(url, verify=False, timeout=10) # 10 seconds
+        return "http"
+    except Exception as e:
+        print(e)
+        try:
+            url = "https://%s:%s" %(ip, port)
+            r = requests.get(url, verify=False, timeout=10) # 10 seconds
+            return "https"
+        except Exception as e:
+            print(e)
+            pass
+    return "other"
+    
+
 
 def get_naabu_port_list(directory_output):
     path = "%s/%s" % (directory_output, "naabu.log")
@@ -67,7 +127,7 @@ def scan_all_tcp_port(directory_output, ip):
                 scan_all_tcp_port(directory_output, ip)
     retval = p.wait()
     logger.opt(colors=True).info("<blue>[================================END OUTPUT NMAP======================================]</blue>\n\n" )
-    return get_nmap_port_list(directory_output)
+    return get_nmap_port_list(directory_output, ip)
 
 def naabu_scan(directory_output,ip):
       #nmap -p- --min-rate 10000 -oA scans/nmap-alltcp 10.10.10.161
@@ -154,7 +214,7 @@ def scan_nmap(ip, path_output):
     ports1,services = scan_all_tcp_port(directory_output_nmap, ip)
     ports2 = naabu_scan(directory_output_naabu,ip)
     ports = list(set(ports1) | set(ports2))
-    # scan_detail_service_v1(directory_output_nmap, ip)
+    scan_detail_service_v1(directory_output_nmap, ip)
     thread_detail  = threading.Thread(target=scan_detail_service, args=(directory_output_nmap, ip, ports))
     thread_vuln  = threading.Thread(target=scan_vuln_service, args=(directory_output_nmap, ip, ports))
     # thread_udp  = threading.Thread(target=scan_top_20_udp, args=(directory_output_nmap, ip, ports))

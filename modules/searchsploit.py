@@ -3,9 +3,10 @@ import os
 import xmltodict
 import json
 from loguru import logger
+import requests
 
 directory_output = "/searchsploit/"
-
+outfile_detail_port = "nmap-detail-service"
 
 
 def get_ports_from_nmap(out_path):
@@ -32,6 +33,24 @@ def get_ports_from_nmap(out_path):
                     ports["service"] = port["service"]
                     list_port.append(ports)
         return list_port
+def detect_webservices(ip, ports):
+    http_lists = []
+    https_lists = []
+    for i in ports:
+        url_http = "http://%s:%s" % (ip,int(i))
+        url_https = "https://%s:%s" % (ip,int(i))
+        try:
+            r = requests.get(url_http, verify=False, timeout=10)
+            http_lists.append(i)
+        except:
+            pass
+        try:
+            r = requests.get(url_https, verify=False, timeout=10)
+            https_lists.append(i)
+        except:
+            pass
+    return http_lists, https_lists
+
 
 def init_scan_searchsploit(out_path):
     if not os.path.exists(out_path + directory_output):
@@ -58,7 +77,8 @@ def searchsploit_service(port, out_path ,nameservice, version=''):
     retval = p.wait()
     logger.opt(colors=True).info("<blue>[================================END OUTPUT SEARCHSPLOIT======================================]</blue>\n\n" )
 
-def run_searchsploit(out_path):    
+def run_searchsploit(out_path):
+    print("run search sploit")    
     init_scan_searchsploit(out_path)
     try:
         service = get_ports_from_nmap(out_path)
@@ -68,5 +88,6 @@ def run_searchsploit(out_path):
             if ("@name" in port["service"]):
                 searchsploit_service(port["port"], out_path, port["service"]["@name"])
         remove_none_file(out_path + "/" + directory_output)
-    except:
+    except Exception as e:
+        print(e)
         pass

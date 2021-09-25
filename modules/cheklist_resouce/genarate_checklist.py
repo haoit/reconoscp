@@ -71,10 +71,10 @@ def template_block(name, notes, jsmind_container_id, manual_id, manual_text, ref
 
 def template_refer_list(list_url):
     temp_data=""
-    print(list_url)
+    # print(list_url)
     for url in list_url:
         temp_data += '<li><a href="%s" target="_blank">%s</a></li>'%(url,url)
-    print(temp_data)
+    # print(temp_data)
     return temp_data
 
 def template_script_mindmap(mind_var, data, options_var, jsmind_container_id):

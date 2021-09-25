@@ -4,6 +4,7 @@ import os
 import random
 import string
 from loguru import logger
+from html import escape
 
 temp_random = []
 
@@ -14,23 +15,6 @@ def run_os_scandir(path_output):
 def run_os_scanfile(path_folder):
     files = [f.name for f in os.scandir(path_folder) if f.is_file()]
     return files
-
-
-
-def get_ports_from_nmap():
-        path = "../portscan/nmap/%s.xml"%outfile_detail_port
-    # try:
-        with open(path) as f:
-            xml = f.read()  
-        output = json.loads(json.dumps(xmltodict.parse(xml)))
-        list_port = []
-        for port in output ["nmaprun"]["host"]["ports"]["port"]:
-            ports = {}
-            if(port["state"]["@state"] == "open"):
-                ports["port"] = port["@portid"]
-                ports["service"] = port["service"]
-                list_port.append(ports)
-        return list_port
 
 def template_block():
     block = """
@@ -43,7 +27,7 @@ def template_block():
               </h5>
             </div>
         
-            <div id="{{{class_toggel_block}}}" class="collapse" aria-labelledby="headingOne" data-parent="#accordion-main">
+            <div id="{{{class_toggel_block}}}" class="collapse" aria-labelledby="headingOne" data-parent="#{{{id_parrent}}}">
               <div class="card-body">
                   {{{block_content}}}
               </div>
@@ -74,9 +58,7 @@ def template_toggle_content():
               
                   <div id="{{{toggle_target}}}" class="collapse" aria-labelledby="headingOne" data-parent="#{{{toggle_id}}}">
                     <div class="card-body">
-                        <code>
                         {{{toggle_content}}}
-                        </code>
                     </div>
                   </div>
     </div> 
@@ -94,26 +76,26 @@ def gen_nmap_report(path_output):
 
     #Gen type 1
     with open("%s/nmap/nmap-alltcp.nmap"%path_output) as f:
-        output_all_port = f.read().replace("\n","</br>")
+        output_all_port = escape(f.read()).replace("\n","</br>")
     toggle_target = "nmapallport"
     toggle_name = report_type_1
-    toggle_content = output_all_port
+    toggle_content = "<code>%s</code>" % output_all_port
     data_type_1 = template_toggle_content().replace("{{{toggle_target}}}", toggle_target).replace("{{{toggle_name}}}", toggle_name).replace("{{{toggle_content}}}", toggle_content).replace("{{{toggle_id}}}", toggle_id)
 
     #Gen type 2
     with open("%s/nmap/nmap-detail-service.nmap"%path_output) as f:
-        output_all_port = f.read().replace("\n","</br>")
+        output_all_port = escape(f.read()).replace("\n","</br>")
     toggle_target = "nmapdetailport"
     toggle_name = report_type_2
-    toggle_content = output_all_port
+    toggle_content = "<code>%s</code>" % output_all_port
     data_type_2 = template_toggle_content().replace("{{{toggle_target}}}", toggle_target).replace("{{{toggle_name}}}", toggle_name).replace("{{{toggle_content}}}", toggle_content).replace("{{{toggle_id}}}", toggle_id)
 
    #Gen type 3
     with open("%s/nmap/nmap-vuln-port.nmap"%path_output) as f:
-        output_all_port = f.read().replace("\n","</br>")
+        output_all_port = escape(f.read()).replace("\n","</br>")
     toggle_target = "nmapvulnport"
     toggle_name = report_type_3
-    toggle_content = output_all_port
+    toggle_content = "<code>%s</code>" %output_all_port
     data_type_3 = template_toggle_content().replace("{{{toggle_target}}}", toggle_target).replace("{{{toggle_name}}}", toggle_name).replace("{{{toggle_content}}}", toggle_content).replace("{{{toggle_id}}}", toggle_id)
 
     # #Gen type 4
@@ -149,7 +131,9 @@ def gen_random_string():
 
 def genarate_html_from_forlder(namefolder , path_folder):
     files = run_os_scanfile(path_folder)
+    list_dir = run_os_scandir(path_folder)
     block_content = ""
+    screenshot_data = ""
     toggle_id = gen_random_string()
     for i in files:
         with open("%s/%s" % (path_folder, i)) as f:
@@ -157,27 +141,57 @@ def genarate_html_from_forlder(namefolder , path_folder):
         if len(file_content) > 1:
             toggle_name = i
             toggle_target = gen_random_string()
-            toggle_content = file_content.replace('\n','</br>')
+            toggle_content = "<code>%s</code>" % file_content.replace('\n','</br>')
             data_type = template_toggle_content().replace("{{{toggle_target}}}", toggle_target).replace("{{{toggle_name}}}", toggle_name).replace("{{{toggle_content}}}", toggle_content).replace("{{{toggle_id}}}", toggle_id)
             block_content += data_type
-    
+    if "screenshots" in list_dir:
+        screenshot_data = genarate_screenshot_forlder(path_folder + "/screenshots", toggle_id)
+        
     data = template_toggle_in_block().replace("{{{toggle_id}}}", toggle_id).replace("{{{block_content}}}", block_content)
     
     class_name = gen_random_string()
     class_toggel_block = gen_random_string()
     name_block = namefolder
     block_content = data
-
-    data = template_block().replace("{{{class_name}}}", class_name).replace("{{{class_toggel_block}}}", class_toggel_block).replace("{{{name_block}}}", name_block).replace("{{{block_content}}}", block_content)
+    block_content += screenshot_data
+    data = template_block().replace("{{{class_name}}}", class_name).replace("{{{class_toggel_block}}}", class_toggel_block).replace("{{{name_block}}}", name_block).replace("{{{block_content}}}", block_content).replace("{{{id_parrent}}}", "accordion-main")
     return data
+
+def genarate_screenshot_forlder( path_folder, parrent_id ,name_block="screen-shots"):
+    files = run_os_scanfile(path_folder)
+    block_content = ""
+    toggle_id = gen_random_string()
+    for i in files:
+        file_name = bytes.fromhex(i.split('.')[0]).decode('utf-8')
+        array_file = file_name.split('||')
+        url = array_file[0]
+        respone_status = array_file[1]
+        size_respone = array_file[2]
+        toggle_name =  "<code>%s</code> - <code>%s</code> - <code>%s</code><a href='%s' target='_blank'  class='fa fa-eye'> - ☞☞☞</a>"%(url, respone_status, size_respone, url)
+        toggle_target = gen_random_string()
+        toggle_content = "<img src='%s' class='rounded mx-auto d-block'>" % (path_folder + "/" + i)
+        data_type = template_toggle_content().replace("{{{toggle_target}}}", toggle_target).replace("{{{toggle_name}}}", toggle_name).replace("{{{toggle_content}}}", toggle_content).replace("{{{toggle_id}}}", toggle_id)
+        block_content += data_type
     
+    data = template_toggle_in_block().replace("{{{toggle_id}}}", toggle_id).replace("{{{block_content}}}", block_content)
+    
+    class_name = gen_random_string()
+    class_toggel_block = gen_random_string()
+    block_content = data
+
+    data = template_block().replace("{{{class_name}}}", class_name).replace("{{{class_toggel_block}}}", class_toggel_block).replace("{{{name_block}}}", name_block).replace("{{{block_content}}}", block_content).replace("{{{id_parrent}}}", parrent_id)
+    return data
 
 def genarate_html_report(ip, base_path):
+    data_detail = ""
+    
     path_output = os.getcwd() +"/output/%s/" % ip
     list_dir = run_os_scandir(path_output)
-    print(list_dir)
-    list_dir.remove('nmap')
-    data_detail = ""
+    if os.path.isdir(path_output +'/nmap'):
+        list_dir.remove('nmap')
+    if os.path.isdir(path_output +'/manual_screenshots'):
+        list_dir.remove('manual_screenshots')
+        data_detail += genarate_screenshot_forlder(path_output +'/manual_screenshots', "accordion-main" ,"manual_screenshots")
     for folder in list_dir:
         if len(os.listdir(path_output + folder)) != 0:
             data_detail += genarate_html_from_forlder(folder, path_output + folder)

@@ -29,10 +29,11 @@ def calculate_elapsed_time(start_time):
 
     return ', '.join(elapsed_time)
 
-def run_command(tools, command, output ):
+def run_command(tools, command, output, is_save=True ):
     start_time = time.time()
-    save = "echo %s | tee -a  %s" % (command,  output)
-    subprocess.Popen(save , shell=True, stdout=subprocess.PIPE, stderr=subprocess.STDOUT)
+    if is_save:
+        save = "echo '%s' | tee -a  %s" % (command,  output)
+        subprocess.Popen(save , shell=True, stdout=subprocess.PIPE, stderr=subprocess.STDOUT)
     p = subprocess.Popen(command , shell=True, stdout=subprocess.PIPE, stderr=subprocess.STDOUT)
     logger.opt(colors=True).info("[i] Starting scan %s using command: <yellow>%s</yellow> ." % (tools, command))
     logger.opt(colors=True).info("<blue>[================================OUTPUT %s======================================]</blue>\n\n" % tools)
